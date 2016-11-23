@@ -5,5 +5,6 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class MyEntity {
-    String manager="王晓普";
+    String manager="修坤朝";
+    String[]arry={"img"};
 }
