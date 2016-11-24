@@ -7,6 +7,15 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 public class Joke {
     private String mContent;
     private String mHashId;
+    private int mUnixtime;
+    private String mUpdatetime;
+
+    public Joke(String mContent, String mHashId, int mUnixtime, String mUpdatetime) {
+        this.mContent = mContent;
+        this.mHashId = mHashId;
+        this.mUnixtime = mUnixtime;
+        this.mUpdatetime = mUpdatetime;
+    }
 
     public String getmContent() {
         return mContent;
@@ -39,8 +48,4 @@ public class Joke {
     public void setmUpdatetime(String mUpdatetime) {
         this.mUpdatetime = mUpdatetime;
     }
-
-    private int mUnixtime;
-    private String mUpdatetime;
-
 }
