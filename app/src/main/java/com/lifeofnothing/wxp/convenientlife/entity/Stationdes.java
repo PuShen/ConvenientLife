@@ -10,6 +10,9 @@ public class Stationdes {
     private String name;
     private String xy;
 
+    public Stationdes() {
+    }
+
     public Stationdes(String code, String stationNum, String name, String xy) {
         this.code = code;
         this.stationNum = stationNum;

@@ -16,6 +16,22 @@ public class LWeather {
     private String n_direct;
     private String n_power;
 
+    public LWeather() {
+    }
+
+    public LWeather(String d_id, String d_weather, String d_temperature, String d_direct, String d_power, String n_id, String n_weather, String n_temperature, String n_direct, String n_power) {
+        this.d_id = d_id;
+        this.d_weather = d_weather;
+        this.d_temperature = d_temperature;
+        this.d_direct = d_direct;
+        this.d_power = d_power;
+        this.n_id = n_id;
+        this.n_weather = n_weather;
+        this.n_temperature = n_temperature;
+        this.n_direct = n_direct;
+        this.n_power = n_power;
+    }
+
     public String getD_id() {
         return d_id;
     }

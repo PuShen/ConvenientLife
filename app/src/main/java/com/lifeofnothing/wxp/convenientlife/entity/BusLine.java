@@ -41,6 +41,44 @@ public class BusLine {
     private String commutation_ticket;
     private List<Stationdes> lb =new ArrayList<>();
 
+    public BusLine() {
+    }
+
+    public BusLine(String city, String bus, String terminal_name, String line_id, String front_spell, String key_name, String time_desc, String front_name, String description, String start_time, String photo_floder, String gpsfile_id, String interval5, String data_source, String total_price, String company, String speed, String length, String loop, String auto, String ic_card, String double_deck, String express_way, String status, String basic_price, String end_time, String air, String type, String paper_table_id, String name, String commutation_ticket, List<Stationdes> lb) {
+        this.city = city;
+        this.bus = bus;
+        this.terminal_name = terminal_name;
+        this.line_id = line_id;
+        this.front_spell = front_spell;
+        this.key_name = key_name;
+        this.time_desc = time_desc;
+        this.front_name = front_name;
+        this.description = description;
+        this.start_time = start_time;
+        this.photo_floder = photo_floder;
+        this.gpsfile_id = gpsfile_id;
+        this.interval5 = interval5;
+        this.data_source = data_source;
+        this.total_price = total_price;
+        this.company = company;
+        this.speed = speed;
+        this.length = length;
+        this.loop = loop;
+        this.auto = auto;
+        this.ic_card = ic_card;
+        this.double_deck = double_deck;
+        this.express_way = express_way;
+        this.status = status;
+        this.basic_price = basic_price;
+        this.end_time = end_time;
+        this.air = air;
+        this.type = type;
+        this.paper_table_id = paper_table_id;
+        this.name = name;
+        this.commutation_ticket = commutation_ticket;
+        this.lb = lb;
+    }
+
     public String getCity() {
         return city;
     }

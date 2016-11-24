@@ -58,4 +58,15 @@ public class News {
     public void setmDate(int mDate) {
         this.mDate = mDate;
     }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "mTitle='" + mTitle + '\'' +
+                ", mAuthor='" + mAuthor + '\'' +
+                ", mUrl='" + mUrl + '\'' +
+                ", mImage='" + mImage + '\'' +
+                ", mDate=" + mDate +
+                '}';
+    }
 }

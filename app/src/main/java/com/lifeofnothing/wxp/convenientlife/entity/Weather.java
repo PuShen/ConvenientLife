@@ -46,6 +46,49 @@ public class Weather {
     private String cityName;
    private  List<LWeather> ls=new ArrayList<>();
 
+    public Weather() {
+    }
+
+    public Weather(String cityname, String city_code, String city_name, String date, String time, String week, String moon, String dataUptime, String weather, String humidity, String temperature, String info, String img, String direct, String power, String offset, String windspeed, String chuanyi, String ganmao, String kongtiao, String wuran, String xiche, String yundong, String ziwaixian, String nongli, String show_dese, String key, String curPm, String pm25, String pm10, String level, String quality, String des, String dateTime, String isForeign, String cityName, List<LWeather> ls) {
+        this.cityname = cityname;
+        this.city_code = city_code;
+        this.city_name = city_name;
+        this.date = date;
+        this.time = time;
+        this.week = week;
+        this.moon = moon;
+        this.dataUptime = dataUptime;
+        this.weather = weather;
+        this.humidity = humidity;
+        this.temperature = temperature;
+        this.info = info;
+        this.img = img;
+        this.direct = direct;
+        this.power = power;
+        this.offset = offset;
+        this.windspeed = windspeed;
+        this.chuanyi = chuanyi;
+        this.ganmao = ganmao;
+        this.kongtiao = kongtiao;
+        this.wuran = wuran;
+        this.xiche = xiche;
+        this.yundong = yundong;
+        this.ziwaixian = ziwaixian;
+        this.nongli = nongli;
+        this.show_dese = show_dese;
+        this.key = key;
+        this.curPm = curPm;
+        this.pm25 = pm25;
+        this.pm10 = pm10;
+        this.level = level;
+        this.quality = quality;
+        this.des = des;
+        this.dateTime = dateTime;
+        this.isForeign = isForeign;
+        this.cityName = cityName;
+        this.ls = ls;
+    }
+
     public String getCityname() {
         return cityname;
     }

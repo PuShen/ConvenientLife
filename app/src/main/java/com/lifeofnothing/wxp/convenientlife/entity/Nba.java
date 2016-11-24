@@ -31,6 +31,37 @@ public class Nba{
     private  String videoicon;
     private  String name;
 
+    public Nba() {
+    }
+
+    public Nba(String link1text, String link1url, String link2text, String link2url, String player1, String player1logo, String player1url, String player2, String player2logo, String player2logobig, String player2url, String score, String status, String time, String text, String url, String liveurl, String data, String player1info, String player1location, String player2info, String player2location, String titile, String videoicon, String name) {
+        this.link1text = link1text;
+        this.link1url = link1url;
+        this.link2text = link2text;
+        this.link2url = link2url;
+        this.player1 = player1;
+        this.player1logo = player1logo;
+        this.player1url = player1url;
+        this.player2 = player2;
+        this.player2logo = player2logo;
+        this.player2logobig = player2logobig;
+        this.player2url = player2url;
+        this.score = score;
+        this.status = status;
+        this.time = time;
+        this.text = text;
+        this.url = url;
+        this.liveurl = liveurl;
+        this.data = data;
+        this.player1info = player1info;
+        this.player1location = player1location;
+        this.player2info = player2info;
+        this.player2location = player2location;
+        this.titile = titile;
+        this.videoicon = videoicon;
+        this.name = name;
+    }
+
     public String getLink1text() {
         return link1text;
     }
