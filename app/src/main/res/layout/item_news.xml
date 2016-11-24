@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_item_height"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TvItemnewsTitle"
+            android:text="新闻标题"
+            android:textColor="@color/colorBlack"
+            android:layout_margin="@dimen/activity_layout_margieright"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TvItemnewsAuthor"
+                android:text="发布人"
+                android:layout_margin="@dimen/activity_layout_margieright"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TvItemnewsTime"
+                android:text="发布时间"
+                android:layout_margin="@dimen/activity_layout_margieright"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="@dimen/activity_item_height"
+        android:layout_height="@dimen/activity_item_height"
+        android:id="@+id/IvItemnewsHead"
+        android:src="@drawable/image_default"/>
+</LinearLayout>
