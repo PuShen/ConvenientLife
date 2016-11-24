@@ -145,7 +145,6 @@ public class BusLineParser {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             busLines.add(busLine);
         }
 

@@ -23,7 +23,6 @@ public class NbaParser {
         Nba nba = null;
         JSONObject jsonObject = null;
 
-
         //获取服务器返回的状态
         String reason = null;
         try {
