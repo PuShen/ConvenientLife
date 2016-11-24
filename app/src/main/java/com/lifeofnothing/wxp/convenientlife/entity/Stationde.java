@@ -9,7 +9,7 @@ public class Stationde {
     private String stationNum;
     private String name;
     private String xy;
-
+    //无参构造函数
     public Stationde() {
     }
 

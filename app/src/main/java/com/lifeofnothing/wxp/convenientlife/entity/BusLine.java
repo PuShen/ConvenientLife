@@ -38,7 +38,7 @@ public class BusLine {
     private String name;
     private String commutation_ticket;
     private List<Stationde> lb =new ArrayList<>();
-
+    //无参构造函数
     public BusLine() {
     }
 
