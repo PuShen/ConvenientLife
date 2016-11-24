@@ -8,7 +8,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
-import com.lifeofnothing.wxp.convenientlife.http.Nba;
 
 public class MainActivity extends AppCompatActivity {
     private ListView mLvList;
@@ -26,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //测试代码
-        //new Nba().Nba_run();
     }
 
     @Override
