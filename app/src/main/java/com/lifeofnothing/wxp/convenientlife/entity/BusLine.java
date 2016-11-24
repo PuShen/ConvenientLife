@@ -8,8 +8,6 @@ import java.util.List;
  */
 
 public class BusLine {
-    private String city;
-    private String bus;
     private String terminal_name;
     private String front_spell;
     private String line_id;
@@ -39,14 +37,13 @@ public class BusLine {
     private String paper_table_id;
     private String name;
     private String commutation_ticket;
-    private List<Stationdes> lb =new ArrayList<>();
+    private List<Stationde> lb =new ArrayList<>();
 
     public BusLine() {
     }
 
-    public BusLine(String city, String bus, String terminal_name, String line_id, String front_spell, String key_name, String time_desc, String front_name, String description, String start_time, String photo_floder, String gpsfile_id, String interval5, String data_source, String total_price, String company, String speed, String length, String loop, String auto, String ic_card, String double_deck, String express_way, String status, String basic_price, String end_time, String air, String type, String paper_table_id, String name, String commutation_ticket, List<Stationdes> lb) {
-        this.city = city;
-        this.bus = bus;
+    public BusLine(String terminal_name, String line_id, String front_spell, String key_name, String time_desc, String front_name, String description, String start_time, String photo_floder, String gpsfile_id, String interval5, String data_source, String total_price, String company, String speed, String length, String loop, String auto, String ic_card, String double_deck, String express_way, String status, String basic_price, String end_time, String air, String type, String paper_table_id, String name, String commutation_ticket, List<Stationde> lb) {
+
         this.terminal_name = terminal_name;
         this.line_id = line_id;
         this.front_spell = front_spell;
@@ -77,22 +74,6 @@ public class BusLine {
         this.name = name;
         this.commutation_ticket = commutation_ticket;
         this.lb = lb;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getBus() {
-        return bus;
-    }
-
-    public void setBus(String bus) {
-        this.bus = bus;
     }
 
     public String getTerminal_name() {
@@ -327,11 +308,11 @@ public class BusLine {
         this.commutation_ticket = commutation_ticket;
     }
 
-    public List<Stationdes> getLb() {
+    public List<Stationde> getLb() {
         return lb;
     }
 
-    public void setLb(List<Stationdes> lb) {
+    public void setLb(List<Stationde> lb) {
         this.lb = lb;
     }
 }
