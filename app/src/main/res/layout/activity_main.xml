@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/TvItemnewsSearch"
         android:text="@string/tip_type"
         android:padding="@dimen/activity_layout_margieright"
         android:gravity="center"
