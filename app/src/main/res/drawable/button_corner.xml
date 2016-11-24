@@ -3,5 +3,5 @@
     android:shape="rectangle">
     <stroke android:color="@color/colorGreen"
         android:width="2dp"/>
-    <corners android:radius="@dimen/activity_layout_margieright"/>
+    <corners android:radius="@dimen/activity_horizontal_margin"/>
 </shape>

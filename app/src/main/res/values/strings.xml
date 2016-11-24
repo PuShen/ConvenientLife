@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">ConvenientLife</string>
+    <string name="app_name">生活百事通</string>
+    <string name="tip_type">请选择你感兴趣的类型</string>
+    <string name="title_news">新闻头条</string>
+    <string name="news_type">全部分类</string>
+    <string name="news_top">头条</string>
+    <string name="news_shehui">社会</string>
+    <string name="news_guonei">国内</string>
+    <string name="news_guoji">国际</string>
+    <string name="news_yule">娱乐</string>
+    <string name="news_tiyu">体育</string>
+    <string name="news_junshi">军事</string>
+    <string name="news_keji">科技</string>
+    <string name="news_caijing">财经</string>
+    <string name="news_shishang">时尚</string>
 </resources>

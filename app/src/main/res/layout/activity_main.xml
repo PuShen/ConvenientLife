@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lifeofnothing.wxp.convenientlife.ui.MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TvItemnewsSearch"
+        android:text="@string/tip_type"
+        android:padding="@dimen/activity_layout_margieright"
+        android:gravity="center"
+        android:background="@drawable/button_corner"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/LvMainList">
 
     </ListView>
-</RelativeLayout>
+</LinearLayout>
