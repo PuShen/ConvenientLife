@@ -10,7 +10,7 @@ public class WeChat {
     private String source;
     private String firstImg;
     private String mark;
-    private String url;
+    private String url;//
     private String totalPage;
     private String ps;
     private String pno;
