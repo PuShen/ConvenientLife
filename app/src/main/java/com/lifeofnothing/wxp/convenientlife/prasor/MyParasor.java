@@ -6,4 +6,6 @@ package com.lifeofnothing.wxp.convenientlife.prasor;
 
 public class MyParasor {
     String manager="王晓普";
+
+
 }
