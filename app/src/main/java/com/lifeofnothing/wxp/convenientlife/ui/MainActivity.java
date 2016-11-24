@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (Activity.RESULT_OK==resultCode){
             String result=data.getStringExtra("type");
             if (null!=result){
-                Log.e("result:",result);
+
             }
         }
     }
