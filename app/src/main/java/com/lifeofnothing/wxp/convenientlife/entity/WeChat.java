@@ -15,6 +15,21 @@ public class WeChat {
     private String ps;
     private String pno;
 
+    public WeChat() {
+    }
+
+    public WeChat(String id, String title, String source, String firstImg, String mark, String url, String ps, String totalPage, String pno) {
+        this.id = id;
+        this.title = title;
+        this.source = source;
+        this.firstImg = firstImg;
+        this.mark = mark;
+        this.url = url;
+        this.ps = ps;
+        this.totalPage = totalPage;
+        this.pno = pno;
+    }
+
     public String getId() {
         return id;
     }

@@ -8,7 +8,10 @@ public class QQNumber {
     private String conclusion;
     private String analysis;
 
-    public QQNumber( String conclusion, String analysis) {
+    public QQNumber() {
+    }
+
+    public QQNumber(String conclusion, String analysis) {
         this.conclusion = conclusion;
         this.analysis = analysis;
     }
