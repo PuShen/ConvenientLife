@@ -9,7 +9,8 @@
         android:padding="@dimen/activity_layout_margieright">
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
+            android:id="@+id/IvNewstypeBack"
             android:src="@drawable/back"/>
         <TextView
             android:layout_width="wrap_content"
@@ -22,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/news_type"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:textColor="@color/colorBlack"
         android:background="@color/colorWhite"
         android:padding="@dimen/activity_layout_margieright"/>
@@ -32,6 +35,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeTop"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_top"
@@ -41,6 +45,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeSociety"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_shehui"
@@ -50,6 +55,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeInternal"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_guonei"
@@ -59,6 +65,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeInternation"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_guoji"
@@ -68,6 +75,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeEntertainment"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_yule"
@@ -79,6 +87,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeSports"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_tiyu"
@@ -88,6 +97,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeMilitary"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_junshi"
@@ -97,6 +107,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeScience"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_keji"
@@ -106,6 +117,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeFinance"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_caijing"
@@ -115,6 +127,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvNewstypeFashion"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/news_shishang"
