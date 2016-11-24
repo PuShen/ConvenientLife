@@ -5,22 +5,12 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class QQNumber {
-    private String qq;
     private String conclusion;
     private String analysis;
 
-    public QQNumber(String qq, String conclusion, String analysis) {
-        this.qq = qq;
+    public QQNumber( String conclusion, String analysis) {
         this.conclusion = conclusion;
         this.analysis = analysis;
-    }
-
-    public String getQq() {
-        return qq;
-    }
-
-    public void setQq(String qq) {
-        this.qq = qq;
     }
 
     public String getConclusion() {
