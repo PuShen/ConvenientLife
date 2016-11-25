@@ -3,10 +3,15 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.entity.News;
+import com.lifeofnothing.wxp.convenientlife.prasor.NewsParser;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView mIvNews;
