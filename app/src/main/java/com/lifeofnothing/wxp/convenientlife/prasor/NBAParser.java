@@ -10,11 +10,11 @@ import org.json.JSONObject;
  * Created by Administrator on 2016/11/23.
  */
 
-public class NbaParser {
+public class NBAParser {
     //源Json串
     private String mSource = null;
 
-    public NbaParser(String source) {
+    public NBAParser(String source) {
         this.mSource = source;
     }
 
