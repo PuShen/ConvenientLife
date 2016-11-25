@@ -18,12 +18,12 @@ import java.util.Objects;
 
 public class NewsParser {
 
-    public static List getGson(JSONObject result){
+    public static List<News> getGson(StringBuffer result){
 
           List<News> lnews=new ArrayList<>();
         try {
-
-            JSONObject temp=result.getJSONObject("result");
+            JSONObject object=new JSONObject(result.toString());
+            JSONObject temp=object.getJSONObject("result");
             JSONArray data=temp.getJSONArray("data");
 
             for(int i=0;i<data.length();i++){

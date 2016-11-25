@@ -24,7 +24,7 @@ import java.util.List;
         private List<News> newslist = new ArrayList<>();
 
         //自己的构造方法
-        public NewsAdapter(Context context, ArrayList<News> nl) {
+        public NewsAdapter(Context context, List<News> nl) {
             this.context = context;
             this.newslist = nl;
         }

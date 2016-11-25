@@ -1,17 +1,19 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.adapter.NewsAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.News;
-import com.lifeofnothing.wxp.convenientlife.prasor.NewsParser;
 
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private ImageView mIvNews;
@@ -31,10 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //测试代码
-        //new Nba().Nba_run();
-
     }
 
     @Override
