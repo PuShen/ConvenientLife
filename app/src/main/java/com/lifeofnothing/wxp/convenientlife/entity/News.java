@@ -9,9 +9,9 @@ public class News {
     private String mAuthor;
     private  String mUrl;
     private String mImage;
-    private int mDate;
+    private String mDate;
 
-    public News(String mTitle, String mAuthor, String mUrl, String mImage, int mDate) {
+    public News(String mTitle, String mAuthor, String mUrl, String mImage, String mDate) {
         this.mTitle = mTitle;
         this.mAuthor = mAuthor;
         this.mUrl = mUrl;
@@ -51,11 +51,11 @@ public class News {
         this.mImage = mImage;
     }
 
-    public int getmDate() {
+    public String getmDate() {
         return mDate;
     }
 
-    public void setmDate(int mDate) {
+    public void setmDate(String mDate) {
         this.mDate = mDate;
     }
 
