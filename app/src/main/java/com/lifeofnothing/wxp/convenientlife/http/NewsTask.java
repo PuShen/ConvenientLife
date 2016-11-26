@@ -5,9 +5,6 @@ import android.os.Message;
 
 import com.lifeofnothing.wxp.convenientlife.prasor.NewsParser;
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,10 +30,11 @@ public class NewsTask implements Runnable {
     @Override
     public void run() {
         HttpURLConnection connection=null;
+        BufferedReader reader=null;
         try {
             URL url=new URL(mUrl+mParam1+mParam2);
             connection=(HttpURLConnection) url.openConnection();
-            BufferedReader reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer buffer=new StringBuffer("");
             String line=null;
             while (null!=(line=reader.readLine())){
@@ -51,6 +49,13 @@ public class NewsTask implements Runnable {
         } catch (IOException e){
             e.printStackTrace();
         } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             connection.disconnect();
         }
     }
