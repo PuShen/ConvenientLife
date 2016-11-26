@@ -71,7 +71,7 @@ public class NewsActivity extends Activity {
         setContentView(R.layout.activity_news);
 
         //测试代码
-        //new Nba().Nba_run();
+        //new NbaTask().Nba_run();
 
     }
 

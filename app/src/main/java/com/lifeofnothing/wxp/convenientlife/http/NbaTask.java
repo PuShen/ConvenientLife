@@ -16,9 +16,9 @@ import java.util.List;
  * Created by 我需要一枚好辅助丶 on 2016/11/24.
  */
 
-public class Nba {
+public class NbaTask {
 
-    public Nba() {
+    public NbaTask() {
     }
 
     private String mUrl = "http://op.juhe.cn/onebox/basketball/nba?key=6647ff1ad4f8b21cb866c21623874a24";
