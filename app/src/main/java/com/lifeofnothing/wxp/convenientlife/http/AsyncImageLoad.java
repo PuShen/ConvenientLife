@@ -16,6 +16,7 @@ public class AsyncImageLoad extends AsyncTask<Void,Void,Drawable> {
     private String mUrl;
     private Drawable mImage;
     private ImageView mImageview;
+    private Boolean flag;//作为判断当前是否处于联网状态的标志位
 
     public AsyncImageLoad(String mUrl, ImageView mImageview) {
         this.mUrl = mUrl;
@@ -26,8 +27,10 @@ public class AsyncImageLoad extends AsyncTask<Void,Void,Drawable> {
     protected Drawable doInBackground(Void... params) {
         try {
             mImage = Drawable.createFromStream((InputStream)(new URL(mUrl)).openStream(), "test");
+            flag=true;
         } catch (IOException e) {
             e.printStackTrace();
+            flag=false;
         }
         return null;
     }
@@ -40,7 +43,9 @@ public class AsyncImageLoad extends AsyncTask<Void,Void,Drawable> {
     @Override
     protected void onPostExecute(Drawable drawable) {
         super.onPostExecute(drawable);
-        mImageview.setImageDrawable(mImage);
+        if (flag){
+            mImageview.setImageDrawable(mImage);
+        }
     }
 
 
