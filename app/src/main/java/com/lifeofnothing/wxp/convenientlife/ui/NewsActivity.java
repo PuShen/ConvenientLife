@@ -49,13 +49,15 @@ public class NewsActivity extends Activity {
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
-                    List<News> list=(List<News>) msg.obj;
+                    final List<News> list=(List<News>) msg.obj;
                     NewsAdapter adapter=new NewsAdapter(NewsActivity.this,list);
                     mLvList.setAdapter(adapter);
                     mLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                            Intent intent=new Intent(NewsActivity.this,NewscontentActivity.class);
+                            intent.putExtra("url",list.get(position).getmUrl());
+                            startActivity(intent);
                         }
                     });
                     break;

@@ -24,6 +24,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.NewstypeActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.NewscontentActivity"/>
     </application>
 
 
