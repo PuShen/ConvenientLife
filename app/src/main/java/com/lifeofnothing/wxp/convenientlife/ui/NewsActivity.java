@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -68,7 +67,6 @@ public class NewsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("onCreate:","我执行了");
         mType="";
         setContentView(R.layout.activity_news);
 
@@ -80,7 +78,6 @@ public class NewsActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e("onStart:","我执行了");
         mLvList= (ListView) findViewById(R.id.LvNewsList);
         mTvSearch= (TextView) findViewById(R.id.TvNewsSearch);
         mIvBack= (ImageView) findViewById(R.id.IvNewsBack);
@@ -89,7 +86,6 @@ public class NewsActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("onResume:","我执行了");
         mTvSearch.setOnClickListener(listener);
         mIvBack.setOnClickListener(listener);
         new Thread(new NewsTask(mType,handler)).start();
@@ -98,7 +94,6 @@ public class NewsActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("onActivityResult:","我执行了");
         if (Activity.RESULT_OK==resultCode){
             String result=data.getStringExtra("type");
             if (null!=result){
