@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 刘超 on 2016/11/24.
+ * Created by 刘超 on 201/161/24.
  */
 
     public class NewsAdapter extends BaseAdapter {
