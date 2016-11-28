@@ -3,13 +3,13 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 /**
  * Created by dell on 2016/11/24.
  */
-
+//新闻头条类
 public class News {
-    private String mTitle;
-    private String mAuthor;
-    private  String mUrl;
-    private String mImage;
-    private String mDate;
+    private String mTitle;  //新闻头条的标题
+    private String mAuthor; //新闻头条的作者
+    private  String mUrl;   //新闻头条的网址
+    private String mImage;  //新闻头条的图片
+    private String mDate;   //新闻头条的日期
 
     public News(String mTitle, String mAuthor, String mUrl, String mImage, String mDate) {
         this.mTitle = mTitle;

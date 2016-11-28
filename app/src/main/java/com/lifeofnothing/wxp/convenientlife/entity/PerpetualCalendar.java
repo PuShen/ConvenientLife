@@ -7,13 +7,13 @@ import android.util.MonthDisplayHelper;
  */
 
 public class PerpetualCalendar {
-    private  String mAnimalsYear;
-    private  String mWeekday;
-    private  String mLunarYear;
-    private  String mLunar;
-    private  String mYearMonth;
-    private  String mDate;
-
+    private  String mAnimalsYear; //天干地支
+    private  String mWeekday;     //星期
+    private  String mLunarYear;   //阴历年
+    private  String mLunar;       //阴历
+    private  String mYearMonth;   //年月
+    private  String mDate;        //日期
+    private  String mAvoid;       //忌
     public PerpetualCalendar(String mAnimalsYear, String mWeekday, String mLunarYear, String mLunar, String mYearMonth, String mDate) {
         this.mAnimalsYear = mAnimalsYear;
         this.mWeekday = mWeekday;
