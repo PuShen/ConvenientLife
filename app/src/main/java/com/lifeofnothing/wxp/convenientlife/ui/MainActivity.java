@@ -15,13 +15,13 @@ import java.io.UnsupportedEncodingException;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView mIvNews;
+    private TextView mTvNews;
     private TextView mTvWechat;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.IvMainNews:
+                case R.id.TvMainNews:
                     Intent intent=new Intent(MainActivity.this,NewsActivity.class);
                     startActivity(intent);
                     break;
@@ -49,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mIvNews= (ImageView) findViewById(R.id.IvMainNews);
+        mTvNews= (TextView) findViewById(R.id.TvMainNews);
         mTvWechat =(TextView)findViewById(R.id.TvMainWechat);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mIvNews.setOnClickListener(listener);
+        mTvNews.setOnClickListener(listener);
         mTvWechat.setOnClickListener(listener);
     }
 
