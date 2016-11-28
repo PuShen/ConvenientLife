@@ -1,0 +1,44 @@
+package com.lifeofnothing.wxp.convenientlife.adapter;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import com.lifeofnothing.wxp.convenientlife.entity.NbaBottomLink;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by 刘超 on 2016/11/28.
+ */
+
+public class NbaBottomLinkAdapter extends BaseAdapter {
+     private Context context;
+     private List<NbaBottomLink> nbaBottomLinkList=new ArrayList<>();
+    //创建了自己的构造函数
+    public  NbaBottomLinkAdapter(Context context,ArrayList<NbaBottomLink> nbll){
+        this.context=context;
+        this.nbaBottomLinkList=nbll;
+    }
+    @Override
+    public int getCount() {
+        return nbaBottomLinkList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return nbaBottomLinkList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return convertView;
+    }
+}
