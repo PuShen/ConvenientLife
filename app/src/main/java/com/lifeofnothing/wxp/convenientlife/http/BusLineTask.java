@@ -1,11 +1,14 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.util.Log;
+
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.prasor.BusLineParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -20,8 +23,8 @@ public class BusLineTask {
 
     private String mUrl = "http://op.juhe.cn/189/bus/busline?";
     private String mParam1 = "key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
-    private String mParam2 = "%E8%8B%8F%E5%B7%9E&%20";
-    private String mParam3 = "156";
+    private String mParam2;
+    private String mParam3;
 
     public BusLineTask(String city,String bus){
         this.mParam2 = city;
@@ -37,6 +40,16 @@ public class BusLineTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 String str = Buslist.toString();
                 BusLineParser bp = new BusLineParser(str);
+
+                try {
+                    String s = response.getString("reason");
+                    Log.e("succeed",response.toString());
+                    if (s.equals("success")){
+                        Log.e("succeed","1");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 super.onSuccess(statusCode, headers, response);
             }
         });
