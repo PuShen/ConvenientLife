@@ -9,25 +9,18 @@ public class WeChat {
     private String title;
     private String source;
     private String firstImg;
-    private String mark;
     private String url;//
-    private String totalPage;
-    private String ps;
-    private String pno;
+
 
     public WeChat() {
     }
 
-    public WeChat(String id, String title, String source, String firstImg, String mark, String url, String ps, String totalPage, String pno) {
+    public WeChat(String id, String title, String source, String firstImg, String url) {
         this.id = id;
         this.title = title;
         this.source = source;
         this.firstImg = firstImg;
-        this.mark = mark;
         this.url = url;
-        this.ps = ps;
-        this.totalPage = totalPage;
-        this.pno = pno;
     }
 
     public String getId() {
@@ -62,14 +55,6 @@ public class WeChat {
         this.firstImg = firstImg;
     }
 
-    public String getMark() {
-        return mark;
-    }
-
-    public void setMark(String mark) {
-        this.mark = mark;
-    }
-
     public String getUrl() {
         return url;
     }
@@ -78,27 +63,4 @@ public class WeChat {
         this.url = url;
     }
 
-    public String getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(String totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public String getPs() {
-        return ps;
-    }
-
-    public void setPs(String ps) {
-        this.ps = ps;
-    }
-
-    public String getPno() {
-        return pno;
-    }
-
-    public void setPno(String pno) {
-        this.pno = pno;
-    }
 }
