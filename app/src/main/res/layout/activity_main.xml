@@ -6,15 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lifeofnothing.wxp.convenientlife.ui.MainActivity">
-    <ImageView
+    <TextView
         android:layout_width="@dimen/activity_item_height"
         android:layout_height="@dimen/activity_item_height"
-        android:id="@+id/IvMainNews"
-        android:src="@drawable/news"/>
+        android:id="@+id/TvMainNews"
+        android:text="@string/title_news"
+        android:gravity="center"
+        android:background="@drawable/news"/>
     <TextView
         android:id="@+id/TvMainWechat"
         android:background="@drawable/weixin"
         android:text="@string/title_wechat"
         android:layout_width="@dimen/activity_item_height"
-        android:layout_height="@dimen/activity_item_height"/>
+        android:layout_height="@dimen/activity_item_height"
+        android:gravity="center"/>
 </LinearLayout>
