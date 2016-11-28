@@ -5,23 +5,23 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class LeagueFootballMatch {
-    private String mSaiCheng1;
-    private String mSaiCheng2;
-    private String mSaiCheng3;
-    private String mJiFenBang;
-    private String mC1;
-    private String mC2;
-    private String mC3;
-    private String mC4T1;
-    private String mC4T1Url;
-    private String mC4R;
-    private String mC4T2;
-    private String mC4T2Url;
-    private String mC51;
-    private String mC51Link;
-    private String mC52;
-    private String mC52Link;
-    private String mLived;
+    private String mSaiCheng1; //赛程1
+    private String mSaiCheng2; //赛程2
+    private String mSaiCheng3; //赛程3
+    private String mJiFenBang; //积分榜
+    private String mC1;  // 是否结束
+    private String mC2;  //日期
+    private String mC3;  //时间
+    private String mC4T1;//队名
+    private String mC4T1Url;//网址
+    private String mC4R;    //比分
+    private String mC4T2;   //队名
+    private String mC4T2Url;//网址
+    private String mC51;    //统计
+    private String mC51Link;//网址
+    private String mC52;    //图文书数据
+    private String mC52Link;//网址
+    private String mLived;  //编号
 
     public LeagueFootballMatch(String mSaiCheng1, String mSaiCheng2, String mSaiCheng3, String mJiFenBang, String mC1, String mC2, String mC3, String mC4T1, String mC4T1Url, String mC4R, String mC4T2, String mC4T2Url, String mC51, String mC51Link, String mC52, String mC52Link, String mLived) {
         this.mSaiCheng1 = mSaiCheng1;
