@@ -31,6 +31,7 @@ public class NbaTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
                     String str = response.getString("reason");
+                    Log.e("结果",response.toString());
                     if(str.equals("查询成功")){
                         Log.e("测试","请求成功");
                     }
