@@ -5,14 +5,14 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class TodayInHistory {
-    private String mId;
-    private String mTitle;
-    private String mPic;
-    private String mYear;
-    private String mMonth;
-    private String mDay;
-    private String mDes;
-    private String mLunar;
+    private String mId;     //哪一年
+    private String mTitle;  //标题
+    private String mPic;    //图片
+    private String mYear;   //年份
+    private String mMonth;  //月份
+    private String mDay;    //天
+    private String mDes;    //事件
+    private String mLunar;  //阴历
 
     public TodayInHistory(String mId, String mTitle, String mPic, String mYear, String mMonth, String mDay, String mDes, String mLunar) {
         this.mId = mId;
