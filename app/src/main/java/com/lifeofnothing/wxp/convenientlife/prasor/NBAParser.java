@@ -21,31 +21,28 @@ public class NBAParser {
     public Nba parse() {
         //用于保存服务器返回的数据
         Nba nba = null;
-        JSONObject jsonObject = null;
 
         //获取服务器返回的状态
-        String reason = null;
+        int errorCode = -1;
         try {
             if (mSource != null) {
-                jsonObject = new JSONObject(mSource);
-                reason = jsonObject.getString("reason");
+                JSONObject jsonObject = new JSONObject(mSource);
+                errorCode = jsonObject.getInt("error_code");
+
+                //检查服务器返回的状态,若成功则开始数据解析
+                if (0 == errorCode) {
+                    //开始解析
+                    nba =
+                            startParse(jsonObject.getJSONObject("result"));
+                } else {
+                    //否则赋值为null
+                    nba = null;
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
         }
-        //检查服务器返回的状态,若成功则开始数据解析
-        if (reason.equals("查询成功")) {
-            //开始解析
-            nba =
-                    startParse(jsonObject);
-
-
-        } else {
-            //否则赋值为null
-            nba = null;
-        }
-
         return nba;
     }
 
