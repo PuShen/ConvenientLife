@@ -44,15 +44,30 @@ public class WeChatAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView= LayoutInflater.from(context).inflate(R.layout.item_wechat,null);
-        TextView TvItemwechatTitle=(TextView)convertView.findViewById(R.id. TvItemwechatTitle);
-        TvItemwechatTitle.setText(weChatList.get(position).getTitle());
-        TextView TvItemwechatAuthor =(TextView)convertView.findViewById(R.id. TvItemwechatAuthor);
-        TvItemwechatAuthor.setText(weChatList.get(position).getSource());
-        ImageView IvItemwechatHead=(ImageView)convertView.findViewById(R.id.IvItemwechatHead);
-        AsyncImageLoad imageLoad=new AsyncImageLoad
-                (weChatList.get(position).getFirstImg(),IvItemwechatHead);
-        imageLoad.execute();
+
+            switch (position%6) {
+                case 0:
+                    TextView TvItemwechatbigTitle=(TextView)convertView.findViewById(R.id. TvItemwechatbigTitle);
+                    TvItemwechatbigTitle.setText(weChatList.get(position).getTitle());
+                    TextView TvItemwechatbigAuthor=(TextView)convertView.findViewById(R.id. TvItemwechatbigAuthor);
+                    TvItemwechatbigAuthor.setText(weChatList.get(position).getSource());
+                    ImageView IvItemwechatbigHead=(ImageView)convertView.findViewById(R.id.IvItemwechatbigHead);
+                         AsyncImageLoad imageBigLoad = new AsyncImageLoad
+                                 (weChatList.get(position).getFirstImg(), IvItemwechatbigHead);
+                         imageBigLoad.execute();
+                         convertView= LayoutInflater.from(context).inflate(R.layout.item_wechat_big,null);
+                default:
+                    TextView TvItemwechatTitle=(TextView)convertView.findViewById(R.id. TvItemwechatTitle);
+                    TvItemwechatTitle.setText(weChatList.get(position).getTitle());
+                    TextView TvItemwechatAuthor =(TextView)convertView.findViewById(R.id. TvItemwechatAuthor);
+                    TvItemwechatAuthor.setText(weChatList.get(position).getSource());
+                    ImageView IvItemwechatHead=(ImageView)convertView.findViewById(R.id.IvItemwechatHead);
+                          AsyncImageLoad imageLoad = new AsyncImageLoad
+                         (weChatList.get(position).getFirstImg(), IvItemwechatHead);
+                          imageLoad.execute();
+                          convertView= LayoutInflater.from(context).inflate(R.layout.item_wechat,null);
+            }
+
         return convertView;
     }
 }
