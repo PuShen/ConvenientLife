@@ -40,16 +40,6 @@ public class BusLineTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 String str = Buslist.toString();
                 BusLineParser bp = new BusLineParser(str);
-
-                try {
-                    String s = response.getString("reason");
-                    Log.e("succeed",response.toString());
-                    if (s.equals("success")){
-                        Log.e("succeed","1");
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 super.onSuccess(statusCode, headers, response);
             }
         });
