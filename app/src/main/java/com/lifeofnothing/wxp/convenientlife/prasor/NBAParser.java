@@ -6,6 +6,7 @@ import com.lifeofnothing.wxp.convenientlife.entity.NbaDetails;
 import com.lifeofnothing.wxp.convenientlife.entity.NbaList;
 import com.lifeofnothing.wxp.convenientlife.entity.NbaLive;
 import com.lifeofnothing.wxp.convenientlife.entity.NbaLiveLink;
+import com.lifeofnothing.wxp.convenientlife.entity.NbaTeamMatch;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,7 +66,7 @@ public class NBAParser {
             String st0 = statuslist.getString("st0");
             String st1 = statuslist.getString("st1");
             String st2 = statuslist.getString("st2");
-            String[] status = new String[]{st0, st1, st2};
+            final String[] status = new String[]{st0, st1, st2};
 
             List<NbaList> nbaDailies = new ArrayList<NbaList>();
             JSONArray list = result.getJSONArray("list");
@@ -215,13 +216,27 @@ public class NBAParser {
 
                 nbaDailies.add(nbaDaily);
             }
+            nba.setLlist(nbaDailies);
 
+            JSONArray teammatchesJSONArray = result.getJSONArray("teammatch");
+            List<NbaTeamMatch> teamMatches = new ArrayList<NbaTeamMatch>();
+
+            for (int i = 0; i < teammatchesJSONArray.length(); i++) {
+                NbaTeamMatch teamMatch = new NbaTeamMatch();
+                JSONObject teamMatchJSONObj = teammatchesJSONArray.getJSONObject(i);
+                String name = teamMatchJSONObj.getString("name");
+                teamMatch.setName(name);
+                String url = teamMatchJSONObj.getString("url");
+                teamMatch.setUrl(url);
+
+                teamMatches.add(teamMatch);
+            }
+            nba.setLtmatch(teamMatches);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return nba;
     }
-
 
 }
