@@ -2,5 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_item_height_big"
+        android:id="@+id/IvItemwechatbigHead"
+        android:background="@drawable/image_default"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TvItemwechatbigTitle"
+        android:text="微信精选标题"
+        android:textColor="@color/colorBlack"
+        android:layout_margin="@dimen/activity_layout_margieright"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TvItemwechatbigAuthor"
+        android:text="来源"
+        android:layout_margin="@dimen/activity_layout_margieright"/>
 </LinearLayout>
