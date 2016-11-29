@@ -19,7 +19,7 @@ import java.net.URLEncoder;
  */
 
 public class WeatherTask {
-    private String mParam;
+    private String mParam;        //用户需要输入的城市名称
     private String mCityName;
     private String mUrl;
 
@@ -29,6 +29,7 @@ public class WeatherTask {
 
 
     public void Weather_run() throws UnsupportedEncodingException {
+        //传的参数中城市名称需要utf-8 urlencode
         mCityName = URLEncoder.encode(mParam,"UTF-8");
         mUrl = "http://op.juhe.cn/onebox/weather/query?cityname="+mCityName+"&key=440d0e0e41e24f869d09ed9696856c45";
         AsyncHttpClient httpClient = new AsyncHttpClient();
