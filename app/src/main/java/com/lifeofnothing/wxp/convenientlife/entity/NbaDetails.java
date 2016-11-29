@@ -20,11 +20,14 @@ public class NbaDetails {
     private  String score;
     private  String status;
     private  String time;
+    private  String m_link1url;
+    private  String m_link2url;
+
 
     public NbaDetails() {
     }
 
-    public NbaDetails(String link1text, String link1url, String link2text, String link2url, String player1, String player1logo, String player1logobig, String player1url, String player2, String player2logo, String player2logobig, String player2url, String score, String status, String time) {
+    public NbaDetails(String link1text, String link1url, String link2text, String link2url, String player1, String player1logo, String player1logobig, String player1url, String player2, String player2logo, String player2logobig, String player2url, String score, String status, String time,String m_link1url, String m_link2url) {
         this.link1text = link1text;
         this.link1url = link1url;
         this.link2text = link2text;
@@ -40,6 +43,8 @@ public class NbaDetails {
         this.score = score;
         this.status = status;
         this.time = time;
+        this.m_link1url=m_link1url;
+        this.m_link2url=m_link2url;
     }
 
     public String getLink1text() {
@@ -160,5 +165,21 @@ public class NbaDetails {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getM_link1url() {
+        return m_link1url;
+    }
+
+    public void setM_link1url(String m_link1url) {
+        this.m_link1url = m_link1url;
+    }
+
+    public String getM_link2url() {
+        return m_link2url;
+    }
+
+    public void setM_link2url(String m_link2url) {
+        this.m_link2url = m_link2url;
     }
 }
