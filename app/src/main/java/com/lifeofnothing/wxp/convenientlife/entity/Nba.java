@@ -8,15 +8,17 @@ import java.util.List;
  */
 
 public class Nba{
+   private  String title;
    private List<NbaList> llist=new ArrayList<>();
    private  List<NbaTeamMatch> ltmatch=new ArrayList<>();
 
     public Nba() {
     }
 
-    public Nba(List<NbaList> llist, List<NbaTeamMatch> ltmatch) {
+    public Nba(List<NbaList> llist, List<NbaTeamMatch> ltmatch, String title) {
         this.llist = llist;
         this.ltmatch = ltmatch;
+        this.title=title;
     }
 
     public List<NbaList> getLlist() {
@@ -33,5 +35,13 @@ public class Nba{
 
     public void setLtmatch(List<NbaTeamMatch> ltmatch) {
         this.ltmatch = ltmatch;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
