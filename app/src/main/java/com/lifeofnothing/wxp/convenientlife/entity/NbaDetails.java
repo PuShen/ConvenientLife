@@ -11,6 +11,7 @@ public class NbaDetails {
     private  String link2url;
     private  String player1;
     private  String player1logo;
+    private  String player1logobig;
     private  String player1url;
     private  String player2;
     private  String player2logo;
@@ -23,13 +24,14 @@ public class NbaDetails {
     public NbaDetails() {
     }
 
-    public NbaDetails(String link1text, String link1url, String link2text, String link2url, String player1, String player1logo, String player1url, String player2, String player2logo, String player2logobig, String player2url, String score, String status, String time) {
+    public NbaDetails(String link1text, String link1url, String link2text, String link2url, String player1, String player1logo, String player1logobig, String player1url, String player2, String player2logo, String player2logobig, String player2url, String score, String status, String time) {
         this.link1text = link1text;
         this.link1url = link1url;
         this.link2text = link2text;
         this.link2url = link2url;
         this.player1 = player1;
         this.player1logo = player1logo;
+        this.player1logobig=player1logobig;
         this.player1url = player1url;
         this.player2 = player2;
         this.player2logo = player2logo;
@@ -94,6 +96,14 @@ public class NbaDetails {
 
     public void setPlayer1logo(String player1logo) {
         this.player1logo = player1logo;
+    }
+
+    public String getPlayer1logobig() {
+        return player1logobig;
+    }
+
+    public void setPlayer1logobig(String player1logobig) {
+        this.player1logobig = player1logobig;
     }
 
     public String getPlayer2() {
