@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.http.NbaTask;
+import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
 
 import java.io.UnsupportedEncodingException;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 //        } catch (UnsupportedEncodingException e) {
 //            e.printStackTrace();
 //        }
+//        WeChatsTask a = new WeChatsTask();
+//        a.WeChats_run();
+
     }
 
     @Override
