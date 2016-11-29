@@ -86,27 +86,41 @@ public class NBAParser {
                     String link1text = nbaDetailJSONObj.getString("link1text");
                     nbaDetail.setLink1text(link1text);
                     String link1url = nbaDetailJSONObj.getString("link1url");
+                    link1url = UrlFixer.fix(link1url);
                     nbaDetail.setLink1url(link1url);
                     String link2text = nbaDetailJSONObj.getString("link2text");
                     nbaDetail.setLink2text(link2text);
                     String link2url = nbaDetailJSONObj.getString("link2url");
+                    link2url = UrlFixer.fix(link2url);
                     nbaDetail.setLink2url(link2url);
                     String player1 = nbaDetailJSONObj.getString("player1");
                     nbaDetail.setPlayer1(player1);
                     String player1logo = nbaDetailJSONObj.getString("player1logo");
+                    player1logo = UrlFixer.fix(player1logo);
                     nbaDetail.setPlayer1logo(player1logo);
                     String player1logobig = nbaDetailJSONObj.getString("player1logobig");
+                    player1logobig = UrlFixer.fix(player1logobig);
                     nbaDetail.setPlayer1logobig(player1logobig);
                     String player1url = nbaDetailJSONObj.getString("player1url");
+                    player1url = UrlFixer.fix(player1url);
                     nbaDetail.setPlayer1url(player1url);
                     String player2 = nbaDetailJSONObj.getString("player2");
                     nbaDetail.setPlayer2(player2);
                     String player2logo = nbaDetailJSONObj.getString("player2logo");
+                    player2logo = UrlFixer.fix(player2logo);
                     nbaDetail.setPlayer2logo(player2logo);
                     String player2logobig = nbaDetailJSONObj.getString("player2logobig");
+                    player2logobig = UrlFixer.fix(player2logobig);
                     nbaDetail.setPlayer2logobig(player2logobig);
                     String player2url = nbaDetailJSONObj.getString("player2url");
+                    player2url = UrlFixer.fix(player2url);
                     nbaDetail.setPlayer2url(player2url);
+                    String m_link1url = nbaDetailJSONObj.getString("m_link1url");
+                    m_link1url = UrlFixer.fix(m_link1url);
+                    nbaDetail.setM_link1url(m_link1url);
+                    String m_link2url = nbaDetailJSONObj.getString("m_link2url");
+                    m_link2url = UrlFixer.fix(m_link2url);
+                    nbaDetail.setM_link2url(m_link2url);
                     String score = nbaDetailJSONObj.getString("score");
                     nbaDetail.setScore(score);
                     int st = nbaDetailJSONObj.getInt("status");
@@ -141,78 +155,86 @@ public class NBAParser {
                     String text = bottomLinkJSONObj.getString("text");
                     bottomLink.setText(text);
                     String url = bottomLinkJSONObj.getString("url");
+                    url = UrlFixer.fix(url);
                     bottomLink.setUrl(url);
 
                     bottomLinks.add(bottomLink);
                 }
                 nbaDaily.setLblink(bottomLinks);
 
-                List<NbaLive> nbaLives = new ArrayList<NbaLive>();
-                JSONArray livesJSONArray = nbaDailyJSONobj.getJSONArray("live");
+                if (i == 1) { //服务器共返回三日数据, 其中仅中间一日(今日)具有直播信息
+                    List<NbaLive> nbaLives = new ArrayList<NbaLive>();
+                    JSONArray livesJSONArray = nbaDailyJSONobj.getJSONArray("live");
 
-                for (int j = 0; j < livesJSONArray.length(); j++) {
-                    JSONObject liveJSONObj = livesJSONArray.getJSONObject(j);
-                    NbaLive live = new NbaLive();
+                    for (int j = 0; j < livesJSONArray.length(); j++) {
+                        JSONObject liveJSONObj = livesJSONArray.getJSONObject(j);
+                        NbaLive live = new NbaLive();
 
-                    String liveTitle = liveJSONObj.getString("title");
-                    live.setTitle(liveTitle);
-                    String player1 = liveJSONObj.getString("player1");
-                    live.setPlayer1(player1);
-                    String player2 = liveJSONObj.getString("player2");
-                    live.setPlayer2(player2);
-                    String player1info = liveJSONObj.getString("player1info");
-                    live.setPlayer1info(player1info);
-                    String player2info = liveJSONObj.getString("player2info");
-                    live.setPlayer2info(player2info);
-                    String player1logobig = liveJSONObj.getString("player1logobig");
-                    live.setPlayer1logobig(player1logobig);
-                    String player2logobig = liveJSONObj.getString("player2logobig");
-                    live.setPlayer2logobig(player2logobig);
-                    String player1url = liveJSONObj.getString("player1url");
-                    live.setPlayer1url(player1url);
-                    String player2url = liveJSONObj.getString("player2url");
-                    live.setPlayer2url(player2url);
-                    String player1location = liveJSONObj.getString("player1location");
-                    live.setPlayer1location(player1location);
-                    String player2location = liveJSONObj.getString("player2location");
-                    live.setPlayer2location(player2location);
-                    int st = liveJSONObj.getInt("status");
-                    String stString = null;
-                    switch (st) {
-                        case 0:
-                            stString = status[0];
-                            break;
-                        case 1:
-                            stString = status[1];
-                            break;
-                        case 2:
-                            stString = status[2];
-                            break;
+                        String liveTitle = liveJSONObj.getString("title");
+                        live.setTitle(liveTitle);
+                        String player1 = liveJSONObj.getString("player1");
+                        live.setPlayer1(player1);
+                        String player2 = liveJSONObj.getString("player2");
+                        live.setPlayer2(player2);
+                        String player1info = liveJSONObj.getString("player1info");
+                        live.setPlayer1info(player1info);
+                        String player2info = liveJSONObj.getString("player2info");
+                        live.setPlayer2info(player2info);
+                        String player1logobig = liveJSONObj.getString("player1logobig");
+                        player1logobig = UrlFixer.fix(player1logobig);
+                        live.setPlayer1logobig(player1logobig);
+                        String player2logobig = liveJSONObj.getString("player2logobig");
+                        player2logobig = UrlFixer.fix(player2logobig);
+                        live.setPlayer2logobig(player2logobig);
+                        String player1url = liveJSONObj.getString("player1url");
+                        player1url = UrlFixer.fix(player1url);
+                        live.setPlayer1url(player1url);
+                        String player2url = liveJSONObj.getString("player2url");
+                        player2url = UrlFixer.fix(player2url);
+                        live.setPlayer2url(player2url);
+                        String player1location = liveJSONObj.getString("player1location");
+                        live.setPlayer1location(player1location);
+                        String player2location = liveJSONObj.getString("player2location");
+                        live.setPlayer2location(player2location);
+                        int st = liveJSONObj.getInt("status");
+                        String stString = null;
+                        switch (st) {
+                            case 0:
+                                stString = status[0];
+                                break;
+                            case 1:
+                                stString = status[1];
+                                break;
+                            case 2:
+                                stString = status[2];
+                                break;
+                        }
+                        live.setStatus(stString);
+                        String score = liveJSONObj.getString("score");
+                        live.setScore(score);
+                        String liveurl = liveJSONObj.getString("liveurl");
+                        liveurl = UrlFixer.fix(liveurl);
+                        live.setLiveurl(liveurl);
                     }
-                    live.setStatus(stString);
-                    String score = liveJSONObj.getString("score");
-                    live.setScore(score);
-                    String liveurl = liveJSONObj.getString("liveurl");
-                    live.setLiveurl(liveurl);
+                    nbaDaily.setLlive(nbaLives);
+
+                    List<NbaLiveLink> liveLinks = new ArrayList<NbaLiveLink>();
+                    JSONArray liveLinksJSONArray = nbaDailyJSONobj.getJSONArray("livelink");
+
+                    for (int j = 0; j < liveLinksJSONArray.length(); j++) {
+                        JSONObject liveLinkJSONObj = liveLinksJSONArray.getJSONObject(j);
+                        NbaLiveLink liveLink = new NbaLiveLink();
+
+                        String text = liveLinkJSONObj.getString("text");
+                        liveLink.setText(text);
+                        String url = liveLinkJSONObj.getString("url");
+                        url = UrlFixer.fix(url);
+                        liveLink.setUrl(url);
+
+                        liveLinks.add(liveLink);
+                    }
+                    nbaDaily.setLlink(liveLinks);
                 }
-                nbaDaily.setLlive(nbaLives);
-
-                List<NbaLiveLink> liveLinks = new ArrayList<NbaLiveLink>();
-                JSONArray liveLinksJSONArray = nbaDailyJSONobj.getJSONArray("livelink");
-
-                for (int j = 0; j < liveLinksJSONArray.length(); j++) {
-                    JSONObject liveLinkJSONObj = liveLinksJSONArray.getJSONObject(j);
-                    NbaLiveLink liveLink = new NbaLiveLink();
-
-                    String text = liveLinkJSONObj.getString("text");
-                    liveLink.setText(text);
-                    String url = liveLinkJSONObj.getString("url");
-                    liveLink.setUrl(url);
-
-                    liveLinks.add(liveLink);
-                }
-                nbaDaily.setLlink(liveLinks);
-
 
                 nbaDailies.add(nbaDaily);
             }
@@ -227,6 +249,7 @@ public class NBAParser {
                 String name = teamMatchJSONObj.getString("name");
                 teamMatch.setName(name);
                 String url = teamMatchJSONObj.getString("url");
+                url = UrlFixer.fix(url);
                 teamMatch.setUrl(url);
 
                 teamMatches.add(teamMatch);
