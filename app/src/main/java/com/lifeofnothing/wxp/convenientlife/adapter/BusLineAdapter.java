@@ -23,6 +23,7 @@ public class BusLineAdapter extends BaseAdapter{
         this.context =context;
         this.busLinesList=busLines;
     }
+    //重写抽象类或接口的抽象方法
     @Override
     public int getCount() {
         return busLinesList.size();

@@ -1,11 +1,16 @@
 package com.lifeofnothing.wxp.convenientlife.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
+import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +44,15 @@ public class WeChatAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        convertView= LayoutInflater.from(context).inflate(R.layout.item_wechat,null);
+        TextView TvItemwechatTitle=(TextView)convertView.findViewById(R.id. TvItemwechatTitle);
+        TvItemwechatTitle.setText(weChatList.get(position).getTitle());
+        TextView TvItemwechatAuthor =(TextView)convertView.findViewById(R.id. TvItemwechatAuthor);
+        TvItemwechatAuthor.setText(weChatList.get(position).getSource());
+        ImageView IvItemwechatHead=(ImageView)convertView.findViewById(R.id.IvItemwechatHead);
+        AsyncImageLoad imageLoad=new AsyncImageLoad
+                (weChatList.get(position).getFirstImg(),IvItemwechatHead);
+        imageLoad.execute();
+        return convertView;
     }
 }

@@ -5,7 +5,6 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class NbaLive {
-    private  String data;
     private  String liveurl;
     private  String player1;
     private  String player1info;
@@ -26,8 +25,7 @@ public class NbaLive {
     public NbaLive() {
     }
 
-    public NbaLive(String data, String liveurl, String player1, String player1location, String player1info, String player1logo, String player1logobig, String player1url, String player2, String player2info, String player2location, String player2logo, String player2logobig, String player2url, String score, String status, String title) {
-        this.data = data;
+    public NbaLive(String liveurl, String player1, String player1location, String player1info, String player1logo, String player1logobig, String player1url, String player2, String player2info, String player2location, String player2logo, String player2logobig, String player2url, String score, String status, String title) {
         this.liveurl = liveurl;
         this.player1 = player1;
         this.player1location = player1location;
@@ -44,14 +42,6 @@ public class NbaLive {
         this.score = score;
         this.status = status;
         this.title = title;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
     }
 
     public String getLiveurl() {
