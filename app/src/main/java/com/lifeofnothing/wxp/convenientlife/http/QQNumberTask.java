@@ -30,7 +30,7 @@ import java.util.List;
 public class QQNumberTask{
 
     private final String mUrl = "http://japi.juhe.cn/qqevaluate/qq?";
-    private String mParam;
+    private String mParam;      //qq号码
     private final String mParam1 = "key=63c4f5aeed6f5d25132135ea228807ca&qq=";
 
     public QQNumberTask(String qq){
