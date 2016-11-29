@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +24,8 @@ public class WechatActivity extends Activity {
     private SwipeRefreshLayout mSwrRefresh;
     private ImageView mIvBack;
     private ListView mLvList;
+    private List<WeChat> list;
+    WeChatAdapter adapter;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -36,7 +39,14 @@ public class WechatActivity extends Activity {
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            Toast.makeText(WechatActivity.this,"刷新成功！",Toast.LENGTH_SHORT).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    list.add(new WeChat("0","微信精选刷新","微信刷新",null,null));
+                    adapter.notifyDataSetChanged();
+                    mSwrRefresh.setRefreshing(false);
+                }
+            },3000);
         }
     };
 
@@ -52,13 +62,14 @@ public class WechatActivity extends Activity {
         mIvBack= (ImageView) findViewById(R.id.IvWechatBack);
         mLvList= (ListView) findViewById(R.id.LvWechatList);
         mSwrRefresh= (SwipeRefreshLayout) findViewById(R.id.SrlWechatRefresh);
+        list=getTestData();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mIvBack.setOnClickListener(listener);
-        WeChatAdapter adapter=new WeChatAdapter(this,getTestData());
+        adapter=new WeChatAdapter(this,list);
         mLvList.setAdapter(adapter);
         mSwrRefresh.setOnRefreshListener(refreshListener);
     }
