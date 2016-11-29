@@ -86,27 +86,41 @@ public class NBAParser {
                     String link1text = nbaDetailJSONObj.getString("link1text");
                     nbaDetail.setLink1text(link1text);
                     String link1url = nbaDetailJSONObj.getString("link1url");
+                    link1url = UrlFixer.fix(link1url);
                     nbaDetail.setLink1url(link1url);
                     String link2text = nbaDetailJSONObj.getString("link2text");
                     nbaDetail.setLink2text(link2text);
                     String link2url = nbaDetailJSONObj.getString("link2url");
+                    link2url = UrlFixer.fix(link2url);
                     nbaDetail.setLink2url(link2url);
                     String player1 = nbaDetailJSONObj.getString("player1");
                     nbaDetail.setPlayer1(player1);
                     String player1logo = nbaDetailJSONObj.getString("player1logo");
+                    player1logo = UrlFixer.fix(player1logo);
                     nbaDetail.setPlayer1logo(player1logo);
                     String player1logobig = nbaDetailJSONObj.getString("player1logobig");
+                    player1logobig = UrlFixer.fix(player1logobig);
                     nbaDetail.setPlayer1logobig(player1logobig);
                     String player1url = nbaDetailJSONObj.getString("player1url");
+                    player1url = UrlFixer.fix(player1url);
                     nbaDetail.setPlayer1url(player1url);
                     String player2 = nbaDetailJSONObj.getString("player2");
                     nbaDetail.setPlayer2(player2);
                     String player2logo = nbaDetailJSONObj.getString("player2logo");
+                    player2logo = UrlFixer.fix(player2logo);
                     nbaDetail.setPlayer2logo(player2logo);
                     String player2logobig = nbaDetailJSONObj.getString("player2logobig");
+                    player2logobig = UrlFixer.fix(player2logobig);
                     nbaDetail.setPlayer2logobig(player2logobig);
                     String player2url = nbaDetailJSONObj.getString("player2url");
+                    player2url = UrlFixer.fix(player2url);
                     nbaDetail.setPlayer2url(player2url);
+                    String m_link1url = nbaDetailJSONObj.getString("m_link1url");
+                    m_link1url = UrlFixer.fix(m_link1url);
+                    nbaDetail.setM_link1url(m_link1url);
+                    String m_link2url = nbaDetailJSONObj.getString("m_link2url");
+                    m_link2url = UrlFixer.fix(m_link2url);
+                    nbaDetail.setM_link2url(m_link2url);
                     String score = nbaDetailJSONObj.getString("score");
                     nbaDetail.setScore(score);
                     int st = nbaDetailJSONObj.getInt("status");
@@ -141,6 +155,7 @@ public class NBAParser {
                     String text = bottomLinkJSONObj.getString("text");
                     bottomLink.setText(text);
                     String url = bottomLinkJSONObj.getString("url");
+                    url = UrlFixer.fix(url);
                     bottomLink.setUrl(url);
 
                     bottomLinks.add(bottomLink);
@@ -165,12 +180,16 @@ public class NBAParser {
                     String player2info = liveJSONObj.getString("player2info");
                     live.setPlayer2info(player2info);
                     String player1logobig = liveJSONObj.getString("player1logobig");
+                    player1logobig = UrlFixer.fix(player1logobig);
                     live.setPlayer1logobig(player1logobig);
                     String player2logobig = liveJSONObj.getString("player2logobig");
+                    player2logobig = UrlFixer.fix(player2logobig);
                     live.setPlayer2logobig(player2logobig);
                     String player1url = liveJSONObj.getString("player1url");
+                    player1url = UrlFixer.fix(player1url);
                     live.setPlayer1url(player1url);
                     String player2url = liveJSONObj.getString("player2url");
+                    player2url = UrlFixer.fix(player2url);
                     live.setPlayer2url(player2url);
                     String player1location = liveJSONObj.getString("player1location");
                     live.setPlayer1location(player1location);
@@ -193,6 +212,7 @@ public class NBAParser {
                     String score = liveJSONObj.getString("score");
                     live.setScore(score);
                     String liveurl = liveJSONObj.getString("liveurl");
+                    liveurl = UrlFixer.fix(liveurl);
                     live.setLiveurl(liveurl);
                 }
                 nbaDaily.setLlive(nbaLives);
@@ -207,6 +227,7 @@ public class NBAParser {
                     String text = liveLinkJSONObj.getString("text");
                     liveLink.setText(text);
                     String url = liveLinkJSONObj.getString("url");
+                    url = UrlFixer.fix(url);
                     liveLink.setUrl(url);
 
                     liveLinks.add(liveLink);
@@ -227,6 +248,7 @@ public class NBAParser {
                 String name = teamMatchJSONObj.getString("name");
                 teamMatch.setName(name);
                 String url = teamMatchJSONObj.getString("url");
+                url = UrlFixer.fix(url);
                 teamMatch.setUrl(url);
 
                 teamMatches.add(teamMatch);
