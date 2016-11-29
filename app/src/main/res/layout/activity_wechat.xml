@@ -19,10 +19,14 @@
             android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <ListView
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/LvWechatList">
-
-    </ListView>
+        android:id="@+id/SrlWechatRefresh">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/LvWechatList">
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -13,6 +14,7 @@ import com.lifeofnothing.wxp.convenientlife.R;
  */
 
 public class WechatActivity extends Activity {
+    private SwipeRefreshLayout mSwrRefresh;
     private ImageView mIvBack;
     private ListView mLvList;
     private View.OnClickListener listener=new View.OnClickListener() {
@@ -37,6 +39,7 @@ public class WechatActivity extends Activity {
         super.onStart();
         mIvBack= (ImageView) findViewById(R.id.IvWechatBack);
         mLvList= (ListView) findViewById(R.id.LvWechatList);
+        mSwrRefresh= (SwipeRefreshLayout) findViewById(R.id.SrlWechatRefresh);
     }
 
     @Override
