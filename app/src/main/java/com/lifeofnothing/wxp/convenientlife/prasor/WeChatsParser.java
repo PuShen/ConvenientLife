@@ -65,8 +65,22 @@ public class WeChatsParser {
                 String source = object.getString("source");
                 weChat.setSource(source);
                 String firstImg = object.getString("firstImg");
+                String [] realFirstImgSplit = firstImg.split("/");
+                StringBuilder firstImgBuilder = new StringBuilder();
+                for (String s:realFirstImgSplit
+                     ) {
+                    firstImgBuilder.append(s);
+                }
+                firstImg = firstImgBuilder.toString();
                 weChat.setFirstImg(firstImg);
                 String url = object.getString("url");
+                String [] realUrl = url.split("/");
+                StringBuilder urlBuilder = new StringBuilder();
+                for (String s:realUrl
+                        ) {
+                    urlBuilder.append(s);
+                }
+                url = urlBuilder.toString();
                 weChat.setUrl(url);
                 weChats.add(weChat);
             }

@@ -23,15 +23,15 @@ public class BusLineTask {
 
     private String mUrl = "http://op.juhe.cn/189/bus/busline?";
     private String mParam1 = "key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
-    private String mParam2;
-    private String mParam3;
+    private String mParam2;     //城市代码或城市名称
+    private String mParam3;     //公交车号
 
     public BusLineTask(String city,String bus){
         this.mParam2 = city;
         this.mParam3 = bus;
     }
 
-    private String url = mUrl+mParam1+mParam2+"bus="+mParam3;
+    private String url = mUrl+mParam1+mParam2+"&%20bus="+mParam3;
     private List<BusLine> Buslist = new ArrayList<>();
     public void Bus_run(){
         AsyncHttpClient client = new AsyncHttpClient();
