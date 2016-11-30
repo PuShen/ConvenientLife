@@ -12,7 +12,10 @@ import android.widget.TextView;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
 import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
+import com.lifeofnothing.wxp.convenientlife.http.BackgroundLoadTask;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -52,9 +55,12 @@ public class WeChatAdapter extends BaseAdapter {
                 TextView TvItemwechatbigAuthor=(TextView)convertView.findViewById(R.id. TvItemwechatbigAuthor);
                 TvItemwechatbigAuthor.setText(weChatList.get(position).getSource());
                 ImageView IvItemwechatbigHead=(ImageView)convertView.findViewById(R.id.IvItemwechatbigHead);
-                AsyncImageLoad imageBigLoad = new AsyncImageLoad
-                        (weChatList.get(position).getFirstImg(), IvItemwechatbigHead);
-                imageBigLoad.execute();
+                BackgroundLoadTask task=new BackgroundLoadTask(IvItemwechatbigHead);
+                try {
+                    task.execute(new URL(weChatList.get(position).getFirstImg()));
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }else{
                 convertView = LayoutInflater.from(context).inflate(R.layout.item_wechat, null);
                 TextView TvItemwechatTitle = (TextView) convertView.findViewById(R.id.TvItemwechatTitle);
@@ -63,9 +69,12 @@ public class WeChatAdapter extends BaseAdapter {
                 TextView TvItemwechatAuthor = (TextView) convertView.findViewById(R.id.TvItemwechatAuthor);
                 TvItemwechatAuthor.setText(weChatList.get(position).getSource());
                 ImageView IvItemwechatHead = (ImageView) convertView.findViewById(R.id.IvItemwechatHead);
-                AsyncImageLoad imageLoad = new AsyncImageLoad
-                        (weChatList.get(position).getFirstImg(), IvItemwechatHead);
-                imageLoad.execute();
+                BackgroundLoadTask task=new BackgroundLoadTask(IvItemwechatHead);
+                try {
+                    task.execute(new URL(weChatList.get(position).getFirstImg()));
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return convertView;
