@@ -68,12 +68,9 @@ public class WeChatAdapter extends BaseAdapter {
                 TextView TvItemwechatAuthor = (TextView) convertView.findViewById(R.id.TvItemwechatAuthor);
                 TvItemwechatAuthor.setText(weChatList.get(position).getSource());
                 ImageView IvItemwechatHead = (ImageView) convertView.findViewById(R.id.IvItemwechatHead);
-                BackgroundLoadTask task=new BackgroundLoadTask(IvItemwechatHead);
-                try {
-                    task.execute(new URL(weChatList.get(position).getFirstImg()));
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
+                AsyncImageLoad imageLoad=new AsyncImageLoad
+                        (weChatList.get(position).getFirstImg(),IvItemwechatHead);
+                imageLoad.execute();
             }
         return convertView;
     }
