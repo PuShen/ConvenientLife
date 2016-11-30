@@ -38,16 +38,19 @@ public class WeChatsTask {
         httpClient.get(mUrl,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
                 //测试请求是否成功
                 try {
                     String mStr = response.getString("reason");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                WeChatsParser parser=new WeChatsParser(response.toString());
+                Log.e("img",parser.parse().get(0).getFirstImg());
                 Message message = new Message();
-                message.obj = response;
+                message.what=0;
+                message.obj = parser.parse();
                 mHandler.sendMessage(message);
-                super.onSuccess(statusCode, headers, response);
             }
         });
     }
