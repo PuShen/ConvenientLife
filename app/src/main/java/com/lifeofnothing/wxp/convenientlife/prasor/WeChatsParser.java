@@ -68,7 +68,6 @@ public class WeChatsParser {
                 firstImg = UrlFixer.fix(firstImg);
                 weChat.setFirstImg(firstImg);
                 String url = object.getString("url");
-                url = UrlFixer.fix(url);
                 weChat.setUrl(url);
                 weChats.add(weChat);
             }

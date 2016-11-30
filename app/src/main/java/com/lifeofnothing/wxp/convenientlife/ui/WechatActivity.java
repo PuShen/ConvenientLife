@@ -1,11 +1,14 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -52,6 +55,15 @@ public class WechatActivity extends Activity {
                     adapter=new WeChatAdapter(WechatActivity.this,list);
                     mLvList.setAdapter(adapter);
                     mSwrRefresh.setOnRefreshListener(refreshListener);
+                    mLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Log.e("contentUrl",list.get(position).getUrl());
+                            Intent intent=new Intent(WechatActivity.this,WechatcontentActivity.class);
+                            intent.putExtra("url",list.get(position).getUrl());
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 1:
                     adapter.notifyDataSetChanged();
