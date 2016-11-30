@@ -3,6 +3,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,17 +37,24 @@ public class WechatActivity extends Activity {
             }
         }
     };
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            adapter.notifyDataSetChanged();
+            mSwrRefresh.setRefreshing(false);
+        }
+    };
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            new Handler().postDelayed(new Runnable() {
+            new Thread(){
                 @Override
                 public void run() {
                     list.add(new WeChat("0","微信精选刷新","微信刷新",null,null));
-                    adapter.notifyDataSetChanged();
-                    mSwrRefresh.setRefreshing(false);
+                    handler.sendEmptyMessage(0);
                 }
-            },3000);
+            }.start();
         }
     };
 
@@ -75,6 +83,7 @@ public class WechatActivity extends Activity {
     }
 
     List<WeChat> getTestData(){
+
         List<WeChat> list=new ArrayList<>();
         list.add(new WeChat("0","微信精选","微信",null,null));
         list.add(new WeChat("0","微信精选","微信",null,null));
