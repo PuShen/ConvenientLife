@@ -47,7 +47,6 @@ public class WeChatAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(null==convertView) {
             if (position % 6 == 0){
                 convertView = LayoutInflater.from(context).inflate(R.layout.item_wechat_big, null);
                 TextView TvItemwechatbigTitle=(TextView)convertView.findViewById(R.id. TvItemwechatbigTitle);
@@ -76,7 +75,6 @@ public class WeChatAdapter extends BaseAdapter {
                     e.printStackTrace();
                 }
             }
-        }
         return convertView;
     }
 }

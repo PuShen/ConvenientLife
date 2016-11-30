@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.WeChatAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
+import com.lifeofnothing.wxp.convenientlife.http.RefreshTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
 
 import java.util.ArrayList;
@@ -27,7 +28,10 @@ public class WechatActivity extends Activity {
     private ImageView mIvBack;
     private ListView mLvList;
     private List<WeChat> list;
-    WeChatAdapter adapter;
+    private WeChatAdapter adapter;
+    private final String url="http://v.juhe.cn/weixin/query?pno=";
+    private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";
+    private int i;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -47,22 +51,21 @@ public class WechatActivity extends Activity {
                     list=(List<WeChat>)msg.obj;
                     adapter=new WeChatAdapter(WechatActivity.this,list);
                     mLvList.setAdapter(adapter);
+                    mSwrRefresh.setOnRefreshListener(refreshListener);
+                    break;
+                case 1:
+                    adapter.notifyDataSetChanged();
+                    mSwrRefresh.setRefreshing(false);
                     break;
             }
-            adapter.notifyDataSetChanged();
-            mSwrRefresh.setRefreshing(false);
         }
     };
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            new Thread(){
-                @Override
-                public void run() {
-                    list.add(new WeChat("0","微信精选刷新","微信刷新",null,null));
-                    handler.sendEmptyMessage(1);
-                }
-            }.start();
+            if (25>++i){
+                new Thread(new RefreshTask(url+i+param,handler,list)).start();
+            }
         }
     };
 
@@ -78,13 +81,13 @@ public class WechatActivity extends Activity {
         mIvBack= (ImageView) findViewById(R.id.IvWechatBack);
         mLvList= (ListView) findViewById(R.id.LvWechatList);
         mSwrRefresh= (SwipeRefreshLayout) findViewById(R.id.SrlWechatRefresh);
+        i=0;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mIvBack.setOnClickListener(listener);
-        mSwrRefresh.setOnRefreshListener(refreshListener);
+        mIvBack.setOnClickListener(listener);;
         new WeChatsTask(handler).WeChats_run();
     }
 }
