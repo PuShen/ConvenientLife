@@ -32,15 +32,17 @@ public class QQNumberTask{
     private final String mUrl = "http://japi.juhe.cn/qqevaluate/qq?";
     private String mParam;      //qq号码
     private final String mParam1 = "key=63c4f5aeed6f5d25132135ea228807ca&qq=";
+    private String url;
 
     public QQNumberTask(String qq){
         this.mParam = qq;
     }
 
-    private String url = mUrl+mParam1+mParam;
+
 
     private List<QQNumber> QQList = new ArrayList<>();
     public void QQNum_run(){
+        url = mUrl+mParam1+mParam;
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new JsonHttpResponseHandler() {
             @Override
