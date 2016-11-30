@@ -1,8 +1,6 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,14 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-//    测试
-//    Handler h = new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            Log.e("结果",msg.toString());
-//            super.handleMessage(msg);
-//        }
-//    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
 //        } catch (UnsupportedEncodingException e) {
 //            e.printStackTrace();
 //        }
-//        new WeChatsTask(h).WeChats_run();
-//        Log.e("测试",str);
     }
 
     @Override
