@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class TodayInHistoryTask implements Runnable{
 
-    private String mUrl = "http://api.juheapi.com/japi/toh?key=您申请的KEY&v=1.0";
+    private String mUrl = "http://api.juheapi.com/japi/toh?key=14e22ba99a08ecf8976f88f4bd49c9b4&v=1.0";
     private String mParam;      //月份
     private String mParam1;     //日
     private String mMonth = "&month=";

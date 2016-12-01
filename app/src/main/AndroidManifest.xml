@@ -28,7 +28,7 @@
         <activity android:name=".ui.WechatActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.WechatcontentActivity"/>
+        <activity android:name=".ui.WeatherActivity"
+            android:screenOrientation="portrait"/>
     </application>
-
-
 </manifest>
