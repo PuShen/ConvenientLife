@@ -32,9 +32,9 @@ public class WechatActivity extends Activity {
     private ListView mLvList;
     private List<WeChat> list;
     private WeChatAdapter adapter;
-    private final String url="http://v.juhe.cn/weixin/query?pno=";
-    private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";
-    private int i;
+    private final String url="http://v.juhe.cn/weixin/query?pno=";//本模块的信息来源网址
+    private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";//地址的参数信息
+    private int i;//参数中的页数信息
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
