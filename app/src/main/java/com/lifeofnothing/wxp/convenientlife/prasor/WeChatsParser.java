@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.prasor;
 
+import android.util.Log;
+
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
 
 import org.json.JSONArray;
