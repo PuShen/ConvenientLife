@@ -14,5 +14,6 @@
     <string name="news_caijing">财经</string>
     <string name="news_shishang">时尚</string>
     <string name="title_wechat">微信精选</string>
+    <string name="title_weather">天气预报</string>
 
 </resources>

@@ -20,4 +20,11 @@
         android:layout_width="@dimen/activity_item_height"
         android:layout_height="@dimen/activity_item_height"
         android:gravity="center"/>
+    <TextView
+        android:id="@+id/TvMainWeather"
+        android:background="@drawable/weixin"
+        android:text="@string/title_weather"
+        android:layout_width="@dimen/activity_item_height"
+        android:layout_height="@dimen/activity_item_height"
+        android:gravity="center"/>
 </LinearLayout>

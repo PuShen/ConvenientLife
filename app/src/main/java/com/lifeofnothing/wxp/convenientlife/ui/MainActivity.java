@@ -19,6 +19,7 @@ import java.io.UnsupportedEncodingException;
 public class MainActivity extends AppCompatActivity {
     private TextView mTvNews;
     private TextView mTvWechat;
+    private TextView mTvWeather;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.TvMainWechat:
                     Intent intent1 = new Intent(MainActivity.this,WechatActivity.class);
                     startActivity(intent1);
+                    break;
+                case R.id.TvMainWeather:
+                    Intent intent2 = new Intent(MainActivity.this,WeatherActivity.class);
+                    startActivity(intent2);
                     break;
             }
         }
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         mTvNews= (TextView) findViewById(R.id.TvMainNews);
         mTvWechat =(TextView)findViewById(R.id.TvMainWechat);
+        mTvWeather =(TextView)findViewById(R.id.TvMainWeather);
     }
 
     @Override
@@ -60,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         mTvNews.setOnClickListener(listener);
         mTvWechat.setOnClickListener(listener);
+        mTvWeather.setOnClickListener(listener);
     }
 
 }
