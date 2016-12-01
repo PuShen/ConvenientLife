@@ -69,7 +69,7 @@ public class WeatherParser {
             String week = realtime.getString("week");
             weather.setWeek(week);
             String moon = realtime.getString("moon");
-            weather.setWeek(week);
+            weather.setMoon(moon);
             Double dataUptime = realtime.getDouble("dataUptime");
             weather.setDataUptime(Double.toString(dataUptime));
 
