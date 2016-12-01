@@ -1,7 +1,11 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
+import com.lifeofnothing.wxp.convenientlife.prasor.JokeParser;
+import com.lifeofnothing.wxp.convenientlife.prasor.TodayInHisoryParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -9,41 +13,63 @@ import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /**
  * Created by hang on 2016/11/29.
  */
 
-public class JokeTask {
+public class JokeTask implements Runnable{
 
-    private String mUrl = "http://japi.juhe.cn/joke/content/list.from?key=您申请的KEY&sort=";
+    private String mUrl = "http://japi.juhe.cn/joke/content/list.from?key=99955ed34841b72633054903d94dc642&sort=";
     private String mTime;   //时间戳
     private String mSort;   //asc指定时间之后和desc指定时间之前
+    private Handler mHandler;
 
-    public JokeTask(String sort,String time){
+    public JokeTask(String sort,String time,Handler handler){
         this.mSort = sort;
         this.mTime = time;
+        this.mHandler = handler;
     }
 
-    private String url = mUrl+mSort+"&time="+mTime;
-
-    public void Joke_run(){
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url,new JsonHttpResponseHandler(){
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                String str = response.toString();
+    @Override
+    public void run() {
+        HttpURLConnection connection = null;
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(mUrl+mSort+"&time="+mTime);
+            connection = (HttpURLConnection)url.openConnection();
+            reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuffer buffer = new StringBuffer("");
+            String line = null;
+            while (null != (line = reader.readLine())){
+                buffer.append(line);
+            }
+            Message message = new Message();
+            message.what = 0;
+            message.obj = JokeParser.getGson(buffer);
+            mHandler.sendMessage(message);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null){
                 try {
-                    String s = response.getString("error_code");
-                    Log.e("error_code",response.toString());
-                    if (s.equals(0)){
-                        Log.e("succeed","1");
-                    }
-                } catch (JSONException e) {
+                    reader.close();
+                    connection.disconnect();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-                super.onSuccess(statusCode, headers, response);
             }
-        });
+            if (null != connection){
+                connection.disconnect();
+            }
+        }
     }
-
 }
