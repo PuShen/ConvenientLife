@@ -13,6 +13,7 @@ import com.lifeofnothing.wxp.convenientlife.R;
 
 public class WeatherActivity extends Activity {
     private ImageView mIvBack;
+    private ImageView mIvAdd;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -34,6 +35,7 @@ public class WeatherActivity extends Activity {
     protected void onStart() {
         super.onStart();
         mIvBack= (ImageView) findViewById(R.id.IvWeatherBack);
+        mIvAdd= (ImageView) findViewById(R.id.IvWeatherAdd);
     }
 
     @Override
