@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class Weather {
-//城市，日期，图标
+//城市，日期
     private String city_name;
     private String date;
 //周几
