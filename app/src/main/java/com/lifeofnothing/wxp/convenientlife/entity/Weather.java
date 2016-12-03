@@ -14,7 +14,6 @@ public class Weather {
 //周几
     private String week;
 //当前天气
-    private String weather;
     private String temperature;
     private String humidity;
     private String info;
@@ -22,13 +21,11 @@ public class Weather {
 //风
     private String direct;
     private String power;
-    private String offset;
-    private String windspeed;
+
 //生活指数
     private String chuanyi;
     private String ganmao;
     private String kongtiao;
-    private String wuran;
     private String xiche;
     private String yundong;
     private String ziwaixian;
@@ -38,37 +35,11 @@ public class Weather {
     private String quality;
     private String des;
 
-    public Weather() {
-    }
-
-    public Weather(  String city_name, String date, String week, String weather, String humidity,String info,int img, String temperature, String direct, String power, String offset, String windspeed, String chuanyi, String ganmao, String kongtiao, String wuran, String xiche, String yundong, String ziwaixian, String curPm, String pm25, String pm10, String level, String quality, String des) {
-
-        this.city_name = city_name;
-        this.date = date;
-        this.week = week;
-        this.weather = weather;
-        this.humidity = humidity;
+    public Weather(String info, int img, String temperature) {
+        this.info = info;
+        this.img = img;
         this.temperature = temperature;
-        this.info=info;
-        this.img=img;
-        this.direct = direct;
-        this.power = power;
-        this.offset = offset;
-        this.windspeed = windspeed;
-        this.chuanyi = chuanyi;
-        this.ganmao = ganmao;
-        this.kongtiao = kongtiao;
-        this.wuran = wuran;
-        this.xiche = xiche;
-        this.yundong = yundong;
-        this.ziwaixian = ziwaixian;
-        this.pm25 = pm25;
-        this.pm10 = pm10;
-        this.quality = quality;
-        this.des = des;
-
     }
-
 
     public String getCity_name() {
         return city_name;
@@ -94,14 +65,6 @@ public class Weather {
         this.week = week;
     }
 
-    public String getWeather() {
-        return weather;
-    }
-
-    public void setWeather(String weather) {
-        this.weather = weather;
-    }
-
     public String getTemperature() {
         return temperature;
     }
@@ -116,6 +79,22 @@ public class Weather {
 
     public void setHumidity(String humidity) {
         this.humidity = humidity;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 
     public String getDirect() {
@@ -134,22 +113,6 @@ public class Weather {
         this.power = power;
     }
 
-    public String getOffset() {
-        return offset;
-    }
-
-    public void setOffset(String offset) {
-        this.offset = offset;
-    }
-
-    public String getWindspeed() {
-        return windspeed;
-    }
-
-    public void setWindspeed(String windspeed) {
-        this.windspeed = windspeed;
-    }
-
     public String getChuanyi() {
         return chuanyi;
     }
@@ -164,14 +127,6 @@ public class Weather {
 
     public void setGanmao(String ganmao) {
         this.ganmao = ganmao;
-    }
-
-    public String getWuran() {
-        return wuran;
-    }
-
-    public void setWuran(String wuran) {
-        this.wuran = wuran;
     }
 
     public String getKongtiao() {
@@ -237,7 +192,4 @@ public class Weather {
     public void setDes(String des) {
         this.des = des;
     }
-
-
-
 }
