@@ -15,5 +15,22 @@
     <string name="news_shishang">时尚</string>
     <string name="title_wechat">微信精选</string>
     <string name="title_weather">天气预报</string>
-
+    <string name="weather_recent">最近天气</string>
+    <string name="weather_detail_information">详细信息</string>
+    <string name="weather_air">空气质量</string>
+    <string name="weather_life">生活指数</string>
+    <string name="weather_information">天气</string>
+    <string name="weather_temperature">温度</string>
+    <string name="weather_humidity">湿度</string>
+    <string name="weather_direct">风向</string>
+    <string name="weather_power">风力</string>
+    <string name="weather_pm25">PM2.5:</string>
+    <string name="weather_pm10">PM10:</string>
+    <string name="weather_effect">影响</string>
+    <string name="weather_cloth">[穿衣指数]</string>
+    <string name="weather_cold">[感冒指数]</string>
+    <string name="weather_airconditioner">[空调指数]</string>
+    <string name="weather_washcars">[洗车指数]</string>
+    <string name="weather_sports">[运动指数]</string>
+    <string name="weather_ultravioletrays">[紫外线指数]</string>
 </resources>
