@@ -8,23 +8,23 @@ import java.util.List;
  */
 
 public class Weather {
-    private String cityname;
-    private String city_code;
+//城市，日期，图标
     private String city_name;
     private String date;
-    private String time;
+//周几
     private String week;
-    private String moon;
-    private String dataUptime;
+//当前天气
     private String weather;
     private String temperature;
     private String humidity;
     private String info;
-    private String img;
+    private int img;
+//风
     private String direct;
     private String power;
     private String offset;
     private String windspeed;
+//生活指数
     private String chuanyi;
     private String ganmao;
     private String kongtiao;
@@ -32,37 +32,25 @@ public class Weather {
     private String xiche;
     private String yundong;
     private String ziwaixian;
-    private String nongli;
-    private String key;
-    private String show_dese;
-    private String curPm;
+//PM2.5
     private String pm25;
     private String pm10;
-    private String level;
     private String quality;
     private String des;
-    private String dateTime;
-    private String isForeign;
-    private String cityName;
-   private  List<LWeather> ls=new ArrayList<>();
 
     public Weather() {
     }
 
-    public Weather(String cityname, String city_code, String city_name, String date, String time, String week, String moon, String dataUptime, String weather, String humidity, String temperature, String info, String img, String direct, String power, String offset, String windspeed, String chuanyi, String ganmao, String kongtiao, String wuran, String xiche, String yundong, String ziwaixian, String nongli, String show_dese, String key, String curPm, String pm25, String pm10, String level, String quality, String des, String dateTime, String isForeign, String cityName, List<LWeather> ls) {
-        this.cityname = cityname;
-        this.city_code = city_code;
+    public Weather(  String city_name, String date, String week, String weather, String humidity,String info,int img, String temperature, String direct, String power, String offset, String windspeed, String chuanyi, String ganmao, String kongtiao, String wuran, String xiche, String yundong, String ziwaixian, String curPm, String pm25, String pm10, String level, String quality, String des) {
+
         this.city_name = city_name;
         this.date = date;
-        this.time = time;
         this.week = week;
-        this.moon = moon;
-        this.dataUptime = dataUptime;
         this.weather = weather;
         this.humidity = humidity;
         this.temperature = temperature;
-        this.info = info;
-        this.img = img;
+        this.info=info;
+        this.img=img;
         this.direct = direct;
         this.power = power;
         this.offset = offset;
@@ -74,36 +62,13 @@ public class Weather {
         this.xiche = xiche;
         this.yundong = yundong;
         this.ziwaixian = ziwaixian;
-        this.nongli = nongli;
-        this.show_dese = show_dese;
-        this.key = key;
-        this.curPm = curPm;
         this.pm25 = pm25;
         this.pm10 = pm10;
-        this.level = level;
         this.quality = quality;
         this.des = des;
-        this.dateTime = dateTime;
-        this.isForeign = isForeign;
-        this.cityName = cityName;
-        this.ls = ls;
+
     }
 
-    public String getCityname() {
-        return cityname;
-    }
-
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
-    }
-
-    public String getCity_code() {
-        return city_code;
-    }
-
-    public void setCity_code(String city_code) {
-        this.city_code = city_code;
-    }
 
     public String getCity_name() {
         return city_name;
@@ -121,36 +86,12 @@ public class Weather {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public String getWeek() {
         return week;
     }
 
     public void setWeek(String week) {
         this.week = week;
-    }
-
-    public String getMoon() {
-        return moon;
-    }
-
-    public void setMoon(String moon) {
-        this.moon = moon;
-    }
-
-    public String getDataUptime() {
-        return dataUptime;
-    }
-
-    public void setDataUptime(String dataUptime) {
-        this.dataUptime = dataUptime;
     }
 
     public String getWeather() {
@@ -175,22 +116,6 @@ public class Weather {
 
     public void setHumidity(String humidity) {
         this.humidity = humidity;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
     public String getDirect() {
@@ -281,38 +206,6 @@ public class Weather {
         this.ziwaixian = ziwaixian;
     }
 
-    public String getNongli() {
-        return nongli;
-    }
-
-    public void setNongli(String nongli) {
-        this.nongli = nongli;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getShow_dese() {
-        return show_dese;
-    }
-
-    public void setShow_dese(String show_dese) {
-        this.show_dese = show_dese;
-    }
-
-    public String getCurPm() {
-        return curPm;
-    }
-
-    public void setCurPm(String curPm) {
-        this.curPm = curPm;
-    }
-
     public String getPm25() {
         return pm25;
     }
@@ -327,14 +220,6 @@ public class Weather {
 
     public void setPm10(String pm10) {
         this.pm10 = pm10;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
     }
 
     public String getQuality() {
@@ -353,35 +238,6 @@ public class Weather {
         this.des = des;
     }
 
-    public String getDateTime() {
-        return dateTime;
-    }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
 
-    public String getIsForeign() {
-        return isForeign;
-    }
-
-    public void setIsForeign(String isForeign) {
-        this.isForeign = isForeign;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public List<LWeather> getLs() {
-        return ls;
-    }
-
-    public void setLs(List<LWeather> ls) {
-        this.ls = ls;
-    }
 }
