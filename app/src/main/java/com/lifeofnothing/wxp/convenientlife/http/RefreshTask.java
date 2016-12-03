@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.http;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
 import com.lifeofnothing.wxp.convenientlife.prasor.NewsParser;
@@ -44,6 +45,7 @@ public class RefreshTask implements Runnable {
                 buffer.append(line);
             }
             WeChatsParser parser=new WeChatsParser(buffer.toString());
+            Log.e("refresh", String.valueOf(parser.parse()==null));
             for (WeChat i:parser.parse()){
                 mList.add(0,i);
             }
