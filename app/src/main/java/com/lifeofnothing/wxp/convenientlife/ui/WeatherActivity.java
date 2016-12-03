@@ -47,6 +47,6 @@ public class WeatherActivity extends Activity {
         super.onResume();
         mIvBack.setOnClickListener(listener);
         mSrlRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
-        mSrlRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBule);
+        mSrlRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBlue);
     }
 }

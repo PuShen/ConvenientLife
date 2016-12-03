@@ -98,6 +98,6 @@ public class WechatActivity extends Activity {
         super.onResume();
         mIvBack.setOnClickListener(listener);;
         mSwrRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
-        mSwrRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBule);
+        mSwrRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBlue);
     }
 }
