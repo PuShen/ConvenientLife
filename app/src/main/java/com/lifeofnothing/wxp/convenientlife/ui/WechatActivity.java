@@ -34,7 +34,6 @@ public class WechatActivity extends Activity {
     private WeChatAdapter adapter;
     private final String url="http://v.juhe.cn/weixin/query?pno=";//本模块的信息来源网址
     private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";//地址的参数信息
-    private int i;//参数中的页数信息
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -75,9 +74,7 @@ public class WechatActivity extends Activity {
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            if (25>++i){
-                new Thread(new RefreshTask(url+i+param,handler,list)).start();
-            }
+            new Thread(new RefreshTask(url+(int)(Math.random()*25)+param,handler,list)).start();
         }
     };
 
@@ -85,6 +82,7 @@ public class WechatActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wechat);
+        new WeChatsTask(handler).WeChats_run();
     }
 
     @Override
@@ -93,7 +91,6 @@ public class WechatActivity extends Activity {
         mIvBack= (ImageView) findViewById(R.id.IvWechatBack);
         mLvList= (ListView) findViewById(R.id.LvWechatList);
         mSwrRefresh= (SwipeRefreshLayout) findViewById(R.id.SrlWechatRefresh);
-        i=0;
     }
 
     @Override
@@ -102,6 +99,5 @@ public class WechatActivity extends Activity {
         mIvBack.setOnClickListener(listener);;
         mSwrRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
         mSwrRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBule);
-        new WeChatsTask(handler).WeChats_run();
     }
 }
