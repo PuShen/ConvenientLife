@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/TvWeatherCity"
             android:text="北京"
             android:textSize="@dimen/activity_title"
             android:textColor="@color/colorWhite"
@@ -51,6 +52,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherTemperature"
                         android:text="0°"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_item_height"
@@ -59,6 +61,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherWeather"
                         android:text="晴"
                         android:layout_margin="@dimen/activity_horizontal_margin"
                         android:textColor="@color/colorWhite"
@@ -67,6 +70,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/IvWeatherImage"
                         android:src="@drawable/weather_evening_fine"
                         android:layout_toRightOf="@id/VWeatherLine"
                         android:layout_alignTop="@id/VWeatherLine"/>
@@ -92,6 +96,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeek1"
                             android:text="星期一"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -99,15 +104,18 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/IvWeatherImage1"
                             android:src="@drawable/weather_evening_fine"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherTemperature1"
                             android:text="0°"
                             android:textColor="@color/colorWhite"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeather1"
                             android:text="晴"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -122,6 +130,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeek2"
                             android:text="星期二"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -129,15 +138,18 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/IvWeatherImage2"
                             android:src="@drawable/weather_evening_fine"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherTemperature2"
                             android:text="0°"
                             android:textColor="@color/colorWhite"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeather2"
                             android:text="晴"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -152,6 +164,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeek3"
                             android:text="星期三"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -159,15 +172,18 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/IvWeatherImage3"
                             android:src="@drawable/weather_evening_fine"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherTemperature3"
                             android:text="0°"
                             android:textColor="@color/colorWhite"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeather3"
                             android:text="晴"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -182,6 +198,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeek4"
                             android:text="星期四"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -189,15 +206,18 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/IvWeatherImage4"
                             android:src="@drawable/weather_evening_fine"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherTemperature4"
                             android:text="0°"
                             android:textColor="@color/colorWhite"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWeather4"
                             android:text="晴"
                             android:textColor="@color/colorWhite"
                             android:layout_marginTop="@dimen/activity_layout_margieright"
@@ -223,8 +243,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:layout_width="@dimen/activity_item_height"
-                        android:layout_height="@dimen/activity_item_height"
+                        android:layout_width="@dimen/actiity_image_big"
+                        android:layout_height="@dimen/actiity_image_big"
+                        android:id="@+id/IvWeatherImagebig"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/weather_evening_fine"/>
                     <LinearLayout
@@ -243,6 +264,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/TvWeatherWeather0"
                                 android:text="晴"
                                 android:textColor="@color/colorWhite"
                                 android:layout_alignParentRight="true"/>
@@ -265,6 +287,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/TvWeatherTemperature0"
                                 android:text="0°"
                                 android:textColor="@color/colorWhite"
                                 android:layout_alignParentRight="true"/>
@@ -287,6 +310,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/TvWeatherHumidity"
                                 android:text="0"
                                 android:textColor="@color/colorWhite"
                                 android:layout_alignParentRight="true"/>
@@ -309,6 +333,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/TvWeatherDirect"
                                 android:text="西北风"
                                 android:textColor="@color/colorWhite"
                                 android:layout_alignParentRight="true"/>
@@ -331,6 +356,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/TvWeatherPower"
                                 android:text="1级"
                                 android:textColor="@color/colorWhite"
                                 android:layout_alignParentRight="true"/>
@@ -353,6 +379,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherQuality"
                         android:text="严重污染"
                         android:textColor="@color/colorWhite"
                         android:layout_alignParentRight="true"/>
@@ -378,6 +405,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherPm25"
                             android:text="25"
                             android:textColor="@color/colorWhite"/>
                     </LinearLayout>
@@ -393,6 +421,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherPm10"
                             android:text="25"
                             android:textColor="@color/colorWhite"/>
                     </LinearLayout>
@@ -400,6 +429,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/TvWeatherDes"
                     android:text="一般人应尽量减少户外运动"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/activity_small_text"/>
@@ -430,6 +460,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherCloth"
                             android:text="较冷"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -442,6 +473,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherClothdes"
                         android:text="建议着厚外套加毛衣等服装。年老体弱者宜着大衣、呢外套加羊毛衫。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>
@@ -465,6 +497,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherCold"
                             android:text="较易发"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -477,6 +510,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherColddes"
                         android:text="天气转凉，空气湿度较大，较易发生感冒，体质较弱的朋友请注意适当防护。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>
@@ -500,6 +534,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherAirconditioner"
                             android:text="开启制暖空调"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -512,6 +547,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherAirconditionerdes"
                         android:text="您将感到有些冷，可以适当开启制暖空调调节室内温度，以免着凉感冒。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>
@@ -535,6 +571,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherWashcars"
                             android:text="不宜"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -547,6 +584,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherWashcarsdes"
                         android:text="不宜洗车，未来24小时内有霾，如果在此期间洗车，会弄脏您的爱车。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>
@@ -570,6 +608,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherSports"
                             android:text="较不宜"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -582,6 +621,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherSportsdes"
                         android:text="有扬沙或浮尘，建议适当停止户外运动，选择在室内进行运动，以避免吸入更多沙尘，有损健康。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>
@@ -605,6 +645,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/TvWeatherUltravioletrays"
                             android:text="最弱"
                             android:textColor="@color/colorWhite"/>
                         <TextView
@@ -617,6 +658,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/TvWeatherUltravioletraysdes"
                         android:text="属弱紫外线辐射天气，无需特别防护。若长期在户外，建议涂擦SPF在8-12之间的防晒护肤品。"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/activity_small_text"/>

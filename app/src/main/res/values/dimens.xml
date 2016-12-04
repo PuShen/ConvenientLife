@@ -8,6 +8,7 @@
     <dimen name="activity_layout_margieright">5dp</dimen>
     <dimen name="activity_title">20dp</dimen>
     <dimen name="activity_item_height">80dp</dimen>
+    <dimen name="actiity_image_big">100dp</dimen>
     <dimen name="activity_item_height_big">180dp</dimen>
     <dimen name="activity_main_content">250dp</dimen>
 </resources>
