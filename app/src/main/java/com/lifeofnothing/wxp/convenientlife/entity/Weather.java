@@ -132,7 +132,7 @@ public class Weather {
     }
 
     public Weather setTemperature(String temperature) {
-        this.temperature = temperature;
+        this.temperature = temperature+"°";
         return this;
     }
 

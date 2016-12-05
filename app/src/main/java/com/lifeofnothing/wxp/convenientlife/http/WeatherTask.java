@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.prasor.WeatherParser;
@@ -22,9 +24,11 @@ public class WeatherTask {
     private String mParam;        //用户需要输入的城市名称
     private String mCityName;
     private String mUrl;
+    private Handler mHandler;
 
-    public WeatherTask(String mParam) throws UnsupportedEncodingException {
+    public WeatherTask(String mParam,Handler mHandler) throws UnsupportedEncodingException {
         this.mParam = mParam;
+        this.mHandler=mHandler;
     }
 
 
@@ -42,6 +46,10 @@ public class WeatherTask {
                     WeatherParser parser=new WeatherParser(mSource);
                     Log.e("Weather",parser.parse().toString());
                     Log.e("resultCode",String.valueOf(statusCode));
+                    Message message=new Message();
+                    message.what=0;
+                    message.obj=parser.parse();
+                    mHandler.sendMessage(message);
 //                    JSONObject a = response.getJSONObject("result");
 //                    JSONObject b = a.getJSONObject("data");
 //                    JSONObject c = b.getJSONObject("realtime");
