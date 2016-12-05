@@ -16,9 +16,9 @@
     <TextView
         android:id="@+id/TvMainWechat"
         android:background="@drawable/weixin"
-        android:text="@string/title_wechat"
-        android:layout_width="@dimen/activity_item_height"
-        android:layout_height="@dimen/activity_item_height"
+        android:text="微信精选"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:gravity="center"/>
     <TextView
         android:id="@+id/TvMainWeather"
@@ -26,5 +26,12 @@
         android:text="@string/title_weather"
         android:layout_width="@dimen/activity_item_height"
         android:layout_height="@dimen/activity_item_height"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/TvMainJoke"
+        android:background="@drawable/joke"
+        android:text="玩笑大全"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:gravity="center"/>
 </LinearLayout>
