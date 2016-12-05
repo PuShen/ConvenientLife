@@ -1,5 +1,6 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 
-public class JokeContentActivity extends AppCompatActivity {
+public class JokeContentActivity extends Activity {
     private WebView mWvContent;
     private ImageView mIvBack;
     private View.OnClickListener listener=new View.OnClickListener() {
