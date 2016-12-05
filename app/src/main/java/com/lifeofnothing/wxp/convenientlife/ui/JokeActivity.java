@@ -2,10 +2,8 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,15 +13,11 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.JokeAdapter;
-import com.lifeofnothing.wxp.convenientlife.adapter.NewsAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
-import com.lifeofnothing.wxp.convenientlife.entity.News;
-import com.lifeofnothing.wxp.convenientlife.http.NewsTask;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class JokeActivity extends AppCompatActivity {
+public class JokeActivity extends Activity {
     private ListView vJokeList;//笑话列表
     private TextView vJokeSearch;//搜索栏
     private ImageView vBack;//返回键

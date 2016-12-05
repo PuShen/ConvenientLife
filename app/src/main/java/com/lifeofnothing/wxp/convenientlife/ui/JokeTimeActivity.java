@@ -15,7 +15,7 @@ import com.lifeofnothing.wxp.convenientlife.R;
 
 import java.util.Calendar;
 
-public class JokeTimeActivity extends AppCompatActivity {
+public class JokeTimeActivity extends Activity {
     //定义5个记录当前时间的变量
     private int year;
     private int month;
