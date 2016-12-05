@@ -25,7 +25,7 @@ public class NewstypeActivity extends Activity {
     private TextView mTvScience;
     private TextView mTvFinance;
     private TextView mTvFashion;
-    private View.OnClickListener listener=new View.OnClickListener() {
+    private View.OnClickListener listener=  new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent();
