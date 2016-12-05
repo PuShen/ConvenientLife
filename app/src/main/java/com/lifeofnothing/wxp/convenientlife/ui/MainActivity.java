@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 //        测试代码
 //        new NbaTask().Nba_run();
 //        try {
-//            new WeatherTask("北京").Weather_run();
+//            new WeatherTask("石家庄").Weather_run();
 //        } catch (UnsupportedEncodingException e) {
 //            e.printStackTrace();
 //        }

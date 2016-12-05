@@ -270,4 +270,35 @@ public class Weather {
         this.des = des;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "city_name='" + city_name + '\'' +
+                ", date='" + date + '\'' +
+                ", week='" + week + '\'' +
+                ", temperature='" + temperature + '\'' +
+                ", humidity='" + humidity + '\'' +
+                ", info='" + info + '\'' +
+                ", img=" + img +
+                ", direct='" + direct + '\'' +
+                ", power='" + power + '\'' +
+                ", chuanyi='" + chuanyi + '\'' +
+                ", chuanyides='" + chuanyides + '\'' +
+                ", ganmao='" + ganmao + '\'' +
+                ", ganmaodes='" + ganmaodes + '\'' +
+                ", kongtiao='" + kongtiao + '\'' +
+                ", kongtiaodes='" + kongtiaodes + '\'' +
+                ", xiche='" + xiche + '\'' +
+                ", xichedes='" + xichedes + '\'' +
+                ", yundong='" + yundong + '\'' +
+                ", yundongdes='" + yundongdes + '\'' +
+                ", ziwaixian='" + ziwaixian + '\'' +
+                ", ziwaixiandes='" + ziwaixiandes + '\'' +
+                ", pm25='" + pm25 + '\'' +
+                ", pm10='" + pm10 + '\'' +
+                ", quality='" + quality + '\'' +
+                ", des='" + des + '\'' +
+                '}';
+    }
 }

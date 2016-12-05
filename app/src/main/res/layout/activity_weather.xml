@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/TvWeatherCity"
-            android:text="北京"
+            android:text="石家庄"
             android:textSize="@dimen/activity_title"
             android:textColor="@color/colorWhite"
             android:layout_centerHorizontal="true"/>
@@ -71,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/IvWeatherImage"
-                        android:src="@drawable/weather_evening_fine"
+                        android:src="@drawable/weather_qing"
                         android:layout_toRightOf="@id/VWeatherLine"
                         android:layout_alignTop="@id/VWeatherLine"/>
                 </RelativeLayout>
@@ -105,7 +105,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/IvWeatherImage1"
-                            android:src="@drawable/weather_evening_fine"/>
+                            android:src="@drawable/weather_qing"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/IvWeatherImage2"
-                            android:src="@drawable/weather_evening_fine"/>
+                            android:src="@drawable/weather_qing"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/IvWeatherImage3"
-                            android:src="@drawable/weather_evening_fine"/>
+                            android:src="@drawable/weather_qing"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -207,7 +207,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/IvWeatherImage4"
-                            android:src="@drawable/weather_evening_fine"/>
+                            android:src="@drawable/weather_qing"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -247,7 +247,7 @@
                         android:layout_height="@dimen/actiity_image_big"
                         android:id="@+id/IvWeatherImagebig"
                         android:layout_gravity="center_vertical"
-                        android:src="@drawable/weather_evening_fine"/>
+                        android:src="@drawable/weather_qing"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

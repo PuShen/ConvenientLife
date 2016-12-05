@@ -39,7 +39,9 @@ public class WeatherTask {
                 try {
                     String str = response.getString("reason");
                     String mSource = response.toString();
-                    new WeatherParser(mSource);
+                    WeatherParser parser=new WeatherParser(mSource);
+                    Log.e("Weather",parser.parse().toString());
+                    Log.e("resultCode",String.valueOf(statusCode));
 //                    JSONObject a = response.getJSONObject("result");
 //                    JSONObject b = a.getJSONObject("data");
 //                    JSONObject c = b.getJSONObject("realtime");
