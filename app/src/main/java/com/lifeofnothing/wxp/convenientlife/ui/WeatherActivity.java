@@ -28,6 +28,23 @@ public class WeatherActivity extends Activity {
     private ImageView mIvAdd;
     private TextView mTvTemperature;
     private TextView mTvWeather;
+    private TextView mTvWeek1;
+    private TextView mTvWeek2;
+    private TextView mTvWeek3;
+    private TextView mTvWeek4;
+    private TextView mTvTemperature1;
+    private TextView mTvTemperature2;
+    private TextView mTvTemperature3;
+    private TextView mTvTemperature4;
+    private TextView mTvWeather1;
+    private TextView mTvWeather2;
+    private TextView mTvWeather3;
+    private TextView mTvWeather4;
+    private TextView mTvWeather0;
+    private TextView mTvTemperature0;
+    private TextView mTvHumidity;
+    private TextView mTvDirect;
+    private TextView mTvPower;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -65,6 +82,23 @@ public class WeatherActivity extends Activity {
         mIvAdd= (ImageView) findViewById(R.id.IvWeatherAdd);
         mTvTemperature= (TextView) findViewById(R.id.TvWeatherTemperature);
         mTvWeather= (TextView) findViewById(R.id.TvWeatherWeather);
+        mTvWeek1= (TextView) findViewById(R.id.TvWeatherWeek1);
+        mTvWeek2= (TextView) findViewById(R.id.TvWeatherWeek2);
+        mTvWeek3= (TextView) findViewById(R.id.TvWeatherWeek3);
+        mTvWeek4= (TextView) findViewById(R.id.TvWeatherWeek4);
+        mTvTemperature1= (TextView) findViewById(R.id.TvWeatherTemperature1);
+        mTvTemperature2= (TextView) findViewById(R.id.TvWeatherTemperature2);
+        mTvTemperature3= (TextView) findViewById(R.id.TvWeatherTemperature3);
+        mTvTemperature4= (TextView) findViewById(R.id.TvWeatherTemperature4);
+        mTvWeather1= (TextView) findViewById(R.id.TvWeatherWeather1);
+        mTvWeather2= (TextView) findViewById(R.id.TvWeatherWeather2);
+        mTvWeather3= (TextView) findViewById(R.id.TvWeatherWeather3);
+        mTvWeather4= (TextView) findViewById(R.id.TvWeatherWeather4);
+        mTvWeather0= (TextView) findViewById(R.id.TvWeatherWeather0);
+        mTvTemperature0= (TextView) findViewById(R.id.TvWeatherTemperature0);
+        mTvHumidity= (TextView) findViewById(R.id.TvWeatherHumidity);
+        mTvDirect= (TextView) findViewById(R.id.TvWeatherDirect);
+        mTvPower= (TextView) findViewById(R.id.TvWeatherPower);
     }
 
     @Override
@@ -84,5 +118,22 @@ public class WeatherActivity extends Activity {
     private void init(){
         mTvTemperature.setText(mList.get(0).getTemperature());
         mTvWeather.setText(mList.get(0).getInfo());
+        mTvWeek1.setText(mList.get(1).getWeek());
+        mTvWeek2.setText(mList.get(2).getWeek());
+        mTvWeek3.setText(mList.get(3).getWeek());
+        mTvWeek4.setText(mList.get(4).getWeek());
+        mTvTemperature1.setText(mList.get(1).getTemperature());
+        mTvTemperature2.setText(mList.get(2).getTemperature());
+        mTvTemperature3.setText(mList.get(3).getTemperature());
+        mTvTemperature4.setText(mList.get(4).getTemperature());
+        mTvWeather1.setText(mList.get(1).getInfo());
+        mTvWeather2.setText(mList.get(2).getInfo());
+        mTvWeather3.setText(mList.get(3).getInfo());
+        mTvWeather4.setText(mList.get(4).getInfo());
+        mTvWeather0.setText(mList.get(0).getInfo());
+        mTvTemperature0.setText(mList.get(0).getTemperature());
+        mTvHumidity.setText(mList.get(0).getHumidity());
+        mTvDirect.setText(mList.get(0).getDirect());
+        mTvPower.setText(mList.get(0).getPower());
     }
 }

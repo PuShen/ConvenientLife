@@ -123,7 +123,7 @@ public class Weather {
     }
 
     public Weather setWeek(String week) {
-        this.week = week;
+        this.week = "星期"+week;
         return this;
     }
 
