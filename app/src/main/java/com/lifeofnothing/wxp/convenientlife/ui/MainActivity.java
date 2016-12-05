@@ -49,13 +49,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        测试代码
-//        new NbaTask().Nba_run();
-//        try {
-//            new WeatherTask("石家庄").Weather_run();
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override
