@@ -35,8 +35,8 @@ public class WeatherParser {
                 //检查服务器返回的状态,若成功则开始数据解析
                 if (0 == errorCode) {
                     //开始解析
-                   weathers =
-                    startParse(jsonObject.getJSONObject("result"));
+                    weathers =
+                            startParse(jsonObject.getJSONObject("result"));
                 } else {
                     //否则赋值为null
                     weathers = null;
@@ -85,34 +85,34 @@ public class WeatherParser {
             JSONObject life = data.getJSONObject("life");
             JSONObject infoJSONObj = life.getJSONObject("info");
             JSONArray chuanyiJSONArray = infoJSONObj.getJSONArray("chuanyi");
-            String chuanyi = chuanyiJSONArray.get(0).toString();
+            String chuanyi = (String)chuanyiJSONArray.get(0);
             weather.setChuanyi(chuanyi);
-            String chuanyides = chuanyiJSONArray.get(1).toString();
+            String chuanyides =(String) chuanyiJSONArray.get(1);
             weather.setChuanyides(chuanyides);
             JSONArray ganmaoJSONArray = infoJSONObj.getJSONArray("ganmao");
-            String ganmao = ganmaoJSONArray.get(0).toString();
+            String ganmao = (String)ganmaoJSONArray.get(0);
             weather.setGanmao(ganmao);
-            String ganmaodes = ganmaoJSONArray.get(1).toString();
+            String ganmaodes =(String) ganmaoJSONArray.get(1);
             weather.setGanmaodes(ganmaodes);
             JSONArray kongtiaoJSONArray = infoJSONObj.getJSONArray("kongtiao");
-            String kongtiao = kongtiaoJSONArray.get(0).toString();
+            String kongtiao =(String) kongtiaoJSONArray.get(0);
             weather.setKongtiao(kongtiao);
-            String kongtiaodes = kongtiaoJSONArray.get(1).toString();
+            String kongtiaodes =(String) kongtiaoJSONArray.get(1);
             weather.setKongtiaodes(kongtiaodes);
             JSONArray xicheJSONArray = infoJSONObj.getJSONArray("xiche");
-            String xiche = xicheJSONArray.get(0).toString();
+            String xiche = (String)xicheJSONArray.get(0);
             weather.setXiche(xiche);
-            String xichedes = xicheJSONArray.get(1).toString();
+            String xichedes = (String)xicheJSONArray.get(1);
             weather.setXichedes(xichedes);
             JSONArray yundongJSONArray = infoJSONObj.getJSONArray("yundong");
-            String yundong = yundongJSONArray.get(0).toString();
+            String yundong =(String)yundongJSONArray.get(0);
             weather.setYundong(yundong);
-            String yundongdes = yundongJSONArray.get(1).toString();
+            String yundongdes = (String)yundongJSONArray.get(1);
             weather.setYundongdes(yundongdes);
             JSONArray ziwaixianJSONArray = infoJSONObj.getJSONArray("ziwaixian");
-            String ziwaixian = ziwaixianJSONArray.get(0).toString();
+            String ziwaixian =(String) ziwaixianJSONArray.get(0);
             weather.setZiwaixian(ziwaixian);
-            String ziwaixiandes = ziwaixianJSONArray.get(1).toString();
+            String ziwaixiandes = (String)ziwaixianJSONArray.get(1);
             weather.setZiwaixiandes(ziwaixiandes);
 
             weathers.add(weather);
