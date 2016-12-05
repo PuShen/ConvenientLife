@@ -1,12 +1,17 @@
 package com.lifeofnothing.wxp.convenientlife.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
+import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +24,7 @@ public class JokeAdapter extends BaseAdapter{
     private Context context;
     private List<Joke> jokeList=new ArrayList<>();
     //创建自己的类
-    public JokeAdapter(Context context,ArrayList<Joke> jl){
+    public JokeAdapter(Context context, List<Joke> jl){
         this.jokeList=jl;
         this.context=context;
     }
@@ -40,6 +45,15 @@ public class JokeAdapter extends BaseAdapter{
     //视图的显示的具体内容
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);
+        TextView TvItemjokeContent =(TextView)convertView.findViewById(R.id. TvItemjokeContent);
+        TvItemjokeContent.setText(jokeList.get(position).getmContent());
+        TextView TvItemjokeHashId =(TextView)convertView.findViewById(R.id. TvItemjokeHashId);
+        TvItemjokeHashId.setText(jokeList.get(position).getmHashId());
+        TextView TvItemjokeUnixTime =(TextView)convertView.findViewById(R.id.TvItemjokeUnixTime);
+        TvItemjokeUnixTime.setText(jokeList.get(position).getmUnixtime());
+        TextView TvItemjokeUpdateTime =(TextView)convertView.findViewById(R.id. TvItemjokeUpdateTime);
+        TvItemjokeUpdateTime.setText(jokeList.get(position).getmUpdatetime());
         return convertView;
     }
 }
