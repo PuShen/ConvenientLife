@@ -70,9 +70,9 @@ public class WeatherParser {
             weather.setHumidity(humidity);
             String info = realtimeWeatherJSONObj.getString("info");
             weather.setInfo(info);
-            String img = realtimeWeatherJSONObj.getString("img");
+            /*String img = realtimeWeatherJSONObj.getString("img");
             int imgInt = Integer.parseInt(img);
-            weather.setImg(imgInt);
+            weather.setImg(imgInt);*/
 
             JSONObject windJSONObj = realtime.getJSONObject("wind");
             String direct = windJSONObj.getString("direct");
@@ -128,8 +128,8 @@ public class WeatherParser {
                 JSONObject weatherInfoJSONObj = weatherJSONObj.getJSONObject("info");
                 JSONArray dayJSONArray = weatherInfoJSONObj.getJSONArray("day");
 
-                int forecastImgInt = Integer.parseInt((String) dayJSONArray.get(0));
-                weather1.setImg(forecastImgInt);
+                /*int forecastImgInt = Integer.parseInt((String) dayJSONArray.get(0));
+                weather1.setImg(forecastImgInt);*/
                 String forecastInfo = (String) dayJSONArray.get(1);
                 weather1.setInfo(forecastInfo);
                 String forecastTemperature = (String) dayJSONArray.get(2);

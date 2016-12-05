@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import com.lifeofnothing.wxp.convenientlife.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,7 +143,7 @@ public class Weather {
     }
 
     public Weather setHumidity(String humidity) {
-        this.humidity = humidity;
+        this.humidity = humidity+"％";
         return this;
     }
 
@@ -151,6 +153,7 @@ public class Weather {
 
     public Weather setInfo(String info) {
         this.info = info;
+        setImg(info);
         return this;
     }
 
@@ -158,10 +161,6 @@ public class Weather {
         return img;
     }
 
-    public Weather setImg(int img) {
-        this.img = img;
-        return this;
-    }
 
     public String getDirect() {
         return direct;
@@ -300,5 +299,112 @@ public class Weather {
                 ", quality='" + quality + '\'' +
                 ", des='" + des + '\'' +
                 '}';
+    }
+
+    private void setImg(String info){
+        switch (info){
+            case "晴":
+                img= R.drawable.weather_qing;
+                break;
+            case "多云":
+                img=R.drawable.weather_duoyun;
+                break;
+            case "霾":
+                img=R.drawable.weather_mai;
+                break;
+            case "阴":
+                img=R.drawable.weather_yin;
+                break;
+            case "阵雨":
+                img=R.drawable.weather_zhenyu;
+                break;
+            case "雷阵雨":
+                img=R.drawable.weather_leizhenyu;
+                break;
+            case "雷阵雨伴有冰雹":
+                img=R.drawable.weather_leiyubing;
+                break;
+            case "雨夹雪":
+                img=R.drawable.weather_yujiaxue;
+                break;
+            case "小雨":
+                img=R.drawable.weather_xiaoyu;
+                break;
+            case "中雨":
+                img=R.drawable.weather_zhongyu;
+                break;
+            case "大雨":
+                img=R.drawable.weather_dayu;
+                break;
+            case "暴雨":
+                img=R.drawable.weather_baoyu;
+                break;
+            case "大暴雨":
+                img=R.drawable.weather_dabaoyu;
+                break;
+            case "特大暴雨":
+                img=R.drawable.weather_tedabaoyu;
+                break;
+            case "阵雪":
+                img=R.drawable.weather_zhenxue;
+                break;
+            case "小雪":
+                img=R.drawable.weather_xiaoxue;
+                break;
+            case "中雪":
+                img=R.drawable.weather_zhongxue;
+                break;
+            case "大雪":
+                img=R.drawable.weather_daxue;
+                break;
+            case "暴雪":
+                img=R.drawable.weather_baoxue;
+                break;
+            case "雾":
+                img=R.drawable.weather_wu;
+                break;
+            case "冻雨":
+                img=R.drawable.weather_dongyu;
+                break;
+            case "沙尘暴":
+                img=R.drawable.weather_shachen;
+                break;
+            case "小雨-中雨":
+                img=R.drawable.weather_yu_zhuan1;
+                break;
+            case "中雨-大雨":
+                img=R.drawable.weather_yu_zhuan2;
+                break;
+            case "大雨-暴雨":
+                img=R.drawable.weather_yu_zhuan3;
+                break;
+            case "暴雨-大暴雨":
+                img=R.drawable.weather_yu_zhuan4;
+                break;
+            case "大暴雨-特大暴雨":
+                img=R.drawable.weather_yu_zhuan5;
+                break;
+            case "小雪-中雪":
+                img=R.drawable.weather_xue_zhuan1;
+                break;
+            case "中雪-大雪":
+                img=R.drawable.weather_xue_zhuan2;
+                break;
+            case "大雪-暴雪":
+                img=R.drawable.weather_xue_zhuan3;
+                break;
+            case "浮尘":
+                img=R.drawable.weather_fuchen;
+                break;
+            case "扬沙":
+                img=R.drawable.weather_yangsha;
+                break;
+            case "强沙尘暴":
+                img=R.drawable.weather_qiangchen;
+                break;
+            default:
+                img= R.drawable.weather_qing;
+                break;
+        }
     }
 }
