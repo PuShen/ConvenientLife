@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvNews;
     private TextView mTvWechat;
     private TextView mTvWeather;
+    private TextView mTvJoke;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.TvMainWeather:
                     Intent intent2 = new Intent(MainActivity.this,WeatherActivity.class);
                     startActivity(intent2);
+                    break;
+                case R.id.TvMainJoke:
+                    Intent intent3=new Intent(MainActivity.this,JokeActivity.class);
+                    startActivity(intent3);
                     break;
             }
         }
@@ -59,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mTvNews= (TextView) findViewById(R.id.TvMainNews);
         mTvWechat =(TextView)findViewById(R.id.TvMainWechat);
         mTvWeather =(TextView)findViewById(R.id.TvMainWeather);
+        mTvJoke= (TextView) findViewById(R.id.TvMainJoke);
     }
 
     @Override
@@ -67,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mTvNews.setOnClickListener(listener);
         mTvWechat.setOnClickListener(listener);
         mTvWeather.setOnClickListener(listener);
+        mTvJoke.setOnClickListener(listener);
     }
 
 }

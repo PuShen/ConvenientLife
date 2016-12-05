@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_item_height_big"
+        android:layout_height="200dp"
         android:id="@+id/IvItemwechatbigHead"
         android:background="@drawable/image_default"/>
     <TextView
