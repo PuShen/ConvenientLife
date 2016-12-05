@@ -142,6 +142,18 @@ public class WeatherParser {
                 weather1.setWeek(forecastWeek);
 
                 weathers.add(weather1);
+
+                //空气质量
+                JSONObject airPollution = data.getJSONObject("pm25");
+                JSONObject pm25JSONObj = airPollution.getJSONObject("pm25");
+                String pm25 = pm25JSONObj.getString("pm25");
+                weathers.get(0).setPm25(pm25);
+                String pm10 = pm25JSONObj.getString("pm10");
+                weathers.get(0).setPm10(pm10);
+                String quality = pm25JSONObj.getString("quality");
+                weathers.get(0).setQuality(quality);
+                String des = pm25JSONObj.getString("des");
+                weathers.get(0).setDes(des);
             }
         } catch (JSONException e) {
             e.printStackTrace();
