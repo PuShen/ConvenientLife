@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -18,12 +20,14 @@ import java.util.List;
 
 public class NbaTask {
 
-    public NbaTask() {
+    private Handler mHandler;
+
+    public NbaTask(Handler mHandler) {
+        this.mHandler = mHandler;
     }
 
     private String mUrl = "http://op.juhe.cn/onebox/basketball/nba?key=6647ff1ad4f8b21cb866c21623874a24";
 
-    private List<com.lifeofnothing.wxp.convenientlife.entity.Nba> nbaList = new ArrayList<>();
     public void Nba_run(){
         AsyncHttpClient httpClient = new AsyncHttpClient();
         httpClient.get(mUrl,new JsonHttpResponseHandler(){
@@ -38,7 +42,9 @@ public class NbaTask {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                Message message = new Message();
+                message.obj = response;
+                mHandler.sendMessage(message);
                 super.onSuccess(statusCode, headers, response);
             }
         });
