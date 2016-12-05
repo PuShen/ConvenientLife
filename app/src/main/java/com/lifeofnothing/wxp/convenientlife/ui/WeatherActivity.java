@@ -85,7 +85,19 @@ public class WeatherActivity extends Activity {
                 case 0:
                     mList=(List<Weather>) msg.obj;
                     init();
+                    mSrlRefresh.setRefreshing(false);
                     break;
+            }
+        }
+    };
+    private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            try {
+                WeatherTask task=new WeatherTask("石家庄",mHandler);
+                task.Weather_run();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
             }
         }
     };
@@ -151,6 +163,7 @@ public class WeatherActivity extends Activity {
         mIvBack.setOnClickListener(listener);
         mSrlRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
         mSrlRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBlue);
+        mSrlRefresh.setOnRefreshListener(refreshListener);
         try {
             WeatherTask task=new WeatherTask("石家庄",mHandler);
             task.Weather_run();
