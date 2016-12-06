@@ -1,9 +1,11 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.lifeofnothing.wxp.convenientlife.entity.Weather;
 import com.lifeofnothing.wxp.convenientlife.prasor.WeatherParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -15,6 +17,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 
 /**
  * Created by 我需要一枚好辅助丶 on 2016/11/28.
@@ -44,21 +47,16 @@ public class WeatherTask {
                     String str = response.getString("reason");
                     String mSource = response.toString();
                     WeatherParser parser=new WeatherParser(mSource);
-                    Log.e("Weather",parser.parse().toString());
-                    Log.e("resultCode",String.valueOf(statusCode));
-                    Message message=new Message();
-                    message.what=0;
-                    message.obj=parser.parse();
-                    mHandler.sendMessage(message);
-//                    JSONObject a = response.getJSONObject("result");
-//                    JSONObject b = a.getJSONObject("data");
-//                    JSONObject c = b.getJSONObject("realtime");
-//                    String name = c.getString("city_name");
-                    if(str.equals("successed!")){
-                        Log.e("测试","请求成功");
-//                        Log.e("城市",name);
+                    List<Weather> list=parser.parse();
+                    if (null!=list){
+                        Log.e("Weather",list.toString());
+                        Message message=new Message();
+                        message.what=0;
+                        message.obj=list;
+                        mHandler.sendMessage(message);
+                    }else {
+                        mHandler.sendEmptyMessage(1);
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

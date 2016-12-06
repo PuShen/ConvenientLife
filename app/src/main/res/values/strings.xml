@@ -33,4 +33,8 @@
     <string name="weather_washcars">[洗车指数]</string>
     <string name="weather_sports">[运动指数]</string>
     <string name="weather_ultravioletrays">[紫外线指数]</string>
+    <string name="weather_city">请输入城市名称</string>
+    <string name="weather_cancle">取消</string>
+    <string name="weather_confirm">确认</string>
+    <string name="tip_error_input">亲，您输入的城市不存在！</string>
 </resources>

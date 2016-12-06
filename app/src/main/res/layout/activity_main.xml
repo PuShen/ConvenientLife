@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/TvMainWechat"
         android:background="@drawable/weixin"
-        android:text="微信精选"
+        android:text="@string/title_wechat"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:gravity="center"/>

@@ -1,6 +1,9 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,6 +28,7 @@ public class WeatherActivity extends Activity {
     private List<Weather> mList;
     private SwipeRefreshLayout mSrlRefresh;
     private ImageView mIvBack;
+    private TextView mTvCity;
     private ImageView mIvAdd;
     private TextView mTvTemperature;
     private ImageView mIvImage;
@@ -74,6 +78,10 @@ public class WeatherActivity extends Activity {
                 case R.id.IvWeatherBack:
                     finish();
                     break;
+                case R.id.IvWeatherAdd:
+                    Intent intent=new Intent(WeatherActivity.this,WeathercityActivity.class);
+                    startActivity(intent);
+                    break;
             }
         }
     };
@@ -94,7 +102,7 @@ public class WeatherActivity extends Activity {
         @Override
         public void onRefresh() {
             try {
-                WeatherTask task=new WeatherTask("石家庄",mHandler);
+                WeatherTask task=new WeatherTask(mTvCity.getText().toString(),mHandler);
                 task.Weather_run();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -113,6 +121,7 @@ public class WeatherActivity extends Activity {
         super.onStart();
         mSrlRefresh= (SwipeRefreshLayout) findViewById(R.id.SrlWeatherRefresh);
         mIvBack= (ImageView) findViewById(R.id.IvWeatherBack);
+        mTvCity= (TextView) findViewById(R.id.TvWeatherCity);
         mIvAdd= (ImageView) findViewById(R.id.IvWeatherAdd);
         mTvTemperature= (TextView) findViewById(R.id.TvWeatherTemperature);
         mIvImage= (ImageView) findViewById(R.id.IvWeatherImage);
@@ -161,11 +170,15 @@ public class WeatherActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mIvBack.setOnClickListener(listener);
+        SharedPreferences sharedPreferences=getSharedPreferences("ConvenientLife", Context.MODE_PRIVATE);
+        String city=sharedPreferences.getString("city","北京");
+        mTvCity.setText(city);
+        mIvAdd.setOnClickListener(listener);
         mSrlRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
         mSrlRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBlue);
         mSrlRefresh.setOnRefreshListener(refreshListener);
         try {
-            WeatherTask task=new WeatherTask("石家庄",mHandler);
+            WeatherTask task=new WeatherTask(mTvCity.getText().toString(),mHandler);
             task.Weather_run();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
