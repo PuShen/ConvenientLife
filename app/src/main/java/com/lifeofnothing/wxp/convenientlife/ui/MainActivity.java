@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.http.NbaTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvWechat;
     private TextView mTvWeather;
     private TextView mTvJoke;
+    private TextView mTvBusLine;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -40,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.TvMainJoke:
                     Intent intent3=new Intent(MainActivity.this,JokeActivity.class);
                     startActivity(intent3);
+                    break;
+                case R.id.TvMainBusLine:
+                    Intent intent4=new Intent(MainActivity.this, BusLineActivity.class);
+                    startActivity(intent4);
                     break;
             }
         }
@@ -65,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         mTvWechat =(TextView)findViewById(R.id.TvMainWechat);
         mTvWeather =(TextView)findViewById(R.id.TvMainWeather);
         mTvJoke= (TextView) findViewById(R.id.TvMainJoke);
+        mTvBusLine= (TextView) findViewById(R.id.TvMainBusLine);
     }
 
     @Override
@@ -74,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         mTvWechat.setOnClickListener(listener);
         mTvWeather.setOnClickListener(listener);
         mTvJoke.setOnClickListener(listener);
+        mTvBusLine.setOnClickListener(listener);
     }
 
 }
