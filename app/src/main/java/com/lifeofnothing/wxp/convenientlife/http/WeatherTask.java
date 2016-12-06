@@ -62,6 +62,12 @@ public class WeatherTask {
                 }
                 super.onSuccess(statusCode, headers, response);
             }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                mHandler.sendEmptyMessage(1);
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
         });
     }
 }
