@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <stroke android:color="@color/colorGreen"
-        android:width="@dimen/activity_dash"/>
+    <solid android:color="@color/colorBlue"/>
     <corners android:radius="@dimen/activity_horizontal_margin"/>
 </shape>

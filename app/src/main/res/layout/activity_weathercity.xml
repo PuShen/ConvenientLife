@@ -22,14 +22,16 @@
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_layout_margieright">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/TvWeathercityConfirm"
             android:text="@string/weather_confirm"
-            android:background="@drawable/button_corner"
-            android:padding="@dimen/activity_small_text"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_corner2"
+            android:padding="@dimen/activity_layout_margieright"
             android:layout_alignParentRight="true"/>
         <TextView
             android:layout_width="wrap_content"

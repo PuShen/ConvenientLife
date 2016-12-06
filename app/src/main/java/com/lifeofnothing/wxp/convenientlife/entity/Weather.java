@@ -235,7 +235,7 @@ public class Weather {
     }
 
     public String getPm25() {
-        return pm25;
+        return pm25!=null?pm25:"暂无数据";
     }
 
     public Weather setPm25(String pm25) {
@@ -244,7 +244,7 @@ public class Weather {
     }
 
     public String getPm10() {
-        return pm10;
+        return pm10!=null?pm10:"暂无数据";
     }
 
     public Weather setPm10(String pm10) {
@@ -253,7 +253,7 @@ public class Weather {
     }
 
     public String getQuality() {
-        return quality;
+        return quality!=null?quality:"暂无数据";
     }
 
     public Weather setQuality(String quality) {
@@ -262,7 +262,7 @@ public class Weather {
     }
 
     public String getDes() {
-        return des;
+        return des!=null?des:"暂无建议";
     }
 
     public Weather setDes(String des) {

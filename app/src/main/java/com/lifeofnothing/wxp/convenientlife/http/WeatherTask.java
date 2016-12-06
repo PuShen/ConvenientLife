@@ -65,7 +65,7 @@ public class WeatherTask {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                mHandler.sendEmptyMessage(1);
+                mHandler.sendEmptyMessage(2);
                 super.onFailure(statusCode, headers, responseString, throwable);
             }
         });
