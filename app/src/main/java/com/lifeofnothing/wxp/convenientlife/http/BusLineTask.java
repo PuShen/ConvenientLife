@@ -1,6 +1,9 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.prasor.BusLineParser;
@@ -26,9 +29,11 @@ public class BusLineTask {
     private String mParam2;     //城市代码或城市名称
     private String mParam3;     //公交车号
     private String url;
-    public BusLineTask(String city,String bus){
+    private Handler mHandler;
+    public BusLineTask(String city,String bus,Handler handler){
         this.mParam2 = city;
         this.mParam3 = bus;
+        this.mHandler=handler;
     }
 
 
@@ -39,9 +44,6 @@ public class BusLineTask {
         client.get(url,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                String str = Buslist.toString();
-                BusLineParser bp = new BusLineParser(str);
-
                 try {
                     String s = response.getString("reason");
                     Log.e("reason",response.toString());
@@ -51,7 +53,17 @@ public class BusLineTask {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                Message msg = new Message();
+                msg.obj = response;
+                mHandler.sendMessage(msg);
                 super.onSuccess(statusCode, headers, response);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                mHandler.sendEmptyMessage(1);
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
