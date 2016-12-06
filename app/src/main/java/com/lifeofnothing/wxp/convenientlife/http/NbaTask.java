@@ -47,6 +47,13 @@ public class NbaTask {
                 mHandler.sendMessage(message);
                 super.onSuccess(statusCode, headers, response);
             }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                //请求失败时，向主线程发送空的消息
+                mHandler.sendEmptyMessage(1);
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
         });
     }
 }
