@@ -33,9 +33,11 @@ public class QQNumberTask{
     private String mParam;      //qq号码
     private final String mParam1 = "key=63c4f5aeed6f5d25132135ea228807ca&qq=";
     private String url;
+    private Handler mHandler;
 
-    public QQNumberTask(String qq){
+    public QQNumberTask(String qq,Handler handler){
         this.mParam = qq;
+        this.mHandler = handler;
     }
 
 
@@ -47,10 +49,16 @@ public class QQNumberTask{
         client.get(url, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
-                String str = QQList.toString();
-                QQNumberParser qp = new QQNumberParser(str);
+                Message msg = new Message();
+                msg.obj = response;
+                mHandler.sendMessage(msg);
                 super.onSuccess(statusCode, headers, response);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                mHandler.sendEmptyMessage(1);
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
