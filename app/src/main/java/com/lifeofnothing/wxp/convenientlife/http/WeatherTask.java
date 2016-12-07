@@ -64,9 +64,9 @@ public class WeatherTask {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 mHandler.sendEmptyMessage(2);
-                super.onFailure(statusCode, headers, responseString, throwable);
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
