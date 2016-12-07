@@ -62,7 +62,7 @@ public class BusLineTask {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                mHandler.sendEmptyMessage(1);
+                mHandler.sendEmptyMessage(2);
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
