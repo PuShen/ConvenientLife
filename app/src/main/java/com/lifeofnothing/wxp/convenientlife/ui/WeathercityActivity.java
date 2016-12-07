@@ -58,6 +58,10 @@ public class WeathercityActivity extends Activity {
                     break;
                 case 1:
                     Toast.makeText(WeathercityActivity.this,R.string.tip_error_input,Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    Toast.makeText(WeathercityActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
+                    break;
             }
         }
     };

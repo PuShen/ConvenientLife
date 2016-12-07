@@ -11,6 +11,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -65,8 +66,8 @@ public class WeatherTask {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                mHandler.sendEmptyMessage(2);
                 super.onFailure(statusCode, headers, throwable, errorResponse);
+                mHandler.sendEmptyMessage(2);
             }
         });
     }

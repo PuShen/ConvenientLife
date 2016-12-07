@@ -37,4 +37,5 @@
     <string name="weather_cancle">取消</string>
     <string name="weather_confirm">确认</string>
     <string name="tip_error_input">亲，您输入的城市不存在！</string>
+    <string name="tip_error_net">世界上最遥远的距离就是没网！</string>
 </resources>

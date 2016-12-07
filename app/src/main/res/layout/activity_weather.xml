@@ -69,7 +69,7 @@
                         android:layout_alignBottom="@id/VWeatherLine"/>
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/activity_weather_image"
                         android:id="@+id/IvWeatherImage"
                         android:src="@drawable/weather_qing"
                         android:layout_toRightOf="@id/VWeatherLine"
@@ -103,7 +103,7 @@
                             android:layout_marginBottom="@dimen/activity_layout_margieright"/>
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/activity_weather_image"
                             android:id="@+id/IvWeatherImage1"
                             android:src="@drawable/weather_qing"/>
                         <TextView
@@ -137,7 +137,7 @@
                             android:layout_marginBottom="@dimen/activity_layout_margieright"/>
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/activity_weather_image"
                             android:id="@+id/IvWeatherImage2"
                             android:src="@drawable/weather_qing"/>
                         <TextView
@@ -171,7 +171,7 @@
                             android:layout_marginBottom="@dimen/activity_layout_margieright"/>
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/activity_weather_image"
                             android:id="@+id/IvWeatherImage3"
                             android:src="@drawable/weather_qing"/>
                         <TextView
@@ -205,7 +205,7 @@
                             android:layout_marginBottom="@dimen/activity_layout_margieright"/>
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/activity_weather_image"
                             android:id="@+id/IvWeatherImage4"
                             android:src="@drawable/weather_qing"/>
                         <TextView

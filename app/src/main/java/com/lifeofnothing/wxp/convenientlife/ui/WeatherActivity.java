@@ -12,6 +12,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.Weather;
@@ -93,9 +94,12 @@ public class WeatherActivity extends Activity {
                 case 0:
                     mList=(List<Weather>) msg.obj;
                     init();
-                    mSrlRefresh.setRefreshing(false);
+                    break;
+                case 2:
+                    Toast.makeText(WeatherActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
+            mSrlRefresh.setRefreshing(false);
         }
     };
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
