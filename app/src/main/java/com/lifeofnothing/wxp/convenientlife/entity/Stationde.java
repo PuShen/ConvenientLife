@@ -5,7 +5,6 @@ package com.lifeofnothing.wxp.convenientlife.entity;
  */
 
 public class Stationde {
-    private String code;
     private String stationNum;
     private String name;
     private String xy;
@@ -13,19 +12,10 @@ public class Stationde {
     public Stationde() {
     }
 
-    public Stationde(String code, String stationNum, String name, String xy) {
-        this.code = code;
+    public Stationde( String stationNum, String name, String xy) {
         this.stationNum = stationNum;
         this.name = name;
         this.xy = xy;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getStationNum() {
