@@ -87,11 +87,10 @@ public class BusLineParser {
                 }
                 busLines.add(busLine);
             }
-
             return busLines;
         }
 
-        for (int i = 0; i < result.length(); i++) { // 公交线路查询模式结果
+        for (int i = 0; i < result.length(); i++) { // else公交线路查询模式结果
             BusLine busLine = null;
 
             try {
