@@ -54,7 +54,42 @@ public class BusLineParser {
         //开始解析主要数据
         List<BusLine> busLines = new ArrayList<BusLine>();
 
-        for (int i = 0; i < result.length(); i++) {
+        if (result.length() > 2) { // 站台经往车辆查询模式结果
+            for (int i = 0; i < result.length(); i++) {
+                BusLine busLine = null;
+
+                try {
+                    JSONObject busLineJSONObj = result.getJSONObject(i);
+                    busLine = new BusLine();
+
+                    String keyName = busLineJSONObj.getString("key_name");
+                    busLine.setKey_name(keyName);
+                    String frontName = busLineJSONObj.getString("front_name");
+                    busLine.setFront_name(frontName);
+                    String terminalName = busLineJSONObj.getString("terminal_name");
+                    busLine.setTerminal_name(terminalName);
+                    String startTime = busLineJSONObj.getString("start_time");
+                    String hour = startTime.substring(0, 1);
+                    String minute = startTime.substring(2, 3);
+                    busLine.setEnd_time(hour + ":" + minute);
+                    busLine.setStart_time(startTime);
+                    String endTime = busLineJSONObj.getString("end_time");
+                    hour = endTime.substring(0, 1);
+                    minute = endTime.substring(2, 3);
+                    busLine.setEnd_time(hour + ":" + minute);
+                    String totalPrice = busLineJSONObj.getString("total_price");
+                    busLine.setTotal_price(totalPrice);
+                    String length = busLineJSONObj.getString("length");
+                    busLine.setLength(length);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                busLines.add(busLine);
+            }
+        }
+
+        for (int i = 0; i < result.length(); i++) {// 公交线路查询模式结果
             BusLine busLine = null;
 
             try {
