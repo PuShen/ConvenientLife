@@ -9,10 +9,10 @@ import java.util.List;
 
 public class NbaList {
     private String title;
-    private List<NbaLive> llive=new ArrayList<>();
-    private List<NbaLiveLink> llink=new ArrayList<>();
-    private List<NbaDetails> ldetails=new ArrayList<>();
-    private List<NbaBottomLink> lblink=new ArrayList<>();
+    private List<NbaLive> llive;
+    private List<NbaLiveLink> llink;
+    private List<NbaDetails> ldetails;
+    private List<NbaBottomLink> lblink;
 
     public NbaList() {
     }

@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Nba{
    private  String title;
-   private List<NbaList> llist=new ArrayList<>();
-   private  List<NbaTeamMatch> ltmatch=new ArrayList<>();
+   private List<NbaList> llist;
+   private  List<NbaTeamMatch> ltmatch;
 
     public Nba() {
     }
