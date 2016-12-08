@@ -54,7 +54,7 @@ public class BusLineParser {
         //开始解析主要数据
         List<BusLine> busLines = new ArrayList<BusLine>();
 
-        if (result.length() > 2) { // 站台经往车辆查询模式结果
+        if (result.length() > 2) { //  站台经往车辆查询模式结果
             for (int i = 0; i < result.length(); i++) {
                 BusLine busLine = null;
 
