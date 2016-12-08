@@ -41,11 +41,7 @@ public class WeChatsTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 //测试请求是否成功
-                try {
-                    String mStr = response.getString("reason");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                Log.e("result",response.toString());
                 WeChatsParser parser=new WeChatsParser(response.toString());
                 Log.e("img",parser.parse().get(0).getFirstImg());
                 Message message = new Message();

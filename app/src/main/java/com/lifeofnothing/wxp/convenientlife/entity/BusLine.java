@@ -16,7 +16,7 @@ public class BusLine {
     private String length;
     private String end_time;
 
-    private List<Stationde> lb = new ArrayList<>();
+    private List<Stationde> lb;
 
     //无参构造函数
     public BusLine() {
