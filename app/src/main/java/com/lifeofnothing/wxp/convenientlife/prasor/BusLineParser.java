@@ -81,6 +81,7 @@ public class BusLineParser {
                     stationde.setXy(xy);
                     stationdes.add(stationde);
                 }
+                busLine.setLb(stationdes);
 
 
                 String startTime = busLineJSONObj.getString("start_time");
