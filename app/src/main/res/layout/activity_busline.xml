@@ -14,12 +14,28 @@
             android:layout_height="wrap_content"
             android:id="@+id/IvBuslineBack"
             android:src="@drawable/back"/>
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_bus"
-            android:textColor="@color/colorWhite"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_bus"
+                android:textColor="@color/colorWhite" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TvBuslineCity"
+                android:textColor="@color/colorWhite"
+                android:text="【石家庄】"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/IvBuslineAdd"
+            android:src="@drawable/add"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
     <ImageView
         android:layout_width="wrap_content"
@@ -32,14 +48,26 @@
         android:background="@color/colorWhite"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginBottom="@dimen/activity_vertical_margin">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/EtBuslineSearch"
             android:hint="@string/bus_busline"
             android:layout_weight="1"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/IvBuslineSearch"
             android:src="@drawable/search"/>
     </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LvBuslineList">
+    </ListView>
 </LinearLayout>
