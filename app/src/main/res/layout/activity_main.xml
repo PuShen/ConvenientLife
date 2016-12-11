@@ -46,7 +46,7 @@
         <TextView
             android:id="@+id/TvMainBusLine"
             android:background="@drawable/bus"
-            android:text="公交查询"
+            android:text="@string/title_bus"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:gravity="center"/>
