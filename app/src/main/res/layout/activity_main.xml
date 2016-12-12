@@ -53,7 +53,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/TvMainExplainDream"
-            android:background="@drawable/bus"
+            android:background="@drawable/dream"
             android:text="@string/title_explaindream"
             android:layout_width="80dp"
             android:layout_height="80dp"
