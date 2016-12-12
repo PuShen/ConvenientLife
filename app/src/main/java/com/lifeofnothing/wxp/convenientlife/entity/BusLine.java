@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class BusLine {
+    private String type;//定义当前公交查询的模式，线路或者站点
     private String terminal_name;
     private String key_name;
     private String front_name;
@@ -31,6 +32,18 @@ public class BusLine {
         this.length = length;
         this.end_time = end_time;
         this.lb = lb;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        if ("线路".equals(type)){
+            this.type = type;
+        }else {
+            this.type = "站点";
+        }
     }
 
     public String getTerminal_name() {

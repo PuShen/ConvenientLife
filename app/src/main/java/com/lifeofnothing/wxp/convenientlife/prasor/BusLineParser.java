@@ -62,6 +62,7 @@ public class BusLineParser {
                     JSONObject busLineJSONObj = result.getJSONObject(i);
                     busLine = new BusLine();
 
+                    busLine.setType("站台");
                     String keyName = busLineJSONObj.getString("key_name");
                     busLine.setKey_name(keyName);
                     String frontName = busLineJSONObj.getString("front_name");
@@ -97,6 +98,7 @@ public class BusLineParser {
                 JSONObject busLineJSONObj = result.getJSONObject(i);
                 busLine = new BusLine();
 
+                busLine.setType("线路");
                 String terminalName = busLineJSONObj.getString("terminal_name");
                 busLine.setTerminal_name(terminalName);
                 String keyName = busLineJSONObj.getString("key_name");

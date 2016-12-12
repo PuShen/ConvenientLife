@@ -47,6 +47,15 @@
                android:id="@+id/TvItembusTerminal"
                android:text="终点站"
                android:textColor="@color/colorBlack"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/TvItembusType"
+               android:textColor="@color/colorWhite"
+               android:padding="@dimen/activity_layout_margieright"
+               android:layout_marginLeft="@dimen/activity_vertical_margin"
+               android:background="@drawable/button_corner2"
+               android:text="线路"/>
        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
