@@ -45,4 +45,6 @@
     <string name="bus_start_and_end">首末班：</string>
     <string name="bus_price">票价：</string>
     <string name="bus_lu">路</string>
+    <string name="title_explaindream">周公解梦</string>
+
 </resources>

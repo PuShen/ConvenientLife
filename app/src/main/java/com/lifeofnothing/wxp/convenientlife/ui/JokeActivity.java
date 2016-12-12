@@ -14,7 +14,9 @@ import android.widget.TextView;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.JokeAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
+import com.lifeofnothing.wxp.convenientlife.http.JokeTask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JokeActivity extends Activity {
@@ -22,6 +24,7 @@ public class JokeActivity extends Activity {
     private TextView vJokeSearch;//搜索栏
     private ImageView vBack;//返回键
     private  String vTime;//笑话的选择时间
+    private List<Joke> list;
     private  View.OnClickListener listener=new  View.OnClickListener(){
 
         @Override
@@ -30,10 +33,10 @@ public class JokeActivity extends Activity {
                 case  R.id.IvJokeBack:
                     finish();
                     break;
-                case R.id.TvJokeSearch:
-                    Intent intent=new Intent(JokeActivity.this,JokeTimeActivity.class);
-                    startActivityForResult(intent,0);
-                    break;
+//                case R.id.TvJokeSearch:
+//                    Intent intent=new Intent(JokeActivity.this,JokeTimeActivity.class);
+//                    startActivityForResult(intent,0);
+//                    break;
             }
         }
     };
@@ -43,17 +46,10 @@ public class JokeActivity extends Activity {
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
-                    final List<Joke> list=(List<Joke>)msg.obj;
+                    list=(List<Joke>) msg.obj;
                     JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
-                    vJokeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent intent=new Intent(JokeActivity.this,JokeContentActivity.class);
-                            intent.putExtra("url",list.get(position).getmContent());
-                        }
-                    });
                     break;
             }
         }
@@ -62,8 +58,9 @@ public class JokeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // vTime="";
-        // new Thread(new JokeTask(handler)).start();
+        new Thread(new JokeTask(handler)).start();
         setContentView(R.layout.activity_joke);
+
         //   new  JokeTask(a,jtime,handler).run();
 
     }
@@ -72,15 +69,12 @@ public class JokeActivity extends Activity {
     protected void onStart() {
         super.onStart();
         vJokeList=(ListView)findViewById(R.id.LvJokeList);
-        vJokeSearch=(TextView)findViewById(R.id.TvJokeSearch);
         vBack=(ImageView)findViewById(R.id.IvJokeBack);
     }
     @Override
     protected void onResume() {
         super.onResume();
-        vJokeSearch.setOnClickListener(listener);
         vBack.setOnClickListener(listener);
-
     }
 
 //        @Override
@@ -91,14 +85,14 @@ public class JokeActivity extends Activity {
 //            new Thread(new NewsTask(mTime,handler)).start();
 //        }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (Activity.RESULT_OK==resultCode){
-            String result=data.getStringExtra("time");
-            if (null!=result){
-                vTime=data.getStringExtra("time");
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (Activity.RESULT_OK==resultCode){
+//            String result=data.getStringExtra("time");
+//            if (null!=result){
+//                vTime=data.getStringExtra("time");
+//            }
+//        }
+//    }
 }
