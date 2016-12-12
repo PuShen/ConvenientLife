@@ -26,15 +26,11 @@ import java.net.URL;
 
 public class JokeTask implements Runnable{
 
-    private String mUrl = "http://japi.juhe.cn/joke/content/list.from?key=99955ed34841b72633054903d94dc642&sort=";
-    private String mTime;   //时间戳
-    private String mSort;   //asc指定时间之后和desc指定时间之前
+    private String mUrl = "http://v.juhe.cn/joke/randJoke.php?key=99955ed34841b72633054903d94dc642";
     private Handler mHandler;
 
-    public JokeTask(String sort,String time,Handler handler){
-        this.mSort = sort;
-        this.mTime = time;
-        this.mHandler = handler;
+    public JokeTask(Handler mHandler) {
+        this.mHandler = mHandler;
     }
 
     @Override
@@ -42,7 +38,7 @@ public class JokeTask implements Runnable{
         HttpURLConnection connection = null;
         BufferedReader reader = null;
         try {
-            URL url = new URL(mUrl+mSort+"&time="+mTime);
+            URL url = new URL(mUrl);
             connection = (HttpURLConnection)url.openConnection();
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer buffer = new StringBuffer("");
