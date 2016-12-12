@@ -48,5 +48,6 @@
     <string name="title_explaindream">周公解梦</string>
     <string name="explaindream_huangjin">黄金</string>
     <string name="explaindream_mengjian">梦见</string>
+    <string name="explaindream_tip">常见的梦：黄金，美女，蛇，下雨，狗</string>
 
 </resources>
