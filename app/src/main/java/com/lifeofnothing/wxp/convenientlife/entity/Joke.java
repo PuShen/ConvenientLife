@@ -7,9 +7,9 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 public class Joke {
     private String mContent;  //内容
     private String mHashId;  //哈希码
-    private int mUnixtime;   //指定时间
+    private String mUnixtime;   //指定时间
 
-    public Joke(String mContent, String mHashId, int mUnixtime) {
+    public Joke(String mContent, String mHashId, String mUnixtime) {
         this.mContent = mContent;
         this.mHashId = mHashId;
         this.mUnixtime = mUnixtime;
@@ -31,11 +31,11 @@ public class Joke {
         this.mHashId = mHashId;
     }
 
-    public int getmUnixtime() {
+    public String getmUnixtime() {
         return mUnixtime;
     }
 
-    public void setmUnixtime(int mUnixtime) {
+    public void setmUnixtime(String mUnixtime) {
         this.mUnixtime = mUnixtime;
     }
 
