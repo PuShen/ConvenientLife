@@ -1,18 +1,24 @@
 package com.lifeofnothing.wxp.convenientlife.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
+import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Nba;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by dell on 2016/11/25.
+ * 修改日期2016/12/12 by 陈熙
  */
 
 public class BusLineAdapter extends BaseAdapter{
@@ -41,6 +47,25 @@ public class BusLineAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = LayoutInflater.from(context).inflate(R.layout.item_bus,null);
+
+        TextView TvItembusName =(TextView)convertView.findViewById(R.id.TvItembusName);
+        TvItembusName.setText(busLinesList.get(position).getFront_name());
+
+        TextView TvItembusFront =(TextView)convertView.findViewById(R.id.TvItembusFront);
+        TvItembusFront.setText(busLinesList.get(position).getFront_name());
+
+        TextView TvItembusTerminal =(TextView)convertView.findViewById(R.id.TvItembusTerminal);
+        TvItembusTerminal.setText(busLinesList.get(position).getTerminal_name());
+
+        TextView TvItembusStarttime =(TextView)convertView.findViewById(R.id.TvItembusStarttime);
+        TvItembusStarttime.setText(busLinesList.get(position).getFront_name());
+
+        TextView TvItembusEndtime =(TextView)convertView.findViewById(R.id.TvItembusEndtime);
+        TvItembusEndtime.setText(busLinesList.get(position).getFront_name());
+
+        TextView TvItembusPrice =(TextView)convertView.findViewById(R.id.TvItembusPrice);
+        TvItembusPrice.setText(busLinesList.get(position).getFront_name());
         return convertView;
     }
 }
