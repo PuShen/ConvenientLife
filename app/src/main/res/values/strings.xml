@@ -46,5 +46,7 @@
     <string name="bus_price">票价：</string>
     <string name="bus_lu">路</string>
     <string name="title_explaindream">周公解梦</string>
+    <string name="explaindream_huangjin">黄金</string>
+    <string name="explaindream_mengjian">梦见</string>
 
 </resources>
