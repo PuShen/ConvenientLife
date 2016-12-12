@@ -2,16 +2,24 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.adapter.BusLineAdapter;
+import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
+
+import java.util.List;
 
 /**
  * Created by dell on 2016/12/6.
@@ -26,6 +34,9 @@ public class BusLineActivity extends Activity {
     private View mLlaySearch;
     private ImageView mIvBanner;
     private EditText mEtSearch;
+    private ListView mLvList;
+    private BusLineAdapter mAdapter;
+    private List<BusLine> mList;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -67,6 +78,22 @@ public class BusLineActivity extends Activity {
 
         }
     };
+    private TextWatcher watcher=new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            Toast.makeText(BusLineActivity.this,s.toString(),Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +113,7 @@ public class BusLineActivity extends Activity {
         mLlaySearch=findViewById(R.id.LlayBuslineSearch);
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
+        mLvList= (ListView) findViewById(R.id.LvBuslineList);
     }
 
     @Override
@@ -93,5 +121,6 @@ public class BusLineActivity extends Activity {
         super.onResume();
         mIvBack.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
+        mEtSearch.addTextChangedListener(watcher);
     }
 }

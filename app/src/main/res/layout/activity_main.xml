@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/TvMainJoke"
         android:background="@drawable/joke"
-        android:text="玩笑大全"
+        android:text="笑话大全"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:gravity="center"/>
@@ -53,7 +53,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/TvMainExplainDream"
-            android:background="@drawable/bus"
+            android:background="@drawable/dream"
             android:text="@string/title_explaindream"
             android:layout_width="80dp"
             android:layout_height="80dp"

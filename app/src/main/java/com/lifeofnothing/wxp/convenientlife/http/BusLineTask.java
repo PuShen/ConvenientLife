@@ -44,17 +44,8 @@ public class BusLineTask {
         client.get(url,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                try {
-                    String s = response.getString("reason");
-                    Log.e("reason",response.toString());
-                    if (s.equals("success")){
-                        Log.e("reason","1");
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
                 Message msg = new Message();
+                msg.what=0;
                 msg.obj = response;
                 mHandler.sendMessage(msg);
                 super.onSuccess(statusCode, headers, response);
