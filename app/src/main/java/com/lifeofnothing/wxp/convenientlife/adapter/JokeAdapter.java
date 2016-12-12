@@ -52,8 +52,8 @@ public class JokeAdapter extends BaseAdapter{
         TvItemjokeHashId.setText(jokeList.get(position).getmHashId());
         TextView TvItemjokeUnixTime =(TextView)convertView.findViewById(R.id.TvItemjokeUnixTime);
         TvItemjokeUnixTime.setText(jokeList.get(position).getmUnixtime());
-        TextView TvItemjokeUpdateTime =(TextView)convertView.findViewById(R.id. TvItemjokeUpdateTime);
-        TvItemjokeUpdateTime.setText(jokeList.get(position).getmUpdatetime());
+//        TextView TvItemjokeUpdateTime =(TextView)convertView.findViewById(R.id. TvItemjokeUpdateTime);
+//        TvItemjokeUpdateTime.setText(jokeList.get(position).getmUpdatetime());
         return convertView;
     }
 }

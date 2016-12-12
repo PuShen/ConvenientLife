@@ -27,7 +27,7 @@ public class JokeParser {
                 JSONObject js1 = data.getJSONObject(i);
 
 
-                list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getInt("unixtime"), js1.getString("updatetime")));
+                list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getInt("unixtime")));
             }
         } catch (JSONException e) {
             e.printStackTrace();

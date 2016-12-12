@@ -8,13 +8,11 @@ public class Joke {
     private String mContent;  //内容
     private String mHashId;  //哈希码
     private int mUnixtime;   //指定时间
-    private String mUpdatetime; //更新时间
 
-    public Joke(String mContent, String mHashId, int mUnixtime, String mUpdatetime) {
+    public Joke(String mContent, String mHashId, int mUnixtime) {
         this.mContent = mContent;
         this.mHashId = mHashId;
         this.mUnixtime = mUnixtime;
-        this.mUpdatetime = mUpdatetime;
     }
 
     public String getmContent() {
@@ -41,11 +39,11 @@ public class Joke {
         this.mUnixtime = mUnixtime;
     }
 
-    public String getmUpdatetime() {
-        return mUpdatetime;
-    }
-
-    public void setmUpdatetime(String mUpdatetime) {
-        this.mUpdatetime = mUpdatetime;
-    }
+//    public String getmUpdatetime() {
+//        return mUpdatetime;
+//    }
+//
+//    public void setmUpdatetime(String mUpdatetime) {
+//        this.mUpdatetime = mUpdatetime;
+//    }
 }

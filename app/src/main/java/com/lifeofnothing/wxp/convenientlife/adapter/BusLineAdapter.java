@@ -23,9 +23,9 @@ import java.util.List;
 
 public class BusLineAdapter extends BaseAdapter{
     private Context context;
-    private List<BusLine> busLinesList=new ArrayList<>();
+    private List<BusLine> busLinesList;
     //创建自己的构造方法
-    public BusLineAdapter (Context context,ArrayList<BusLine> busLines){
+    public BusLineAdapter (Context context,List<BusLine> busLines){
         this.context =context;
         this.busLinesList=busLines;
     }
@@ -50,7 +50,7 @@ public class BusLineAdapter extends BaseAdapter{
         convertView = LayoutInflater.from(context).inflate(R.layout.item_bus,null);
 
         TextView TvItembusName =(TextView)convertView.findViewById(R.id.TvItembusName);
-        TvItembusName.setText(busLinesList.get(position).getFront_name());
+        TvItembusName.setText(busLinesList.get(position).getKey_name());
 
         TextView TvItembusFront =(TextView)convertView.findViewById(R.id.TvItembusFront);
         TvItembusFront.setText(busLinesList.get(position).getFront_name());
@@ -58,14 +58,17 @@ public class BusLineAdapter extends BaseAdapter{
         TextView TvItembusTerminal =(TextView)convertView.findViewById(R.id.TvItembusTerminal);
         TvItembusTerminal.setText(busLinesList.get(position).getTerminal_name());
 
+        TextView TvItembusType =(TextView)convertView.findViewById(R.id.TvItembusType);
+        TvItembusType.setText(busLinesList.get(position).getType());
+
         TextView TvItembusStarttime =(TextView)convertView.findViewById(R.id.TvItembusStarttime);
-        TvItembusStarttime.setText(busLinesList.get(position).getFront_name());
+        TvItembusStarttime.setText(busLinesList.get(position).getStart_time());
 
         TextView TvItembusEndtime =(TextView)convertView.findViewById(R.id.TvItembusEndtime);
-        TvItembusEndtime.setText(busLinesList.get(position).getFront_name());
+        TvItembusEndtime.setText(busLinesList.get(position).getEnd_time());
 
         TextView TvItembusPrice =(TextView)convertView.findViewById(R.id.TvItembusPrice);
-        TvItembusPrice.setText(busLinesList.get(position).getFront_name());
+        TvItembusPrice.setText(busLinesList.get(position).getTotal_price());
         return convertView;
     }
 }

@@ -29,63 +29,71 @@ public class TodayInHistory {
         return mId;
     }
 
-    public void setmId(String mId) {
+    public TodayInHistory setmId(String mId) {
         this.mId = mId;
+        return this;
     }
 
     public String getmTitle() {
         return mTitle;
     }
 
-    public void setmTitle(String mTitle) {
+    public TodayInHistory setmTitle(String mTitle) {
         this.mTitle = mTitle;
+        return this;
     }
 
     public String getmPic() {
         return mPic;
     }
 
-    public void setmPic(String mPic) {
+    public TodayInHistory setmPic(String mPic) {
         this.mPic = mPic;
+        return this;
     }
 
     public String getmYear() {
         return mYear;
     }
 
-    public void setmYear(String mYear) {
+    public TodayInHistory setmYear(String mYear) {
         this.mYear = mYear;
+        return this;
     }
 
     public String getmMonth() {
         return mMonth;
     }
 
-    public void setmMonth(String mMonth) {
+    public TodayInHistory setmMonth(String mMonth) {
         this.mMonth = mMonth;
+        return this;
     }
 
     public String getmDay() {
         return mDay;
     }
 
-    public void setmDay(String mDay) {
+    public TodayInHistory setmDay(String mDay) {
         this.mDay = mDay;
+        return this;
     }
 
     public String getmDes() {
         return mDes;
     }
 
-    public void setmDes(String mDes) {
+    public TodayInHistory setmDes(String mDes) {
         this.mDes = mDes;
+        return this;
     }
 
     public String getmLunar() {
         return mLunar;
     }
 
-    public void setmLunar(String mLunar) {
+    public TodayInHistory setmLunar(String mLunar) {
         this.mLunar = mLunar;
+        return this;
     }
 }
