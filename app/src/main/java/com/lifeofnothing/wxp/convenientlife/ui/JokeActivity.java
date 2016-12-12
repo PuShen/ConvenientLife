@@ -24,7 +24,7 @@ public class JokeActivity extends Activity {
     private TextView vJokeSearch;//搜索栏
     private ImageView vBack;//返回键
     private  String vTime;//笑话的选择时间
-    private List<Joke> list;
+
     private  View.OnClickListener listener=new  View.OnClickListener(){
 
         @Override
@@ -46,7 +46,7 @@ public class JokeActivity extends Activity {
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
-                    list=(List<Joke>) msg.obj;
+                    List<Joke> list=(List<Joke>) msg.obj;
                     JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
@@ -58,9 +58,9 @@ public class JokeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // vTime="";
-        new Thread(new JokeTask(handler)).start();
-        setContentView(R.layout.activity_joke);
 
+        setContentView(R.layout.activity_joke);
+        new Thread(new JokeTask(handler)).start();
         //   new  JokeTask(a,jtime,handler).run();
 
     }
