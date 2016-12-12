@@ -58,6 +58,9 @@ public class BusLineAdapter extends BaseAdapter{
         TextView TvItembusTerminal =(TextView)convertView.findViewById(R.id.TvItembusTerminal);
         TvItembusTerminal.setText(busLinesList.get(position).getTerminal_name());
 
+        TextView TvItembusType =(TextView)convertView.findViewById(R.id.TvItembusType);
+        TvItembusType.setText(busLinesList.get(position).getTerminal_name());
+
         TextView TvItembusStarttime =(TextView)convertView.findViewById(R.id.TvItembusStarttime);
         TvItembusStarttime.setText(busLinesList.get(position).getFront_name());
 
