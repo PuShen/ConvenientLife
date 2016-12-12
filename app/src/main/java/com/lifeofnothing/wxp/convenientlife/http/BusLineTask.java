@@ -31,30 +31,42 @@ public class BusLineTask {
     private String mParam3;     //公交车号
     private String url;
     private Handler mHandler;
+    private Boolean mFlag1;
 
     private String mUrl2 = "http://op.juhe.cn/189/bus/station?key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
     private String mParam4;     //城市代码或城市名称
     private String mParam5 = "";//站名
     private String url2;
-    private Handler mHandler2;
+    private List<BusLine> b;
+    private Boolean mFlag2;
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 0:
+                    if (true==mFlag1&&true==mFlag2){
+                        Log.e("list",b.toString());
+                        mHandler.sendEmptyMessage(0);
+                    }
+                    break;
+            }
+        }
+    };
 
-    public BusLineTask(String city,String bus,Handler handler){
+    public BusLineTask(String city,String busOrStation,Handler handler,List<BusLine> list){
         this.mParam2 = city;
-        this.mParam3 = bus;
+        this.mParam3 = busOrStation;
         this.mHandler=handler;
-    }
-
-    public BusLineTask(String city,Handler handler ,String station){
-        this.mParam4 = city;
-        this.mParam5 = station;
-        this.mHandler2 = handler;
+        b=list;
+        mFlag1=mFlag2=false;
     }
 
     private JSONArray result;
-    List<BusLine> Buslist1 = new ArrayList<>();
-    List<BusLine> Buslist2 = new ArrayList<>();
-    List<BusLine> b = new ArrayList<>();
+    List<BusLine> Buslist1 ;
+    List<BusLine> Buslist2 ;
     public void Bus_run(){
+        b.clear();
         url= mUrl+mParam1+mParam2+"&%20bus="+mParam3;
         url2 = mUrl2+mParam4+"&%20station="+mParam5;
         AsyncHttpClient client = new AsyncHttpClient();
@@ -62,62 +74,48 @@ public class BusLineTask {
         client.get(url,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Message msg = new Message();
-                msg.what=0;
-                msg.obj = response;
-                mHandler.sendMessage(msg);
-                ;
-
-                BusLineParser b = new BusLineParser(msg.toString());
-                Buslist1 = b.parse();
-
-
                 super.onSuccess(statusCode, headers, response);
+                BusLineParser parser = new BusLineParser(response.toString());
+                Buslist1 = parser.parse();
+                if (null!=Buslist1){
+                    for (int i = 0;i<Buslist1.size();i++){
+                        b.add(Buslist1.get(i));
+                    }
+                }
+                mFlag1=true;
+                handler.sendEmptyMessage(0);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                mHandler.sendEmptyMessage(2);
                 super.onFailure(statusCode, headers, throwable, errorResponse);
+                mFlag1=false;
+                mHandler.sendEmptyMessage(2);
             }
         });
 
         client1.get(url2,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                try {
-                    String s = response.getString("reason");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                Message msg = new Message();
-                msg.obj = response;
-                mHandler2.sendMessage(msg);
-
-
-                BusLineParser b = new BusLineParser(msg.toString());
-                Buslist2 = b.parse();
-
-
                 super.onSuccess(statusCode, headers, response);
+                BusLineParser parser = new BusLineParser(response.toString());
+                Buslist2 = parser.parse();
+                if (null!=Buslist2){
+                    for (int i = 0;i<Buslist2.size();i++){
+                        b.add(Buslist2.get(i));
+                    }
+                }
+                mFlag2=true;
+                handler.sendEmptyMessage(0);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                mHandler2.sendEmptyMessage(2);
                 super.onFailure(statusCode, headers, throwable, errorResponse);
+                mFlag2=false;
+                mHandler.sendEmptyMessage(2);
             }
         });
-        for (int i = 0;i<Buslist1.size();i++){
-            b.add(Buslist1.get(i));
-        }
-        for (int i = 0;i<Buslist2.size();i++){
-            b.add(Buslist2.get(i));
-        }
-        Message m = new Message();
-        m.obj = b;
-        Handler h = new Handler();
-        h.sendMessage(m);
     }
 
 }

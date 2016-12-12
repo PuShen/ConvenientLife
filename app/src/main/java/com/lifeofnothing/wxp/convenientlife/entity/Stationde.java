@@ -41,4 +41,13 @@ public class Stationde {
     public void setXy(String xy) {
         this.xy = xy;
     }
+
+    @Override
+    public String toString() {
+        return "Stationde{" +
+                "stationNum='" + stationNum + '\'' +
+                ", name='" + name + '\'' +
+                ", xy='" + xy + '\'' +
+                '}';
+    }
 }
