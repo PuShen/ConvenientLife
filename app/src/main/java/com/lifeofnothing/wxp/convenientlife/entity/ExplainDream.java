@@ -6,15 +6,13 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 
 public class ExplainDream {
     private String title;
-    private String des;
     private String list;
 
     public ExplainDream() {
     }
 
-    public ExplainDream(String title, String des, String list) {
+    public ExplainDream(String title, String list) {
         this.title = title;
-        this.des = des;
         this.list = list;
     }
 
@@ -24,14 +22,6 @@ public class ExplainDream {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDes() {
-        return des;
-    }
-
-    public void setDes(String des) {
-        this.des = des;
     }
 
     public String getList() {
