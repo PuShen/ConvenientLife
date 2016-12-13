@@ -86,7 +86,11 @@ public class BusLine {
     }
 
     public BusLine setStart_time(String start_time) {
-        this.start_time = start_time;
+        if (4==start_time.length()){
+            this.start_time = start_time.substring(0,2)+":"+start_time.substring(2,4);
+        }else {
+            this.start_time=start_time;
+        }
         return this;
     }
 
@@ -113,7 +117,11 @@ public class BusLine {
     }
 
     public BusLine setEnd_time(String end_time) {
-        this.end_time = end_time;
+        if (4==end_time.length()){
+            this.end_time=end_time.substring(0,2)+":"+end_time.substring(2,4);
+        }else {
+            this.end_time = end_time;
+        }
         return this;
     }
 

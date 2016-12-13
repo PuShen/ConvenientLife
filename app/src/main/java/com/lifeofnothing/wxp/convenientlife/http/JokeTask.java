@@ -5,6 +5,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Button;
 
+import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.prasor.JokeParser;
 import com.lifeofnothing.wxp.convenientlife.prasor.TodayInHisoryParser;
 import com.loopj.android.http.AsyncHttpClient;
@@ -55,10 +56,21 @@ public class JokeTask implements Runnable{
             while (null != (line = reader.readLine())){
                 buffer.append(line);
             }
-            Message message = new Message();
-            message.what = 0;
-            message.obj = JokeParser.getGson(buffer);
-            mHandler.sendMessage(message);
+            switch (mBtn.getId()){
+                case R.id.BtnJokeRefresh:
+                    Message message1 = new Message();
+                    message1.what = 0;
+                    message1.obj = JokeParser.getGson(buffer,0);
+                    mHandler.sendMessage(message1);
+                    break;
+                case R.id.BtnJokeFunny:
+                    Message message2 = new Message();
+                    message2.what = 1;
+                    message2.obj = JokeParser.getGson(buffer,1);
+                    mHandler.sendMessage(message2);
+                    break;
+            }
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

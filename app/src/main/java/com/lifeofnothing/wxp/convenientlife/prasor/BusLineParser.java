@@ -75,14 +75,9 @@ public class BusLineParser {
                     String terminalName = busLineJSONObj.getString("terminal_name");
                     busLine.setTerminal_name(terminalName);
                     String startTime = busLineJSONObj.getString("start_time");
-                    String hour = startTime.substring(0, 1);
-                    String minute = startTime.substring(2, 3);
-                    busLine.setEnd_time(hour + ":" + minute);
                     busLine.setStart_time(startTime);
                     String endTime = busLineJSONObj.getString("end_time");
-                    hour = endTime.substring(0, 1);
-                    minute = endTime.substring(2, 3);
-                    busLine.setEnd_time(hour + ":" + minute);
+                    busLine.setEnd_time(endTime);
                     String totalPrice = busLineJSONObj.getString("total_price");
                     busLine.setTotal_price(totalPrice);
                     String length = busLineJSONObj.getString("length");
@@ -128,9 +123,6 @@ public class BusLineParser {
 
 
                 String startTime = busLineJSONObj.getString("start_time");
-                String hour = startTime.substring(0, 1);
-                String minute = startTime.substring(2, 3);
-                busLine.setEnd_time(hour + ":" + minute);
                 busLine.setStart_time(startTime);
                 String totalPrice = busLineJSONObj.getString("total_price");
                 busLine.setTotal_price(totalPrice);
@@ -138,9 +130,7 @@ public class BusLineParser {
                 busLine.setLength(length);
 
                 String endTime = busLineJSONObj.getString("end_time");
-                hour = endTime.substring(0, 1);
-                minute = endTime.substring(2, 3);
-                busLine.setEnd_time(hour + ":" + minute);
+                busLine.setEnd_time(endTime);
 
             } catch (JSONException e) {
                 e.printStackTrace();

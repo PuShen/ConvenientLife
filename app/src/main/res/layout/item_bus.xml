@@ -83,7 +83,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bus_to"/>
+                android:text="@string/bus_to"
+                android:textColor="@color/colorPrimary"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
