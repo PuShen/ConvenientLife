@@ -76,7 +76,7 @@ public class BusLineTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 BusLineParser parser = new BusLineParser(response.toString());
-                Buslist1 = parser.parse();
+                Buslist1 = parser.parse("线路");
                 if (null!=Buslist1){
                     for (int i = 0;i<Buslist1.size();i++){
                         b.add(Buslist1.get(i));
@@ -99,7 +99,7 @@ public class BusLineTask {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 BusLineParser parser = new BusLineParser(response.toString());
-                Buslist2 = parser.parse();
+                Buslist2 = parser.parse("站点");
                 if (null!=Buslist2){
                     for (int i = 0;i<Buslist2.size();i++){
                         b.add(Buslist2.get(i));
