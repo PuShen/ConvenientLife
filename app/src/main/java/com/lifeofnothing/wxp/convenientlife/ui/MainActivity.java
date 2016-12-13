@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         mTvBusLine.setOnClickListener(listener);
         mTvExplainDream.setOnClickListener(listener);
         mTvPerpetualCalendar.setOnClickListener(listener);
+
     }
 
 }
