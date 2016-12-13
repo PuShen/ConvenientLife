@@ -25,9 +25,14 @@ public class JokeParser {
 
             for (int i = 0; i < data.length(); i++) {
                 JSONObject js1 = data.getJSONObject(i);
+                String b = js1.getString("url");
+                if(b == null){
+                    list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getString("unixtime")));
+                }else{
+                    list.add(new Joke(js1.getString("content"),js1.getString("hashId"),js1.getString("unixtime"),js1.getString("url")));
+                }
 
 
-                list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getString("unixtime")));
             }
         } catch (JSONException e) {
             e.printStackTrace();

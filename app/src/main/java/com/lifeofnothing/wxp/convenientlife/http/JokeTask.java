@@ -3,6 +3,7 @@ package com.lifeofnothing.wxp.convenientlife.http;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Button;
 
 import com.lifeofnothing.wxp.convenientlife.prasor.JokeParser;
 import com.lifeofnothing.wxp.convenientlife.prasor.TodayInHisoryParser;
@@ -26,11 +27,19 @@ import java.net.URL;
 
 public class JokeTask implements Runnable{
 
-    private String mUrl = "http://v.juhe.cn/joke/randJoke.php?key=99955ed34841b72633054903d94dc642";
+    private String mUrl;
     private Handler mHandler;
+    private Button mBtn;
 
-    public JokeTask(Handler mHandler) {
+    public JokeTask(Handler mHandler, String mUrl) {
         this.mHandler = mHandler;
+        this.mUrl = mUrl;
+    }
+
+    public JokeTask(Handler mHandler, Button mBtn,String mUrl) {
+        this.mHandler = mHandler;
+        this.mBtn = mBtn;
+        this.mUrl = mUrl;
     }
 
     @Override

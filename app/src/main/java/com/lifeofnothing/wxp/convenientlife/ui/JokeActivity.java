@@ -22,10 +22,11 @@ import java.util.List;
 
 public class JokeActivity extends Activity {
     private ListView vJokeList;//笑话列表
-    private TextView vJokeSearch;//搜索栏
-    private Button vChange;  //换一换按钮
+    private Button vJoke;  //换一换按钮
     private ImageView vBack;//返回键
-    private  String vTime;//笑话的选择时间
+    private Button vFunnyPicJoke;  //有图笑话按钮
+    private String vUrl1 = "http://v.juhe.cn/joke/randJoke.php?key=99955ed34841b72633054903d94dc642";
+    private String vUrl2 = "http://v.juhe.cn/joke/randJoke.php?type=pic&key=99955ed34841b72633054903d94dc642" ;
 
     private  View.OnClickListener listener=new  View.OnClickListener(){
 
@@ -40,7 +41,10 @@ public class JokeActivity extends Activity {
 //                    startActivityForResult(intent,0);
 //                    break;
                 case R.id.BtnJokeRefresh:
-                    new Thread(new JokeTask(handler)).start();
+                    new Thread(new JokeTask(handler,vJoke,vUrl1)).start();
+                    break;
+                case R.id.BtnJokeFunny:
+                    new Thread(new JokeTask(handler,vFunnyPicJoke,vUrl2)).start();
             }
         }
     };
@@ -51,7 +55,7 @@ public class JokeActivity extends Activity {
             switch (msg.what){
                 case 0:
                     List<Joke> list=(List<Joke>) msg.obj;
-                    JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list);
+                    JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list,vFunnyPicJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
                     break;
@@ -65,7 +69,7 @@ public class JokeActivity extends Activity {
         // vTime="";
 
         setContentView(R.layout.activity_joke);
-        new Thread(new JokeTask(handler)).start();
+        new Thread(new JokeTask(handler,vUrl1)).start();
         //   new  JokeTask(a,jtime,handler).run();
 
     }
@@ -75,13 +79,15 @@ public class JokeActivity extends Activity {
         super.onStart();
         vJokeList=(ListView)findViewById(R.id.LvJokeList);
         vBack=(ImageView)findViewById(R.id.IvJokeBack);
-        vChange = (Button)findViewById(R.id.BtnJokeRefresh);
+        vJoke = (Button)findViewById(R.id.BtnJokeRefresh);
+        vFunnyPicJoke = (Button)findViewById(R.id.BtnJokeFunny);
     }
     @Override
     protected void onResume() {
         super.onResume();
         vBack.setOnClickListener(listener);
-        vChange.setOnClickListener(listener);
+        vJoke.setOnClickListener(listener);
+        vFunnyPicJoke.setOnClickListener(listener);
     }
 
 //        @Override
