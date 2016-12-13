@@ -37,6 +37,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvBuscontentLocation"
                 android:layout_weight="1" />
         </TableRow>
         <TableRow
@@ -50,6 +51,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvBuscontentTime"
                 android:layout_weight="1" />
         </TableRow>
         <TableRow>
@@ -61,12 +63,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/TvBuscontentPrice"
                 android:layout_weight="1" />
         </TableRow>
     </TableLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/LvBuscontentList"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:padding="@dimen/activity_layout_margieright"
         android:background="@drawable/corner_white">

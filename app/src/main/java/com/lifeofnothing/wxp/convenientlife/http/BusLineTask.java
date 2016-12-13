@@ -23,7 +23,7 @@ import java.util.List;
  */
 
 public class BusLineTask {
-
+    private final int mTimeout=5000;//设置超时时长
 
     private String mUrl = "http://op.juhe.cn/189/bus/busline?";
     private String mParam1 = "key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
@@ -71,6 +71,8 @@ public class BusLineTask {
         url2 = mUrl2+mParam4+"&%20station="+mParam5;
         AsyncHttpClient client = new AsyncHttpClient();
         AsyncHttpClient client1 = new AsyncHttpClient();
+        client.setTimeout(mTimeout);
+        client1.setTimeout(mTimeout);
         client.get(url,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
