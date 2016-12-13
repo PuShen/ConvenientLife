@@ -45,6 +45,7 @@ public class JokeActivity extends Activity {
                     break;
                 case R.id.BtnJokeFunny:
                     new Thread(new JokeTask(handler,vFunnyPicJoke,vUrl2)).start();
+                    break;
             }
         }
     };
@@ -59,6 +60,12 @@ public class JokeActivity extends Activity {
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
                     break;
+                case 1:
+                    List<Joke> list1=(List<Joke>) msg.obj;
+                    JokeAdapter adapter1=new JokeAdapter(JokeActivity.this,list1);
+                    vJokeList=(ListView)findViewById(R.id.LvJokeList);
+                    vJokeList.setAdapter(adapter1);
+                    break;
             }
         }
     };
@@ -69,7 +76,7 @@ public class JokeActivity extends Activity {
         // vTime="";
 
         setContentView(R.layout.activity_joke);
-        new Thread(new JokeTask(handler,vUrl1)).start();
+//        new Thread(new JokeTask(handler,vUrl1)).start();
         //   new  JokeTask(a,jtime,handler).run();
 
     }

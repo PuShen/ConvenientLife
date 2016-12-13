@@ -1,6 +1,8 @@
 package com.lifeofnothing.wxp.convenientlife.prasor;
 
 
+import android.util.Log;
+
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
 
 import org.json.JSONArray;
@@ -16,24 +18,36 @@ import java.util.List;
 
 public class JokeParser {
 
-    public static List<Joke> getGson(StringBuffer result) {
+    private int flag; // 用于区别传来的信息
+
+    public static List<Joke> getGson(StringBuffer result , int flag) {
 
         List<Joke> list = new ArrayList<>();
         try {
             JSONObject object = new JSONObject(result.toString());
             JSONArray data = object.getJSONArray("result");
 
-            for (int i = 0; i < data.length(); i++) {
-                JSONObject js1 = data.getJSONObject(i);
-                String b = js1.getString("url");
-                if(b == null){
-                    list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getString("unixtime")));
-                }else{
-                    list.add(new Joke(js1.getString("content"),js1.getString("hashId"),js1.getString("unixtime"),js1.getString("url")));
-                }
+            switch (flag){
+                case 0:
+                    for (int i = 0; i < data.length(); i++) {
+                        JSONObject js1 = data.getJSONObject(i);
 
-
+                        list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getString("unixtime")));
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i <data.length();i++){
+                        JSONObject js2 = data.getJSONObject(i);
+                        Log.e("测试","调用");
+                        String b = js2.getString("url");
+                        if(b != null){
+                            list.add(new Joke(js2.getString("content"),js2.getString("hashId"),js2.getString("unixtime"),js2.getString("url")));
+                        }
+                    }
             }
+
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
