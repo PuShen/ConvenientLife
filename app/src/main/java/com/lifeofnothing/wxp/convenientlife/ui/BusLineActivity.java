@@ -1,6 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -49,6 +51,13 @@ public class BusLineActivity extends Activity {
                     finish();
                     break;
             }
+        }
+    };
+    private AdapterView.OnItemClickListener itemClickListener=new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent=new Intent(BusLineActivity.this,BuscontentActivity.class);
+            startActivity(intent);
         }
     };
     private View.OnTouchListener touchListener=new View.OnTouchListener() {
@@ -140,6 +149,7 @@ public class BusLineActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mLvList.setAdapter(mAdapter);
+        mLvList.setOnItemClickListener(itemClickListener);
         mIvBack.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
         mEtSearch.addTextChangedListener(watcher);

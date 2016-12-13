@@ -41,7 +41,7 @@
     <string name="title_bus">公交查询</string>
     <string name="bus_busline">查询线路、站点</string>
     <string name="bus_from_to">→</string>
-    <string name="bus_to">-</string>
+    <string name="bus_to">--</string>
     <string name="bus_start_and_end">首末班：</string>
     <string name="bus_price">票价：</string>
     <string name="bus_lu">路</string>
