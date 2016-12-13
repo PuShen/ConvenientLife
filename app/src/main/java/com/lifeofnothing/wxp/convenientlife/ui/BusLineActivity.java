@@ -57,6 +57,7 @@ public class BusLineActivity extends Activity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent=new Intent(BusLineActivity.this,BuscontentActivity.class);
+            intent.putExtra("bus",mList.get(position));
             startActivity(intent);
         }
     };
@@ -126,6 +127,7 @@ public class BusLineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busline);
+        mList=new ArrayList<>();
     }
 
     @Override
@@ -141,7 +143,6 @@ public class BusLineActivity extends Activity {
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
         mLvList= (ListView) findViewById(R.id.LvBuslineList);
-        mList=new ArrayList<>();
         mAdapter=new BusLineAdapter(this,mList);
     }
 
