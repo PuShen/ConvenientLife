@@ -49,7 +49,7 @@ public class JokeAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (button.getId()==R.id.BtnJokeFunny){
-            convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);
+            convertView= LayoutInflater.from(context).inflate(R.layout.item_joke_funnypic,null);
             TextView TvFunnyContent =(TextView)convertView.findViewById(R.id.TvFunnyContent);
             TvFunnyContent.setText(jokeList.get(position).getmContent());
             TextView TvFunnyHashId =(TextView)convertView.findViewById(R.id. TvFunnyHashId);
@@ -60,7 +60,7 @@ public class JokeAdapter extends BaseAdapter{
             AsyncImageLoad imageLoad = new AsyncImageLoad(jokeList.get(position).getmImageUrl(),Ivfunnypic);
         }
         else{
-            convertView= LayoutInflater.from(context).inflate(R.layout.item_joke_funnypic,null);
+            convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);
             TextView TvItemjokeContent =(TextView)convertView.findViewById(R.id. TvItemjokeContent);
             TvItemjokeContent.setText(jokeList.get(position).getmContent());
             TextView TvItemjokeHashId =(TextView)convertView.findViewById(R.id. TvItemjokeHashId);
