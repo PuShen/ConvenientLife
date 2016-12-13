@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,76 +40,105 @@ public class BusLine {
         return type;
     }
 
-    public void setType(String type) {
+    public BusLine setType(String type) {
+        Log.e("flag",type);
         if ("线路".equals(type)){
-            this.type = type;
+            this.type = "线路";
         }else {
             this.type = "站点";
         }
+        return this;
     }
 
     public String getTerminal_name() {
         return terminal_name;
     }
 
-    public void setTerminal_name(String terminal_name) {
+    public BusLine setTerminal_name(String terminal_name) {
         this.terminal_name = terminal_name;
+        return this;
     }
 
     public String getKey_name() {
         return key_name;
     }
 
-    public void setKey_name(String key_name) {
-        this.key_name = key_name;
+    public BusLine setKey_name(String key_name) {
+        if (key_name.endsWith("路")){
+            this.key_name=key_name.substring(0,key_name.length()-1);
+        }else {
+            this.key_name = key_name;
+        }
+        return this;
     }
 
     public String getFront_name() {
         return front_name;
     }
 
-    public void setFront_name(String front_name) {
+    public BusLine setFront_name(String front_name) {
         this.front_name = front_name;
+        return this;
     }
 
     public String getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(String start_time) {
+    public BusLine setStart_time(String start_time) {
         this.start_time = start_time;
+        return this;
     }
 
     public String getTotal_price() {
         return total_price;
     }
 
-    public void setTotal_price(String total_price) {
+    public BusLine setTotal_price(String total_price) {
         this.total_price = total_price;
+        return this;
     }
 
     public String getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public BusLine setLength(String length) {
         this.length = length;
+        return this;
     }
 
     public String getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(String end_time) {
+    public BusLine setEnd_time(String end_time) {
         this.end_time = end_time;
+        return this;
     }
 
     public List<Stationde> getLb() {
         return lb;
     }
 
-    public void setLb(List<Stationde> lb) {
+    public BusLine setLb(List<Stationde> lb) {
         this.lb = lb;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "BusLine{" +
+                "type='" + type + '\'' +
+                ", terminal_name='" + terminal_name + '\'' +
+                ", key_name='" + key_name + '\'' +
+                ", front_name='" + front_name + '\'' +
+                ", start_time='" + start_time + '\'' +
+                ", total_price='" + total_price + '\'' +
+                ", length='" + length + '\'' +
+                ", end_time='" + end_time + '\'' +
+                ", lb=" + lb +
+                '}';
     }
 }
 

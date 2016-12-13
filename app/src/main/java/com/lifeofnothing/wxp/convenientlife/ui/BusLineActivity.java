@@ -2,6 +2,8 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -18,7 +20,9 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.BusLineAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
+import com.lifeofnothing.wxp.convenientlife.http.BusLineTask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -86,12 +90,26 @@ public class BusLineActivity extends Activity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            Toast.makeText(BusLineActivity.this,s.toString(),Toast.LENGTH_SHORT).show();
+            new BusLineTask("石家庄",s.toString(),handler,mList).Bus_run();
         }
 
         @Override
         public void afterTextChanged(Editable s) {
 
+        }
+    };
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 0:
+                    mAdapter.notifyDataSetChanged();
+                    break;
+                case 2:
+                    Toast.makeText(BusLineActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
     };
 
@@ -114,13 +132,31 @@ public class BusLineActivity extends Activity {
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
         mLvList= (ListView) findViewById(R.id.LvBuslineList);
+        mList=new ArrayList<>();
+        mAdapter=new BusLineAdapter(this,mList);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        mLvList.setAdapter(mAdapter);
         mIvBack.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
         mEtSearch.addTextChangedListener(watcher);
+
+    }
+
+    /**
+     * 测试方法
+     */
+    public void test(){
+        mList=new ArrayList<>();
+        BusLine busLine=new BusLine();
+        busLine.setType("呵呵").setKey_name("58路").setFront_name("南郊").setTerminal_name("火车站").setStart_time("06:30").setEnd_time("21:30").setTotal_price("1元");
+        mList.add(busLine);
+        mList.add(busLine);
+        mList.add(busLine);
+        mAdapter=new BusLineAdapter(this,mList);
+        mLvList.setAdapter(mAdapter);
     }
 }

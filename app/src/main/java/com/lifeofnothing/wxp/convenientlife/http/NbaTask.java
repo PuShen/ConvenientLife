@@ -49,10 +49,10 @@ public class NbaTask {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 //请求失败时，向主线程发送空的消息
                 mHandler.sendEmptyMessage(1);
-                super.onFailure(statusCode, headers, responseString, throwable);
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
