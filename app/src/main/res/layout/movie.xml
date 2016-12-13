@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     >
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,7 +14,8 @@
         android:id="@+id/text"
         android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@null"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -23,11 +25,13 @@
         android:id="@+id/huanyin"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="120dp" />
+        android:layout_marginEnd="120dp"
+        android:contentDescription="@null"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/renwu"/>
+        android:src="@drawable/renwu"
+        android:contentDescription="@null"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -36,5 +40,6 @@
         android:layout_alignTop="@+id/text"
         android:layout_alignParentStart="true"
         android:layout_marginStart="13dp"
-        android:id="@+id/xiao"/>
+        android:id="@+id/xiao"
+        android:contentDescription="@null"/>
 </RelativeLayout>
