@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="@dimen/activity_title"
         android:layout_height="@dimen/activity_title"
+        android:id="@+id/TvItembusstationNum"
         android:layout_marginLeft="@dimen/activity_layout_margieright"
         android:gravity="center"
         android:text="1"
@@ -15,6 +16,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/TvItembusstaionStation"
         android:layout_marginLeft="@dimen/activity_title"
         android:layout_weight="1"
         android:text="河北师大站"/>
