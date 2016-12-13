@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.prasor;
 
+import android.support.annotation.NonNull;
+
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Stationde;
 
@@ -22,7 +24,7 @@ public class BusLineParser {
         this.mSource = source;
     }
 
-    public List<BusLine> parse() {
+    public List<BusLine> parse(@NonNull String dataType) {
         //用于保存服务器返回的数据
         List<BusLine> busLines = null;
 
@@ -37,7 +39,7 @@ public class BusLineParser {
                 if (0 == errorCode) {
                     //开始解析
                     busLines =
-                            startParse(jsonObject.getJSONArray("result"));
+                            startParse(jsonObject.getJSONArray("result"),dataType);
                 } else {
                     //否则赋值为null
                     busLines = null;
@@ -50,11 +52,11 @@ public class BusLineParser {
         return busLines;
     }
 
-    private List<BusLine> startParse(JSONArray result) {
+    private List<BusLine> startParse(JSONArray result, @NonNull String dataType) {
         //开始解析主要数据
         List<BusLine> busLines = new ArrayList<BusLine>();
 
-        if (result.length() > 2) { // 站台经往车辆查询模式结果
+        if (dataType.equals("站点")) { // 站台经往车辆查询模式结果
             for (int i = 0; i < result.length(); i++) {
                 BusLine busLine = null;
 
