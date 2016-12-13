@@ -29,23 +29,23 @@
             android:id="@+id/TvJokeMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击右侧的按钮可以换一批笑话~"
+            android:text="点击右侧的按钮可以换一批笑话~~"
             android:textColor="#FF0000"/>
         <Button
             android:layout_toRightOf="@+id/TvJokeMessage"
-            android:background="#FF4081"
+            android:background="#f6ffb8"
             android:id="@+id/BtnJokeRefresh"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            android:text="无图笑话"/>
+            android:text="无图笑话" />
         <Button
-            android:layout_toRightOf="@+id/BtnJokeRefresh"
-
-            android:background="#FF4081"
+           android:layout_toRightOf="@id/BtnJokeRefresh"
+            android:background="#f6ffb8"
             android:id="@+id/BtnJokeFunny"
             android:layout_gravity="right"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
