@@ -58,6 +58,7 @@ public class JokeAdapter extends BaseAdapter{
             TvFunnyUnixTime.setText(jokeList.get(position).getmUnixtime());
             ImageView Ivfunnypic =(ImageView)convertView.findViewById(R.id.Ivfunnypic);
             AsyncImageLoad imageLoad = new AsyncImageLoad(jokeList.get(position).getmImageUrl(),Ivfunnypic);
+            imageLoad.execute();
         }
         else{
             convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);
