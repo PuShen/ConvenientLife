@@ -1,11 +1,18 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
-
+import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.http.ExplainDreamTask;
+import com.lifeofnothing.wxp.convenientlife.prasor.ExplainDreamParser;
+
+import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/12/12.
