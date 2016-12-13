@@ -1,5 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import java.util.List;
+
 /**
  * Created by dell on 2016/11/24.
  */
@@ -47,135 +49,152 @@ public class LeagueFootballMatch {
         return mSaiCheng1;
     }
 
-    public void setmSaiCheng1(String mSaiCheng1) {
+    public LeagueFootballMatch setmSaiCheng1(String mSaiCheng1) {
         this.mSaiCheng1 = mSaiCheng1;
+        return this;
     }
 
     public String getmSaiCheng2() {
         return mSaiCheng2;
     }
 
-    public void setmSaiCheng2(String mSaiCheng2) {
+    public LeagueFootballMatch setmSaiCheng2(String mSaiCheng2) {
         this.mSaiCheng2 = mSaiCheng2;
+        return this;
     }
 
     public String getmSaiCheng3() {
         return mSaiCheng3;
     }
 
-    public void setmSaiCheng3(String mSaiCheng3) {
+    public LeagueFootballMatch setmSaiCheng3(String mSaiCheng3) {
         this.mSaiCheng3 = mSaiCheng3;
+        return this;
     }
 
     public String getmJiFenBang() {
         return mJiFenBang;
     }
 
-    public void setmJiFenBang(String mJiFenBang) {
+    public LeagueFootballMatch setmJiFenBang(String mJiFenBang) {
         this.mJiFenBang = mJiFenBang;
+        return this;
     }
 
     public String getmC1() {
         return mC1;
     }
 
-    public void setmC1(String mC1) {
+    public LeagueFootballMatch setmC1(String mC1) {
         this.mC1 = mC1;
+        return this;
     }
 
     public String getmC2() {
         return mC2;
     }
 
-    public void setmC2(String mC2) {
+    public LeagueFootballMatch setmC2(String mC2) {
         this.mC2 = mC2;
+        return this;
     }
 
     public String getmC3() {
         return mC3;
     }
 
-    public void setmC3(String mC3) {
+    public LeagueFootballMatch setmC3(String mC3) {
         this.mC3 = mC3;
+        return this;
     }
 
     public String getmC4T1() {
         return mC4T1;
     }
 
-    public void setmC4T1(String mC4T1) {
+    public LeagueFootballMatch setmC4T1(String mC4T1) {
         this.mC4T1 = mC4T1;
+        return this;
     }
 
     public String getmC4T1Url() {
         return mC4T1Url;
     }
 
-    public void setmC4T1Url(String mC4T1Url) {
+    public LeagueFootballMatch setmC4T1Url(String mC4T1Url) {
         this.mC4T1Url = mC4T1Url;
+        return this;
     }
 
     public String getmC4R() {
         return mC4R;
     }
 
-    public void setmC4R(String mC4R) {
+    public LeagueFootballMatch setmC4R(String mC4R) {
         this.mC4R = mC4R;
+        return this;
     }
 
     public String getmC4T2() {
         return mC4T2;
     }
 
-    public void setmC4T2(String mC4T2) {
+    public LeagueFootballMatch setmC4T2(String mC4T2) {
         this.mC4T2 = mC4T2;
+        return this;
     }
 
     public String getmC4T2Url() {
         return mC4T2Url;
     }
 
-    public void setmC4T2Url(String mC4T2Url) {
+    public LeagueFootballMatch setmC4T2Url(String mC4T2Url) {
         this.mC4T2Url = mC4T2Url;
+        return this;
     }
 
     public String getmC51() {
         return mC51;
     }
 
-    public void setmC51(String mC51) {
+    public LeagueFootballMatch setmC51(String mC51) {
         this.mC51 = mC51;
+        return this;
     }
 
     public String getmC51Link() {
         return mC51Link;
     }
 
-    public void setmC51Link(String mC51Link) {
+    public LeagueFootballMatch setmC51Link(String mC51Link) {
         this.mC51Link = mC51Link;
+        return this;
     }
 
     public String getmC52() {
         return mC52;
     }
 
-    public void setmC52(String mC52) {
+    public LeagueFootballMatch setmC52(String mC52) {
         this.mC52 = mC52;
+        return this;
     }
 
     public String getmC52Link() {
         return mC52Link;
     }
 
-    public void setmC52Link(String mC52Link) {
+    public LeagueFootballMatch setmC52Link(String mC52Link) {
         this.mC52Link = mC52Link;
+        return this;
     }
 
     public String getmLived() {
         return mLived;
     }
 
-    public void setmLived(String mLived) {
+    public LeagueFootballMatch setmLived(String mLived) {
         this.mLived = mLived;
+        return this;
     }
 }
