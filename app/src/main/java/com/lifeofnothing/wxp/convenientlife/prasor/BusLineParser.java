@@ -1,6 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.prasor;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Stationde;
@@ -56,6 +57,7 @@ public class BusLineParser {
         //开始解析主要数据
         List<BusLine> busLines = new ArrayList<BusLine>();
 
+        Log.e("dataType",dataType);
         if (dataType.equals("站点")) { // 站台经往车辆查询模式结果
             for (int i = 0; i < result.length(); i++) {
                 BusLine busLine = null;
@@ -65,6 +67,7 @@ public class BusLineParser {
                     busLine = new BusLine();
 
                     busLine.setType("站点");
+                    Log.e("站点模式","请求成功");
                     String keyName = busLineJSONObj.getString("key_name");
                     busLine.setKey_name(keyName);
                     String frontName = busLineJSONObj.getString("front_name");

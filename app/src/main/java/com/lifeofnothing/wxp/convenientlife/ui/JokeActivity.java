@@ -56,7 +56,7 @@ public class JokeActivity extends Activity {
             switch (msg.what){
                 case 0:
                     List<Joke> list=(List<Joke>) msg.obj;
-                    JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list);
+                    JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list,vFunnyPicJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
                     break;

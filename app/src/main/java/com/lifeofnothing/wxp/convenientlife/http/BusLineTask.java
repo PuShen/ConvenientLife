@@ -55,8 +55,8 @@ public class BusLineTask {
     };
 
     public BusLineTask(String city,String busOrStation,Handler handler,List<BusLine> list){
-        this.mParam2 = city;
-        this.mParam3 = busOrStation;
+        this.mParam4=this.mParam2 = city;
+        this.mParam5=this.mParam3 = busOrStation;
         this.mHandler=handler;
         b=list;
         mFlag1=mFlag2=false;
@@ -98,8 +98,10 @@ public class BusLineTask {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+                Log.e("list2",response.toString());
                 BusLineParser parser = new BusLineParser(response.toString());
                 Buslist2 = parser.parse("站点");
+                Log.e("buslist2 is null",String.valueOf(null==Buslist2));
                 if (null!=Buslist2){
                     for (int i = 0;i<Buslist2.size();i++){
                         b.add(Buslist2.get(i));
