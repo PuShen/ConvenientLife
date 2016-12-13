@@ -46,12 +46,16 @@ public class ExplainDreamTask{
                  super.onSuccess(statusCode, headers, response);
                  Log.e("ss",response.toString());
 
+                 Message message=new Message();
+                 message.obj=response;
+                 mHander.sendMessage(message);
 
              }
 
              @Override
              public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                  super.onFailure(statusCode, headers, throwable, errorResponse);
+                 mHander.sendEmptyMessage(1);
              }
          });
      }

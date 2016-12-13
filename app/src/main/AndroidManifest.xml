@@ -42,5 +42,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.PerpetualCalendarActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.ExplainDreamtypeActivity"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>
