@@ -19,16 +19,18 @@ public class ExplainDream {
         return title;
     }
 
-    public void setTitle(String title) {
+    public ExplainDream setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public List<Lexplaindream> getLs() {
         return ls;
     }
 
-    public void setLs(List<Lexplaindream> ls) {
+    public ExplainDream setLs(List<Lexplaindream> ls) {
         this.ls = ls;
+        return this;
     }
 
     @Override
