@@ -58,7 +58,12 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:gravity="center"/>
-
-
+        <TextView
+            android:id="@+id/TvMainPerpetualCalendar"
+            android:background="@drawable/dream"
+            android:text="@string/title_perpetualclendar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>

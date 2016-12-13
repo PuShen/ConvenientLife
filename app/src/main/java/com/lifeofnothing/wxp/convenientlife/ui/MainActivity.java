@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
+import com.lifeofnothing.wxp.convenientlife.entity.PerpetualCalendar;
 import com.lifeofnothing.wxp.convenientlife.http.NbaTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvJoke;
     private TextView mTvBusLine;
     private TextView mTvExplainDream;
+    private TextView mTvPerpetualCalendar;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -52,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent5=new Intent(MainActivity.this, ExplainDreamActivity.class);
                     startActivity(intent5);
                     break;
+                case R.id.TvMainPerpetualCalendar:
+                    Intent intent6=new Intent(MainActivity.this, PerpetualCalendarActivity.class);
+                    startActivity(intent6);
+                    break;
             }
         }
     };
@@ -71,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         mTvJoke= (TextView) findViewById(R.id.TvMainJoke);
         mTvBusLine= (TextView) findViewById(R.id.TvMainBusLine);
         mTvExplainDream= (TextView) findViewById(R.id.TvMainExplainDream);
+        mTvPerpetualCalendar= (TextView) findViewById(R.id.TvMainPerpetualCalendar);
     }
 
     @Override
@@ -82,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         mTvJoke.setOnClickListener(listener);
         mTvBusLine.setOnClickListener(listener);
         mTvExplainDream.setOnClickListener(listener);
+        mTvPerpetualCalendar.setOnClickListener(listener);
+
     }
 
 }
