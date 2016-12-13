@@ -7,6 +7,7 @@ import android.os.Message;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import java.util.List;
 public class JokeActivity extends Activity {
     private ListView vJokeList;//笑话列表
     private TextView vJokeSearch;//搜索栏
+    private Button vChange;  //换一换按钮
     private ImageView vBack;//返回键
     private  String vTime;//笑话的选择时间
 
@@ -37,6 +39,8 @@ public class JokeActivity extends Activity {
 //                    Intent intent=new Intent(JokeActivity.this,JokeTimeActivity.class);
 //                    startActivityForResult(intent,0);
 //                    break;
+                case R.id.BtnJokeRefresh:
+                    new Thread(new JokeTask(handler)).start();
             }
         }
     };
@@ -54,6 +58,7 @@ public class JokeActivity extends Activity {
             }
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,11 +75,13 @@ public class JokeActivity extends Activity {
         super.onStart();
         vJokeList=(ListView)findViewById(R.id.LvJokeList);
         vBack=(ImageView)findViewById(R.id.IvJokeBack);
+        vChange = (Button)findViewById(R.id.BtnJokeRefresh);
     }
     @Override
     protected void onResume() {
         super.onResume();
         vBack.setOnClickListener(listener);
+        vChange.setOnClickListener(listener);
     }
 
 //        @Override
