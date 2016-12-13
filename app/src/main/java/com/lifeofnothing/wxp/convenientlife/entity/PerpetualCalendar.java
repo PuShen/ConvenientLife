@@ -27,47 +27,53 @@ public class PerpetualCalendar {
         return mAnimalsYear;
     }
 
-    public void setmAnimalsYear(String mAnimalsYear) {
+    public PerpetualCalendar setmAnimalsYear(String mAnimalsYear) {
         this.mAnimalsYear = mAnimalsYear;
+        return this;
     }
 
     public String getmWeekday() {
         return mWeekday;
     }
 
-    public void setmWeekday(String mWeekday) {
+    public PerpetualCalendar setmWeekday(String mWeekday) {
         this.mWeekday = mWeekday;
+        return this;
     }
 
     public String getmLunarYear() {
         return mLunarYear;
     }
 
-    public void setmLunarYear(String mLunarYear) {
+    public PerpetualCalendar setmLunarYear(String mLunarYear) {
         this.mLunarYear = mLunarYear;
+        return this;
     }
 
     public String getmLunar() {
         return mLunar;
     }
 
-    public void setmLunar(String mLunar) {
+    public PerpetualCalendar setmLunar(String mLunar) {
         this.mLunar = mLunar;
+        return this;
     }
 
     public String getmYearMonth() {
         return mYearMonth;
     }
 
-    public void setmYearMonth(String mYearMonth) {
+    public PerpetualCalendar setmYearMonth(String mYearMonth) {
         this.mYearMonth = mYearMonth;
+        return this;
     }
 
     public String getmDate() {
         return mDate;
     }
 
-    public void setmDate(String mDate) {
+    public PerpetualCalendar setmDate(String mDate) {
         this.mDate = mDate;
+        return this;
     }
 }
