@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:layout_width="@dimen/activity_item_height"
-        android:layout_height="@dimen/activity_item_height"
+        android:layout_height="match_parent"
         android:background="@drawable/bus_head"
         android:orientation="vertical"
         android:paddingTop="@dimen/activity_layout_margieright"
@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/TvItembusName"
             android:text="72"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/activity_title" />
         <TextView
             android:layout_width="wrap_content"
@@ -30,23 +31,32 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_margin="@dimen/activity_layout_margieright">
-           <TextView
-               android:layout_width="wrap_content"
+           <LinearLayout
+               android:layout_width="0dp"
                android:layout_height="wrap_content"
-               android:id="@+id/TvItembusFront"
-               android:text="起始站"
-               android:textColor="@color/colorBlack"/>
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/bus_from_to"
-               android:textColor="@color/colorPrimaryDark"/>
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:id="@+id/TvItembusTerminal"
-               android:text="终点站"
-               android:textColor="@color/colorBlack"/>
+               android:layout_weight="1">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/TvItembusFront"
+                   android:text="起始站"
+                   android:textColor="@color/colorBlack"
+                   android:ellipsize="end"
+                   android:lines="1"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/bus_from_to"
+                   android:textColor="@color/colorPrimaryDark"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/TvItembusTerminal"
+                   android:text="终点站"
+                   android:textColor="@color/colorBlack"
+                   android:ellipsize="end"
+                   android:lines="1"/>
+           </LinearLayout>
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
