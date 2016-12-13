@@ -7,11 +7,13 @@ import java.util.List;
 
 public class ExplainDream {
     private String title;
+    private String des;
     //list里多种对梦的解释
    private List<Lexplaindream> ls;
 
-    public ExplainDream(String title, List<Lexplaindream> ls) {
+    public ExplainDream(String title,String des, List<Lexplaindream> ls) {
         this.title = title;
+        this.des=des;
         this.ls = ls;
     }
 
@@ -21,6 +23,15 @@ public class ExplainDream {
 
     public ExplainDream setTitle(String title) {
         this.title = title;
+        return this;
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public ExplainDream setDes(String des) {
+        this.des = des;
         return this;
     }
 
@@ -37,6 +48,7 @@ public class ExplainDream {
     public String toString() {
         return "ExplainDream{" +
                 "title='" + title + '\'' +
+                ", des='" + des + '\'' +
                 ", ls=" + ls +
                 '}';
     }

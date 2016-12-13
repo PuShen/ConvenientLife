@@ -29,7 +29,7 @@ public class ExplainDreamParser {
 //                     lexplaindreams.add(new Lexplaindream(json.toString()));
                      lexplaindreams.add(new Lexplaindream(jsonArray.getString(j)));
                 }
-                explaindream.add(new ExplainDream(js1.getString("title"),lexplaindreams));
+                explaindream.add(new ExplainDream(js1.getString("title"),js1.getString("des"),lexplaindreams));
             }
 
 
