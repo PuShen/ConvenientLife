@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Created by Administrator on 2016/11/24.
  */
 
-public class BusLine {
+public class BusLine implements Serializable{
     private String type;//定义当前公交查询的模式，线路或者站点
     private String terminal_name;
     private String key_name;
@@ -99,7 +100,11 @@ public class BusLine {
     }
 
     public BusLine setTotal_price(String total_price) {
-        this.total_price = total_price;
+        if (total_price.contains(".")){
+            this.total_price=total_price.substring(0,total_price.indexOf(".")+3)+"元";
+        }else {
+            this.total_price = total_price+"元";
+        }
         return this;
     }
 

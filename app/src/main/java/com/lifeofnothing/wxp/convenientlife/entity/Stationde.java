@@ -1,10 +1,12 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/11/24.
  */
 
-public class Stationde {
+public class Stationde implements Serializable{
     private String stationNum;
     private String name;
     private String xy;

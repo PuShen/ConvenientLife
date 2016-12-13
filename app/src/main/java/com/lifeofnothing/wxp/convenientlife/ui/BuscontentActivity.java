@@ -1,12 +1,14 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 
 /**
  * Created by 王晓普 on 2016/12/13.
@@ -42,6 +44,12 @@ public class BuscontentActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        initData();
         mIvBack.setOnClickListener(listener);
+    }
+
+    public void initData(){
+        BusLine busLine= (BusLine) getIntent().getSerializableExtra("bus");
+        mTvBus.setText(busLine.getKey_name());
     }
 }
