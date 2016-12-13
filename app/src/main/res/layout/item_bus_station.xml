@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:paddingTop="@dimen/activity_layout_margieright"
+    android:paddingBottom="@dimen/activity_layout_margieright">
+    <TextView
+        android:layout_width="@dimen/activity_title"
+        android:layout_height="@dimen/activity_title"
+        android:layout_marginLeft="@dimen/activity_layout_margieright"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/corner_pink"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_title"
+        android:layout_weight="1"
+        android:text="河北师大站"/>
+</LinearLayout>
