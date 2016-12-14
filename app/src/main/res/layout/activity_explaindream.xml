@@ -32,34 +32,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LlayExplainDreamSearch"
-        android:background="@color/colorLightBlue">
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"/>
-        <TextView
+        android:background="@color/colorLightBlue"
+        android:gravity="center">
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/BtExplainDreamSearch"
             android:text="@string/explaindream_mengjian"
-            android:textSize="30dp"
-            android:padding="5dp"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlack"></View>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EtExplainDreamSearch"
-            android:hint="@string/explaindream_huangjin"
-            android:layout_weight="1"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/IvExplainDreamSearch"
-            android:padding="4dp"
-            android:src="@drawable/search"/>
+            android:background="@color/colorWhite"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
