@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.BusLineStationAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
+import com.lifeofnothing.wxp.convenientlife.entity.Stationde;
+
+import java.util.ArrayList;
 
 /**
  * Created by 王晓普 on 2016/12/13.
@@ -22,6 +25,7 @@ public class BuscontentActivity extends Activity {
     private TextView mTvLocation;
     private TextView mTvTime;
     private TextView mTvPrice;
+    private TextView mTvLength;
     private ListView mLvList;
 
     private View.OnClickListener listener=new View.OnClickListener() {
@@ -49,6 +53,7 @@ public class BuscontentActivity extends Activity {
         mTvLocation= (TextView) findViewById(R.id.TvBuscontentLocation);
         mTvTime= (TextView) findViewById(R.id.TvBuscontentTime);
         mTvPrice= (TextView) findViewById(R.id.TvBuscontentPrice);
+        mTvLength= (TextView) findViewById(R.id.TvBuscontentLength);
         mLvList= (ListView) findViewById(R.id.LvBuscontentList);
     }
 
@@ -65,7 +70,8 @@ public class BuscontentActivity extends Activity {
         mTvLocation.setText(busLine.getFront_name()+"-"+busLine.getTerminal_name());
         mTvTime.setText(busLine.getStart_time()+"-"+busLine.getEnd_time());
         mTvPrice.setText(busLine.getTotal_price());
-        BusLineStationAdapter adapter=new BusLineStationAdapter(this,busLine.getLb());
+        mTvLength.setText(busLine.getLength());
+        BusLineStationAdapter adapter=new BusLineStationAdapter(this,null==busLine.getLb()?new ArrayList<Stationde>():busLine.getLb());
         mLvList.setAdapter(adapter);
     }
 }

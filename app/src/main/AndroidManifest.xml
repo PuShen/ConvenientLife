@@ -37,7 +37,10 @@
         <activity android:name=".ui.JokeTimeActivity"></activity>
         <activity android:name=".ui.BusLineActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.BuscontentActivity"/>
+        <activity android:name=".ui.BuscontentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.BuscityActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.ExplainDreamActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.PerpetualCalendarActivity"

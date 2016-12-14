@@ -1,6 +1,7 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +34,7 @@ import java.util.List;
  */
 
 public class BusLineActivity extends Activity {
+    private String mCity;
     private Animation[] mAnimation=new Animation[2];
     private ImageView mIvBack;
     private TextView mTvCity;
@@ -40,6 +43,7 @@ public class BusLineActivity extends Activity {
     private View mLlaySearch;
     private ImageView mIvBanner;
     private EditText mEtSearch;
+    private ProgressBar mPbLoad;
     private ListView mLvList;
     private BusLineAdapter mAdapter;
     private List<BusLine> mList;
@@ -49,6 +53,10 @@ public class BusLineActivity extends Activity {
             switch (v.getId()){
                 case R.id.IvBuslineBack:
                     finish();
+                    break;
+                case R.id.IvBuslineAdd:
+                    Intent intent=new Intent(BusLineActivity.this,BuscityActivity.class);
+                    startActivity(intent);
                     break;
             }
         }
@@ -100,7 +108,8 @@ public class BusLineActivity extends Activity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            new BusLineTask("石家庄",s.toString(),handler,mList).Bus_run();
+            mPbLoad.setVisibility(View.VISIBLE);
+            new BusLineTask(mCity,s.toString(),handler,mList).Bus_run();
         }
 
         @Override
@@ -120,6 +129,7 @@ public class BusLineActivity extends Activity {
                     Toast.makeText(BusLineActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
+            mPbLoad.setVisibility(View.GONE);
         }
     };
 
@@ -133,6 +143,7 @@ public class BusLineActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
+        mCity=getSharedPreferences("ConvenientLife", Context.MODE_PRIVATE).getString("bus_city","北京");
         mAnimation[0]= AnimationUtils.loadAnimation(this,R.anim.bus_banner_out);
         mAnimation[1]=AnimationUtils.loadAnimation(this,R.anim.bus_banner_alpha);
         mIvBack= (ImageView) findViewById(R.id.IvBuslineBack);
@@ -142,6 +153,7 @@ public class BusLineActivity extends Activity {
         mLlaySearch=findViewById(R.id.LlayBuslineSearch);
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
+        mPbLoad= (ProgressBar) findViewById(R.id.PbBuslineLoad);
         mLvList= (ListView) findViewById(R.id.LvBuslineList);
         mAdapter=new BusLineAdapter(this,mList);
     }
@@ -149,25 +161,13 @@ public class BusLineActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        mTvCity.setText("【"+mCity+"】");
         mLvList.setAdapter(mAdapter);
         mLvList.setOnItemClickListener(itemClickListener);
         mIvBack.setOnClickListener(listener);
+        mIvAdd.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
         mEtSearch.addTextChangedListener(watcher);
 
-    }
-
-    /**
-     * 测试方法
-     */
-    public void test(){
-        mList=new ArrayList<>();
-        BusLine busLine=new BusLine();
-        busLine.setType("呵呵").setKey_name("58路").setFront_name("南郊").setTerminal_name("火车站").setStart_time("06:30").setEnd_time("21:30").setTotal_price("1元");
-        mList.add(busLine);
-        mList.add(busLine);
-        mList.add(busLine);
-        mAdapter=new BusLineAdapter(this,mList);
-        mLvList.setAdapter(mAdapter);
     }
 }

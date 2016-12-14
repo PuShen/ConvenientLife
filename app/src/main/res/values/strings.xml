@@ -36,8 +36,9 @@
     <string name="weather_city">请输入城市名称</string>
     <string name="weather_cancle">取消</string>
     <string name="weather_confirm">确认</string>
-    <string name="tip_error_input">亲，您输入的城市不存在！</string>
+    <string name="tip_error_input">亲，您输入的城市不存在或者暂不支持！</string>
     <string name="tip_error_net">世界上最遥远的距离就是没网！</string>
+    <string name="tip_load">正在加载中，请稍后...</string>
     <string name="title_bus">公交查询</string>
     <string name="bus_busline">查询线路、站点</string>
     <string name="bus_from_to">→</string>
@@ -46,11 +47,14 @@
     <string name="bus_start_and_end">首末班：</string>
     <string name="bus_price">票价：</string>
     <string name="bus_lu">路</string>
+    <string name="bus_length">距离：</string>
+    <string name="bus_city">城市切换</string>
+    <string name="bus_switch">切换</string>
+    <string name="bus_city_tip">温馨提示：现已支持各大热门城市和各省的县级城市，今后会陆续开通其他城市，敬请期待...</string>
     <string name="title_explaindream">周公解梦</string>
     <string name="explaindream_huangjin">黄金</string>
     <string name="explaindream_mengjian">梦见</string>
     <string name="explaindream_tip">常见的梦：黄金，美女，蛇，下雨，狗</string>
-    <string name="title_perpetualclendar">万年历
-    </string>
+    <string name="title_perpetualclendar">万年历</string>
 
 </resources>

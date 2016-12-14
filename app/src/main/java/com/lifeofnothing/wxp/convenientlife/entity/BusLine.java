@@ -113,7 +113,7 @@ public class BusLine implements Serializable{
     }
 
     public BusLine setLength(String length) {
-        this.length = length;
+        this.length = length+"公里";
         return this;
     }
 

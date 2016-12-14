@@ -47,7 +47,11 @@ public class BusLineTask {
                 case 0:
                     if (true==mFlag1&&true==mFlag2){
                         Log.e("list",b.toString());
-                        mHandler.sendEmptyMessage(0);
+                        if (0==b.size()){
+                            mHandler.sendEmptyMessage(1);
+                        }else {
+                            mHandler.sendEmptyMessage(0);
+                        }
                     }
                     break;
             }
