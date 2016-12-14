@@ -4,6 +4,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.prasor.ExplainDreamParser;
+import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -18,6 +19,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 
 
 /**
@@ -44,18 +46,22 @@ public class ExplainDreamTask{
              @Override
              public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                  super.onSuccess(statusCode, headers, response);
-                 Log.e("ss",response.toString());
-
-                 Message message=new Message();
-                 message.obj=response;
-                 mHander.sendMessage(message);
-
+                 List<ExplainDream> list=ExplainDreamParser.getGson(response);
+                 if (null!=list) {
+                   //  Log.e("ss", list.toString());
+                     Message message = new Message();
+                     message.what = 0;
+                     message.obj = list;
+                     mHander.sendMessage(message);
+                 }else {
+                     mHander.sendEmptyMessage(1);
+                 }
              }
 
              @Override
              public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                  super.onFailure(statusCode, headers, throwable, errorResponse);
-                 mHander.sendEmptyMessage(1);
+                 mHander.sendEmptyMessage(2);
              }
          });
      }

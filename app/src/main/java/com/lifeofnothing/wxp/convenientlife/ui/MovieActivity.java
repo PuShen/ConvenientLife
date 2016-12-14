@@ -1,11 +1,15 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 /**
+ * Created by Acer on 2016/12/14.
+ */
+
+/**
  * Created by Acer on 2016/12/13.
  */
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -14,7 +18,7 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 
-public class movie extends Activity {
+public class MovieActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
