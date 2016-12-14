@@ -41,6 +41,7 @@
     <string name="tip_load">正在加载中，请稍后...</string>
     <string name="title_bus">公交查询</string>
     <string name="bus_busline">查询线路、站点</string>
+    <string name="bus_recommend">为您推荐：</string>
     <string name="bus_from_to">→</string>
     <string name="bus_to">--</string>
     <string name="bus_front_and_terminal">始发地：</string>

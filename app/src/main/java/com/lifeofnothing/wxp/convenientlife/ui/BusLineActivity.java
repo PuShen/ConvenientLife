@@ -43,6 +43,7 @@ public class BusLineActivity extends Activity {
     private View mLlaySearch;
     private ImageView mIvBanner;
     private EditText mEtSearch;
+    private TextView mTvRecommend;
     private ProgressBar mPbLoad;
     private ListView mLvList;
     private BusLineAdapter mAdapter;
@@ -75,6 +76,7 @@ public class BusLineActivity extends Activity {
             switch (v.getId()){
                 case R.id.EtBuslineSearch:
                     if (View.GONE!=mIvBanner.getVisibility()){
+                        mTvRecommend.setVisibility(View.GONE);
                         mAnimation[1].setAnimationListener(animationListener);
                         mIvBanner.startAnimation(mAnimation[1]);
                         mLlaySearch.startAnimation(mAnimation[0]);
@@ -152,6 +154,7 @@ public class BusLineActivity extends Activity {
         mIvSearch= (ImageView) findViewById(R.id.IvBuslineSearch);
         mLlaySearch=findViewById(R.id.LlayBuslineSearch);
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
+        mTvRecommend= (TextView) findViewById(R.id.TvBuslineRecommend);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
         mPbLoad= (ProgressBar) findViewById(R.id.PbBuslineLoad);
         mLvList= (ListView) findViewById(R.id.LvBuslineList);
@@ -168,6 +171,7 @@ public class BusLineActivity extends Activity {
         mIvAdd.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
         mEtSearch.addTextChangedListener(watcher);
-
+        mPbLoad.setVisibility(View.VISIBLE);
+        new BusLineTask(mCity,String.valueOf((int)(Math.random()*10)),handler,mList).Bus_run();
     }
 }

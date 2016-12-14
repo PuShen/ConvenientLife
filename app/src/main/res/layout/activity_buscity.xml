@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/LlayBuslineSearch"
         android:padding="@dimen/activity_layout_margieright"
-        android:background="@color/colorBlue"
+        android:background="@drawable/button_corner3"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginBottom="@dimen/activity_vertical_margin">
         <View
