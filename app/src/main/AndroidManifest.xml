@@ -2,17 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lifeofnothing.wxp.convenientlife">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/shenghuo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity"
+        <activity
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,34 +22,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.NewsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.NewstypeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.NewscontentActivity"/>
-        <activity android:name=".ui.WechatActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.WechatcontentActivity"/>
-        <activity android:name=".ui.WeatherActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.WeathercityActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.NewstypeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.NewscontentActivity" />
+        <activity
+            android:name=".ui.WechatActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.WechatcontentActivity" />
+        <activity
+            android:name=".ui.WeatherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WeathercityActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".ui.JokeActivity" />
         <activity android:name=".ui.JokeContentActivity" />
-        <activity android:name=".ui.JokeTimeActivity"></activity>
-        <activity android:name=".ui.BusLineActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.BuscontentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.BuscityActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.ExplainDreamActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.PerpetualCalendarActivity"
+        <activity android:name=".ui.JokeTimeActivity" />
+        <activity
+            android:name=".ui.BusLineActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.ExplainDreamtypeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.ExplainDreamContentActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.BuscontentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.BuscityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ExplainDreamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.PerpetualCalendarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ExplainDreamtypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ExplainDreamContentActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.QQNumberActivity"></activity>
     </application>
+
 </manifest>
