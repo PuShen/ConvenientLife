@@ -67,7 +67,8 @@ public class ExplainDreamtypeActivity extends Activity{
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent intent=new Intent(ExplainDreamtypeActivity.this,ExplainDreamContentActivity.class);
                                intent.putExtra("title",list.get(position).getTitle());
-                          //  Log.e("result", String.valueOf(list.get(position).getLs()));
+
+                          //  1 Log.e("result", String.valueOf(list.get(position).getLs()));
                                intent.putExtra("ls", (Serializable) list.get(position).getLs());
                             startActivity(intent);
 

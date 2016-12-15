@@ -10,8 +10,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
+import com.lifeofnothing.wxp.convenientlife.adapter.ExplainDreamlistAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,5 +55,10 @@ public class ExplainDreamContentActivity extends Activity {
         IvExplainDreamContentBack.setOnClickListener(listener);
         Intent intent = getIntent();
         TvExplainDreamContent.setText(intent.getStringExtra("title"));
+        List<String> list=new ArrayList<>();
+        list=intent.getStringArrayListExtra("ls");
+        ExplainDreamlistAdapter explainDreamlistAdapter=new ExplainDreamlistAdapter(this,list);
+        LvExplainDreamContent.setAdapter(explainDreamlistAdapter);
+
     }
 }

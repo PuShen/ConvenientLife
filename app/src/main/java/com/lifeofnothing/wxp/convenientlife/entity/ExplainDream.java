@@ -9,7 +9,7 @@ import java.util.List;
 public class ExplainDream implements Serializable{
     private String title;
     private String des;
-    //list里多种对梦的解释
+    //1 list里多种对梦的解释
    private List<String> ls;
 
     public ExplainDream(String title, String des, List<String> ls) {
