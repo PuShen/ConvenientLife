@@ -51,7 +51,7 @@ public class ExplainDreamTask{
                  super.onSuccess(statusCode, headers, response);
 
                  try {
-                     if (null!=response.getJSONObject("result")) {
+                     if (null!=response.getJSONObject("result")&&null!=response.getJSONArray("result")) {
                         //Log.e("result", list.toString());
                          List<ExplainDream> list=ExplainDreamParser.getGson(response);
                          Message message = new Message();
@@ -71,6 +71,7 @@ public class ExplainDreamTask{
              public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                  super.onFailure(statusCode, headers, throwable, errorResponse);
                  mHander.sendEmptyMessage(2);
+                 Log.e("result", String.valueOf(statusCode));
              }
          });
      }
