@@ -29,7 +29,7 @@ import java.util.List;
 
 public class ExplainDreamActivity extends Activity {
     private ImageView IvExplainDreamBack;
-    //输入梦
+
     private LinearLayout LlayExplainDreamSearch;
 
     private View.OnClickListener listener=new View.OnClickListener() {
