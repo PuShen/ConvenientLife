@@ -58,9 +58,11 @@ public class ExplainDreamTask{
                          message.what = 0;
                          message.obj = list;
                          mHander.sendMessage(message);
+                     }else {
+                         mHander.sendEmptyMessage(1);
                      }
+
                  } catch (JSONException e) {
-                     mHander.sendEmptyMessage(1);
                      e.printStackTrace();
                  }
              }
