@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvBusLine;
     private TextView mTvExplainDream;
     private TextView mTvPerpetualCalendar;
+    private TextView mTvQQNumber;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent6=new Intent(MainActivity.this, PerpetualCalendarActivity.class);
                     startActivity(intent6);
                     break;
+                case R.id.TvMainQQNumber:
+                    Intent intent7=new Intent(MainActivity.this,QQNumberActivity.class);
+                    startActivity(intent7);
             }
         }
     };
@@ -78,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         mTvBusLine= (TextView) findViewById(R.id.TvMainBusLine);
         mTvExplainDream= (TextView) findViewById(R.id.TvMainExplainDream);
         mTvPerpetualCalendar= (TextView) findViewById(R.id.TvMainPerpetualCalendar);
+        mTvQQNumber=(TextView)findViewById(R.id.TvMainQQNumber);
     }
 
     @Override
@@ -90,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         mTvBusLine.setOnClickListener(listener);
         mTvExplainDream.setOnClickListener(listener);
         mTvPerpetualCalendar.setOnClickListener(listener);
+        mTvQQNumber.setOnClickListener(listener);
 
     }
 
