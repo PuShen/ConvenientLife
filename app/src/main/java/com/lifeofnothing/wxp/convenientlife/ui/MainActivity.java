@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent5);
                     break;
                 case R.id.TvMainPerpetualCalendar:
-                    Intent intent6=new Intent(MainActivity.this, PerpetualCalendarActivity.class);
+                    Intent intent6=new Intent(MainActivity.this, CalendarActivity.class);
                     startActivity(intent6);
                     break;
                 case R.id.TvMainQQNumber:
