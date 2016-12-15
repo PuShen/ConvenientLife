@@ -42,7 +42,7 @@ public class ExplainDreamtypeActivity extends Activity{
                 case R.id.IvExplainDreamSearch:
                     if (0!=EtExplainDream.getText().length()) {
                         try {
-                            new ExplainDreamTask("黄金", mHandler).run();
+                            new ExplainDreamTask(EtExplainDream.getText().toString(), mHandler).run();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }

@@ -55,9 +55,9 @@ public class ExplainDreamContentActivity extends Activity {
         IvExplainDreamContentBack.setOnClickListener(listener);
         Intent intent = getIntent();
         TvExplainDreamContent.setText(intent.getStringExtra("title"));
-        List<String> list=new ArrayList<>();
-        list=intent.getStringArrayListExtra("ls");
-        ExplainDreamlistAdapter explainDreamlistAdapter=new ExplainDreamlistAdapter(this,list);
+        List<String> ls =new ArrayList<>();
+        ls=intent.getStringArrayListExtra("ls");
+        ExplainDreamlistAdapter explainDreamlistAdapter=new ExplainDreamlistAdapter(this,ls);
         LvExplainDreamContent.setAdapter(explainDreamlistAdapter);
 
     }
