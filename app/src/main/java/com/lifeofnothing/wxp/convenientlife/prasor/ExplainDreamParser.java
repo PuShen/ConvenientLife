@@ -3,7 +3,7 @@ package com.lifeofnothing.wxp.convenientlife.prasor;
 import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
-import com.lifeofnothing.wxp.convenientlife.entity.Lexplaindream;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
