@@ -40,8 +40,6 @@
             android:name=".ui.WeathercityActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.JokeActivity" />
-        <activity android:name=".ui.JokeContentActivity" />
-        <activity android:name=".ui.JokeTimeActivity" />
         <activity
             android:name=".ui.BusLineActivity"
             android:screenOrientation="portrait" />
@@ -55,15 +53,13 @@
             android:name=".ui.ExplainDreamActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.PerpetualCalendarActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.ExplainDreamtypeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ExplainDreamContentActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.QQNumberActivity"></activity>
+        <activity android:name=".ui.CalendarActivity"></activity>
     </application>
 
 </manifest>

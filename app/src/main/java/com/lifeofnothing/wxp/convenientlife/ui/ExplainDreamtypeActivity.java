@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import com.lifeofnothing.wxp.convenientlife.adapter.ExplainDreamAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.opengl.ETC1;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.http.ExplainDreamTask;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -31,6 +33,7 @@ public class ExplainDreamtypeActivity extends Activity{
     private ListView LvExplainDreamList;
     private EditText EtExplainDream;
     private ImageView IvExplainDreamSearch;
+    private ProgressDialog Dialog;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -42,10 +45,12 @@ public class ExplainDreamtypeActivity extends Activity{
                     if (0!=EtExplainDream.getText().length()) {
                         try {
                             new ExplainDreamTask(EtExplainDream.getText().toString(), mHandler).run();
+                            Dialog.show();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
                     }
+                    break;
             }
 
         }
@@ -57,7 +62,8 @@ public class ExplainDreamtypeActivity extends Activity{
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
-                    List<ExplainDream> list=(List<ExplainDream>) msg.obj;
+                    Dialog.dismiss();
+                    final List<ExplainDream> list=(List<ExplainDream>) msg.obj;
                   //  Log.e("result",list.toString());
                     ExplainDreamAdapter adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
                     LvExplainDreamList.setAdapter(adapter);
@@ -65,16 +71,21 @@ public class ExplainDreamtypeActivity extends Activity{
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent intent=new Intent(ExplainDreamtypeActivity.this,ExplainDreamContentActivity.class);
+                               intent.putExtra("title",list.get(position).getTitle());
 
+                          //  1 Log.e("result", String.valueOf(list.get(position).getLs()));
+                               intent.putExtra("ls", (Serializable) list.get(position).getLs());
                             startActivity(intent);
 
                         }
                     });
                     break;
                 case 1:
+                    Dialog.dismiss();
                     Toast.makeText(ExplainDreamtypeActivity.this,"亲，你所查找的梦不存在！",Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
+                    Dialog.dismiss();
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
                     break;
 
@@ -95,6 +106,7 @@ public class ExplainDreamtypeActivity extends Activity{
         LvExplainDreamList=(ListView)findViewById(R.id.LvExplainDreamList);
         EtExplainDream=(EditText)findViewById(R.id.EtExplainDream);
         IvExplainDreamSearch=(ImageView)findViewById(R.id.IvExplainDreamSearch);
+        Dialog=new ProgressDialog(this);
     }
 
     @Override
@@ -102,6 +114,7 @@ public class ExplainDreamtypeActivity extends Activity{
         super.onResume();
         IvExplainDreamtypeBack.setOnClickListener(listener);
         IvExplainDreamSearch.setOnClickListener(listener);
+        Dialog.setMessage("系统正在加载中，请稍后！");
 
     }
 }

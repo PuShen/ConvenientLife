@@ -56,16 +56,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent5);
                     break;
                 case R.id.TvMainPerpetualCalendar:
-                    Intent intent6=new Intent(MainActivity.this, PerpetualCalendarActivity.class);
+                    Intent intent6=new Intent(MainActivity.this, CalendarActivity.class);
                     startActivity(intent6);
                     break;
                 case R.id.TvMainQQNumber:
-                    Intent intent7 = new Intent(MainActivity.this,QQNumberActivity.class);
+                    Intent intent7=new Intent(MainActivity.this,QQNumberActivity.class);
                     startActivity(intent7);
             }
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         mTvBusLine= (TextView) findViewById(R.id.TvMainBusLine);
         mTvExplainDream= (TextView) findViewById(R.id.TvMainExplainDream);
         mTvPerpetualCalendar= (TextView) findViewById(R.id.TvMainPerpetualCalendar);
-        mTvQQNumber = (TextView)findViewById(R.id.TvMainQQNumber);
+        mTvQQNumber=(TextView)findViewById(R.id.TvMainQQNumber);
     }
 
     @Override
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         mTvExplainDream.setOnClickListener(listener);
         mTvPerpetualCalendar.setOnClickListener(listener);
         mTvQQNumber.setOnClickListener(listener);
+
     }
 
 }

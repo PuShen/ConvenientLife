@@ -139,7 +139,14 @@ public class BusLineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busline);
+        mPbLoad= (ProgressBar) findViewById(R.id.PbBuslineLoad);
         mList=new ArrayList<>();
+        mLvList= (ListView) findViewById(R.id.LvBuslineList);
+        mAdapter=new BusLineAdapter(this,mList);
+        mLvList.setAdapter(mAdapter);
+        mCity=getSharedPreferences("ConvenientLife", Context.MODE_PRIVATE).getString("bus_city","北京");
+        new BusLineTask(mCity,String.valueOf((int)(Math.random()*10)),handler,mList).Bus_run();
+        mPbLoad.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -156,22 +163,16 @@ public class BusLineActivity extends Activity {
         mIvBanner= (ImageView) findViewById(R.id.IvBuslineBanner);
         mTvRecommend= (TextView) findViewById(R.id.TvBuslineRecommend);
         mEtSearch= (EditText) findViewById(R.id.EtBuslineSearch);
-        mPbLoad= (ProgressBar) findViewById(R.id.PbBuslineLoad);
-        mLvList= (ListView) findViewById(R.id.LvBuslineList);
-        mAdapter=new BusLineAdapter(this,mList);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mTvCity.setText("【"+mCity+"】");
-        mLvList.setAdapter(mAdapter);
         mLvList.setOnItemClickListener(itemClickListener);
         mIvBack.setOnClickListener(listener);
         mIvAdd.setOnClickListener(listener);
         mEtSearch.setOnTouchListener(touchListener);
         mEtSearch.addTextChangedListener(watcher);
-        mPbLoad.setVisibility(View.VISIBLE);
-        new BusLineTask(mCity,String.valueOf((int)(Math.random()*10)),handler,mList).Bus_run();
     }
 }
