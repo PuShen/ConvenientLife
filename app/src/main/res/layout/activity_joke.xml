@@ -24,14 +24,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:id="@+id/TvJokeMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="点击右侧的按钮可以换一批笑话~"
-            android:textColor="#FF0000"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/finger"/>
         <Button
             android:background="#f6ffb8"
             android:id="@+id/BtnJokeRefresh"
@@ -39,7 +37,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
+            android:layout_weight="3"
             android:text="无图笑话" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:src="@drawable/finger"/>
         <Button
             android:background="#f6ffb8"
             android:id="@+id/BtnJokeFunny"
@@ -48,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
+            android:layout_weight="3"
             android:text="趣图笑话"/>
     </LinearLayout>
 
