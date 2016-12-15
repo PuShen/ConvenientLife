@@ -12,10 +12,6 @@ public class ExplainDream implements Serializable{
     //list里多种对梦的解释
    private List<String> ls;
 
-    public ExplainDream(List<String> ls) {
-        this.ls = ls;
-    }
-
     public ExplainDream(String title, String des, List<String> ls) {
         this.title = title;
         this.des=des;

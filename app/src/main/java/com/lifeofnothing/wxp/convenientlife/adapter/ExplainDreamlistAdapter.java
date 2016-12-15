@@ -17,9 +17,9 @@ import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 
 public class ExplainDreamlistAdapter extends BaseAdapter{
     private Context context;
-    private List<ExplainDream> list;
+    private List<String> list;
 
-    public ExplainDreamlistAdapter(Context context, List<ExplainDream> list) {
+    public ExplainDreamlistAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
     }
@@ -45,7 +45,7 @@ public class ExplainDreamlistAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView= LayoutInflater.from(context).inflate(R.layout.item_explaindream_list,null);
         TextView textView=(TextView)convertView.findViewById(R.id.TvItemExplainDreamlist);
-      //  textView.setText(list.get(position).getLs().);
+        textView.setText(list.get(position));
         return convertView;
     }
 }
