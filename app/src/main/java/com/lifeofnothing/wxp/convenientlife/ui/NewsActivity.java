@@ -10,11 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.NewsAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.News;
 import com.lifeofnothing.wxp.convenientlife.http.NewsTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.util.List;
 
@@ -59,6 +61,13 @@ public class NewsActivity extends Activity {
                             startActivity(intent);
                         }
                     });
+                    ObjectCacheUtils.setCache("news",list);
+                    break;
+                case 2:
+                    List<News> list1= (List<News>) ObjectCacheUtils.getCache("news");
+                    NewsAdapter adapter1=new NewsAdapter(NewsActivity.this,list1);
+                    mLvList.setAdapter(adapter1);
+                    Toast.makeText(NewsActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
         }

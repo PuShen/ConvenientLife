@@ -1,10 +1,12 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by dell on 2016/11/24.
  */
 //新闻头条类
-public class News {
+public class News implements Serializable{
     private String mTitle;  //新闻头条的标题
     private String mAuthor; //新闻头条的作者
     private  String mUrl;   //新闻头条的网址
