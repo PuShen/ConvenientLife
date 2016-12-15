@@ -53,8 +53,5 @@ public class ExplainDreamContentActivity extends Activity {
         IvExplainDreamContentBack.setOnClickListener(listener);
         Intent intent = getIntent();
         TvExplainDreamContent.setText(intent.getStringExtra("title"));
-
-        ;
-
     }
 }
