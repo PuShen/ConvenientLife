@@ -57,9 +57,6 @@ import java.util.List;
             TextView TvItemnewsTime =(TextView)convertView.findViewById(R.id. TvItemnewsTime);
             TvItemnewsTime.setText(newslist.get(position).getmDate());
             ImageView IvItemnewsHead=(ImageView)convertView.findViewById(R.id.IvItemnewsHead);
-            AsyncImageLoad imageLoad=new AsyncImageLoad
-                    (newslist.get(position).getmImage(),IvItemnewsHead);
-            imageLoad.execute();
             ImageLoaderUtils.displayImage(newslist.get(position).getmImage(),IvItemnewsHead,context);
             return convertView;
         }
