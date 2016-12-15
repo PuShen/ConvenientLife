@@ -13,6 +13,7 @@ import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
@@ -28,8 +29,8 @@ import java.util.List;
 
 public class ExplainDreamActivity extends Activity {
     private ImageView IvExplainDreamBack;
+    private LinearLayout LlayExplainDreamSearch;
 
-    private Button BtExplainDreamSearch;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -37,7 +38,7 @@ public class ExplainDreamActivity extends Activity {
                 case R.id.IvExplainDreamBack:
                     finish();
                     break;
-                case R.id.BtExplainDreamSearch:
+                case R.id.LlayExplainDreamSearch:
                     Intent intent=new Intent(ExplainDreamActivity.this,ExplainDreamtypeActivity.class);
                     startActivity(intent);
                     break;
@@ -57,7 +58,7 @@ public class ExplainDreamActivity extends Activity {
         super.onStart();
         IvExplainDreamBack=(ImageView)findViewById(R.id.IvExplainDreamBack);
 
-        BtExplainDreamSearch=(Button) findViewById(R.id.BtExplainDreamSearch);
+        LlayExplainDreamSearch=(LinearLayout) findViewById(R.id.LlayExplainDreamSearch);
 
     }
 
@@ -65,6 +66,6 @@ public class ExplainDreamActivity extends Activity {
     protected void onResume() {
         super.onResume();
         IvExplainDreamBack.setOnClickListener(listener);
-       BtExplainDreamSearch.setOnClickListener(listener);
+        LlayExplainDreamSearch.setOnClickListener(listener);
     }
 }

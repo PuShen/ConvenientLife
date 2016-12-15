@@ -53,9 +53,8 @@
     <string name="bus_switch">切换</string>
     <string name="bus_city_tip">温馨提示：现已支持各大热门城市和各省的县级城市，今后会陆续开通其他城市，敬请期待...</string>
     <string name="title_explaindream">周公解梦</string>
-    <string name="explaindream_huangjin">黄金</string>
-    <string name="explaindream_mengjian">梦见</string>
-    <string name="explaindream_tip">常见的梦：黄金，美女，蛇，下雨，狗</string>
+    <string name="explaindream_huangjin">请输入您的梦</string>
+    <string name="explaindream_tip">常见的梦：黄金，美女，蛇，雨，狗</string>
     <string name="title_perpetualclendar">万年历</string>
     <string name="action_settings">Settings</string>
     <string name="title_clendar">中华万年历</string>

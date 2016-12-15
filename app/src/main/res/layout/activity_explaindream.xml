@@ -25,7 +25,7 @@
     </RelativeLayout>
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:id="@+id/IvExplainDreamBanner"
         android:background="@drawable/zhougongjiemeng2"/>
     <LinearLayout
@@ -34,12 +34,22 @@
         android:id="@+id/LlayExplainDreamSearch"
         android:background="@color/colorLightBlue"
         android:gravity="center">
-        <Button
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/TvSearch"
+            android:hint="@string/explaindream_huangjin"
+            android:layout_weight="1"/>
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/BtExplainDreamSearch"
-            android:text="@string/explaindream_mengjian"
-            android:background="@color/colorWhite"/>
+            android:id="@+id/IvExplainSearch"
+            android:src="@drawable/search"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
