@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wannianli_back">
-    <ImageView
-        android:id="@+id/IvPerpetualCalendarImag"
+    <CalendarView
         android:layout_width="wrap_content"
-        android:layout_height="180dp"
-        android:background="@drawable/wannianli1"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/IvPerpetualCalendarSearch"
-        android:padding="@dimen/activity_layout_margieright"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin">
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"/>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EtBuslineSearch"
-            android:hint="输入年月：格式YYYY-MM-DD，月份日期小于10则取个位如2012-1-1"
-            android:layout_weight="1"/>
-        <CalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </CalendarView>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/IvBuslineSearch"
-            android:src="@drawable/search"/>
-    </LinearLayout>
+        android:layout_height="wrap_content">
+
+    </CalendarView>
 
 </LinearLayout>
