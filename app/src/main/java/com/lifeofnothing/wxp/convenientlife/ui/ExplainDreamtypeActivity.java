@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.http.ExplainDreamTask;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class ExplainDreamtypeActivity extends Activity{
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
-                    List<ExplainDream> list=(List<ExplainDream>) msg.obj;
+                    final List<ExplainDream> list=(List<ExplainDream>) msg.obj;
                   //  Log.e("result",list.toString());
                     ExplainDreamAdapter adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
                     LvExplainDreamList.setAdapter(adapter);
@@ -65,7 +66,9 @@ public class ExplainDreamtypeActivity extends Activity{
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent intent=new Intent(ExplainDreamtypeActivity.this,ExplainDreamContentActivity.class);
-
+                               intent.putExtra("title",list.get(position).getTitle());
+                            Log.e("result", String.valueOf(list.get(position).getLs()));
+                               intent.putExtra("ls", (Serializable) list.get(position).getLs());
                             startActivity(intent);
 
                         }
