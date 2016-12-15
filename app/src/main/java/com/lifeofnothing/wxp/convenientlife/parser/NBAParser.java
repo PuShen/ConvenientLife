@@ -1,4 +1,4 @@
-package com.lifeofnothing.wxp.convenientlife.prasor;
+package com.lifeofnothing.wxp.convenientlife.parser;
 
 import com.lifeofnothing.wxp.convenientlife.entity.Nba;
 import com.lifeofnothing.wxp.convenientlife.entity.NbaBottomLink;

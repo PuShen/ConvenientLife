@@ -1,14 +1,10 @@
-package com.lifeofnothing.wxp.convenientlife.prasor;
+package com.lifeofnothing.wxp.convenientlife.parser;
 
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.lifeofnothing.wxp.convenientlife.entity.PerpetualCalendar;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/25.

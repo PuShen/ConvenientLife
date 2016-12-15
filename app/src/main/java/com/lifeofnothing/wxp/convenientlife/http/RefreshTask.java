@@ -1,12 +1,10 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
 import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
-import com.lifeofnothing.wxp.convenientlife.prasor.NewsParser;
-import com.lifeofnothing.wxp.convenientlife.prasor.WeChatsParser;
+import com.lifeofnothing.wxp.convenientlife.parser.WeChatsParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

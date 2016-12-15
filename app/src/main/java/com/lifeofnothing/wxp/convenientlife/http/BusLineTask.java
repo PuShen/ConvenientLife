@@ -3,19 +3,16 @@ package com.lifeofnothing.wxp.convenientlife.http;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
-import com.lifeofnothing.wxp.convenientlife.prasor.BusLineParser;
+import com.lifeofnothing.wxp.convenientlife.parser.BusLineParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

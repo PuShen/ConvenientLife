@@ -3,7 +3,7 @@ package com.lifeofnothing.wxp.convenientlife.http;
 import android.os.Handler;
 import android.os.Message;
 
-import com.lifeofnothing.wxp.convenientlife.prasor.TodayInHisoryParser;
+import com.lifeofnothing.wxp.convenientlife.parser.TodayInHisoryParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

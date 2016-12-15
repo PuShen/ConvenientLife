@@ -4,17 +4,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
-import com.lifeofnothing.wxp.convenientlife.prasor.WeChatsParser;
+import com.lifeofnothing.wxp.convenientlife.parser.WeChatsParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by 我需要一枚好辅助丶 on 2016/11/29.

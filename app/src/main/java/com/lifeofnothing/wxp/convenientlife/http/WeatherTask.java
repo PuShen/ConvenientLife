@@ -1,22 +1,19 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.entity.Weather;
-import com.lifeofnothing.wxp.convenientlife.prasor.WeatherParser;
+import com.lifeofnothing.wxp.convenientlife.parser.WeatherParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
 

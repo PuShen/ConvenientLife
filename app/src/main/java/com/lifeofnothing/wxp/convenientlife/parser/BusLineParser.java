@@ -1,4 +1,4 @@
-package com.lifeofnothing.wxp.convenientlife.prasor;
+package com.lifeofnothing.wxp.convenientlife.parser;
 
 import android.support.annotation.NonNull;
 import android.util.Log;

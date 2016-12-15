@@ -2,18 +2,10 @@ package com.lifeofnothing.wxp.convenientlife.http;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.Button;
 
 import com.lifeofnothing.wxp.convenientlife.R;
-import com.lifeofnothing.wxp.convenientlife.prasor.JokeParser;
-import com.lifeofnothing.wxp.convenientlife.prasor.TodayInHisoryParser;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.lifeofnothing.wxp.convenientlife.parser.JokeParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

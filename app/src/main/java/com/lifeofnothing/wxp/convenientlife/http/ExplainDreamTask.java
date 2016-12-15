@@ -1,9 +1,8 @@
 package com.lifeofnothing.wxp.convenientlife.http;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
-import com.lifeofnothing.wxp.convenientlife.prasor.ExplainDreamParser;
+import com.lifeofnothing.wxp.convenientlife.parser.ExplainDreamParser;
 import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -12,13 +11,7 @@ import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
 
