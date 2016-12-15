@@ -51,7 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
-                android:src="@drawable/qq_xong"/>
+                android:src="@drawable/qq_xong"
+                android:id="@+id/Imqqxong"/>
         </LinearLayout>
 
 </LinearLayout>
