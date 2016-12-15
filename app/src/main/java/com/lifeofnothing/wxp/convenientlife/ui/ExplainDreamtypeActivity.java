@@ -42,7 +42,7 @@ public class ExplainDreamtypeActivity extends Activity{
                 case R.id.IvExplainDreamSearch:
                     if (0!=EtExplainDream.getText().length()) {
                         try {
-                            new ExplainDreamTask(EtExplainDream.getText().toString(), mHandler).run();
+                            new ExplainDreamTask("黄金", mHandler).run();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
@@ -67,7 +67,7 @@ public class ExplainDreamtypeActivity extends Activity{
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent intent=new Intent(ExplainDreamtypeActivity.this,ExplainDreamContentActivity.class);
                                intent.putExtra("title",list.get(position).getTitle());
-                            Log.e("result", String.valueOf(list.get(position).getLs()));
+                         //   Log.e("result", String.valueOf(list.get(position).getLs()));
                                intent.putExtra("ls", (Serializable) list.get(position).getLs());
                             startActivity(intent);
 
