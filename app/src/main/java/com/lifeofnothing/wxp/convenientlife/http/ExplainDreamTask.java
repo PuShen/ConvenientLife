@@ -9,6 +9,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -46,15 +47,19 @@ public class ExplainDreamTask{
              @Override
              public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                  super.onSuccess(statusCode, headers, response);
-                 List<ExplainDream> list=ExplainDreamParser.getGson(response);
-                 if (null!=list) {
-                   //  Log.e("ss", list.toString());
-                     Message message = new Message();
-                     message.what = 0;
-                     message.obj = list;
-                     mHander.sendMessage(message);
-                 }else {
+
+                 try {
+                     if (null!=response.getJSONObject("result")) {
+                        //Log.e("result", list.toString());
+                         List<ExplainDream> list=ExplainDreamParser.getGson(response);
+                         Message message = new Message();
+                         message.what = 0;
+                         message.obj = list;
+                         mHander.sendMessage(message);
+                     }
+                 } catch (JSONException e) {
                      mHander.sendEmptyMessage(1);
+                     e.printStackTrace();
                  }
              }
 
