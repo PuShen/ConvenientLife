@@ -32,6 +32,7 @@ public class ExplainDreamTask{
     private String mParm;//梦境关键字
     private String keyword;
     private Handler mHander;
+    private int mTimeout=5000;
 
     public ExplainDreamTask(String mParm, Handler mHander)throws UnsupportedEncodingException{
         this.mParm=mParm;
@@ -43,22 +44,24 @@ public class ExplainDreamTask{
          keyword=URLEncoder.encode(mParm,"UTF-8");
          mUrl="http://v.juhe.cn/dream/query?q="+keyword+"&cid=&full=1&key=21ab81b5edf982ac86e9b82f98ad923c";
          AsyncHttpClient client=new AsyncHttpClient();
+         client.setTimeout(mTimeout);
          client.get(mUrl,new JsonHttpResponseHandler(){
              @Override
              public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                  super.onSuccess(statusCode, headers, response);
                  try {
                      if (null!=response.getString("result")) {
+
                         //Log.e("result", list.toString());
                          List<ExplainDream> list=ExplainDreamParser.getGson(response);
                          Message message = new Message();
                          message.what = 0;
                          message.obj = list;
                          mHander.sendMessage(message);
-                     }
-                     if (null!=response.getJSONObject("result")){
+                     }else {
                          mHander.sendEmptyMessage(1);
                      }
+
                  } catch (JSONException e) {
 
                      e.printStackTrace();
