@@ -67,8 +67,8 @@
             android:gravity="center"/>
         <TextView
         android:id="@+id/TvMainQQNumber"
-        android:background="@drawable/history"
-        android:text="QQ号吉凶预测"
+        android:background="@drawable/qq_number"
+        android:text="QQ号测吉凶"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:gravity="center"/>
