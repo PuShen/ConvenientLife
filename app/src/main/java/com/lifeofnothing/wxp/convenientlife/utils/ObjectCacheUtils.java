@@ -24,6 +24,15 @@ public class ObjectCacheUtils {
     }
 
     /**
+     * 判断当前的关键字或者文件名是否存在对应的缓存
+     * @param key 缓存的关键字或者文件名
+     * @return 如果返回true，则说明存在缓存，反之没有缓存
+     */
+    public static boolean exists(String key){
+        return new File(mPath+key).exists();
+    }
+
+    /**
      * 设置缓存
      * @param key 缓存的关键字或者文件名
      * @param object 要缓存的对象
@@ -75,5 +84,16 @@ public class ObjectCacheUtils {
             }
         }
         return object;
+    }
+
+    /**
+     * 清除对应的缓存
+     * @param key 缓存的关键字或者文件名
+     */
+    public static void clear(String key){
+        File file=new File(mPath+key);
+        if (file.exists()){
+            file.delete();
+        }
     }
 }

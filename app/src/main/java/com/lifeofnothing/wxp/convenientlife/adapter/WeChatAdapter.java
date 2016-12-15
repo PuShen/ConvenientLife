@@ -13,6 +13,7 @@ import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
 import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
 import com.lifeofnothing.wxp.convenientlife.http.BackgroundLoadTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ImageLoaderUtils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -68,9 +69,7 @@ public class WeChatAdapter extends BaseAdapter {
                 TextView TvItemwechatAuthor = (TextView) convertView.findViewById(R.id.TvItemwechatAuthor);
                 TvItemwechatAuthor.setText(weChatList.get(position).getSource());
                 ImageView IvItemwechatHead = (ImageView) convertView.findViewById(R.id.IvItemwechatHead);
-                AsyncImageLoad imageLoad=new AsyncImageLoad
-                        (weChatList.get(position).getFirstImg(),IvItemwechatHead);
-                imageLoad.execute();
+                ImageLoaderUtils.displayImage(weChatList.get(position).getFirstImg(),IvItemwechatHead,context);
             }
         return convertView;
     }
