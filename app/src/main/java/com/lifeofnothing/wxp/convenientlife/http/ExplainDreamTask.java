@@ -50,20 +50,20 @@ public class ExplainDreamTask{
              public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                  super.onSuccess(statusCode, headers, response);
                  try {
-                     if (null!=response.getString("result")) {
-
+                     if ("null"!=String.valueOf(response.get("result"))) {
+                               // Log.e("resulr",response.getString("result"));
                         //Log.e("result", list.toString());
                          List<ExplainDream> list=ExplainDreamParser.getGson(response);
                          Message message = new Message();
                          message.what = 0;
                          message.obj = list;
                          mHander.sendMessage(message);
+
                      }else {
                          mHander.sendEmptyMessage(1);
                      }
 
                  } catch (JSONException e) {
-
                      e.printStackTrace();
                  }
              }
