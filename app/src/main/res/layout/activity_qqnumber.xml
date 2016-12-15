@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_qqnumber"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/qq_back"
+    android:orientation="vertical"
+    android:background="@drawable/qq_bg1"
     tools:context="com.lifeofnothing.wxp.convenientlife.ui.QQNumberActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/qq_qie"/>
+  <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <EditText
+             android:layout_width="250dp"
+             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+             android:layout_gravity="center"
+             android:layout_marginLeft="50dp"
+             android:text="请输入qq号码"
+            android:textSize="20dp"
+            android:background="@drawable/corner_white"
+             android:id="@+id/Ivqqnumber"/>
 
-</RelativeLayout>
+            <Button
+                android:layout_marginTop="-10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Ivqqnumber"
+                android:id="@+id/Ivqqbtn"
+                android:text="确定"/>
+
+  </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="70dp"
+                android:paddingRight="30dp"
+                android:src="@drawable/qq_ji"
+                android:id="@+id/Imqqji"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:src="@drawable/qq_xong"/>
+        </LinearLayout>
+
+</LinearLayout>

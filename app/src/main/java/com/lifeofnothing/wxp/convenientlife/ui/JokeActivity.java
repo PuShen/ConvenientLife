@@ -25,6 +25,7 @@ public class JokeActivity extends Activity {
     private Button vJoke;  //换一换按钮
     private ImageView vBack;//返回键
     private Button vFunnyPicJoke;  //有图笑话按钮
+    private ImageView hahahahaha;
     private String vUrl1 = "http://v.juhe.cn/joke/randJoke.php?key=99955ed34841b72633054903d94dc642";
     private String vUrl2 = "http://v.juhe.cn/joke/randJoke.php?type=pic&key=99955ed34841b72633054903d94dc642" ;
 
@@ -42,9 +43,11 @@ public class JokeActivity extends Activity {
 //                    break;
                 case R.id.BtnJokeRefresh:
                     new Thread(new JokeTask(handler,vJoke,vUrl1)).start();
+                    hahahahaha.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.BtnJokeFunny:
                     new Thread(new JokeTask(handler,vFunnyPicJoke,vUrl2)).start();
+                    hahahahaha.setVisibility(View.INVISIBLE);
                     break;
             }
         }
@@ -88,6 +91,7 @@ public class JokeActivity extends Activity {
         vBack=(ImageView)findViewById(R.id.IvJokeBack);
         vJoke = (Button)findViewById(R.id.BtnJokeRefresh);
         vFunnyPicJoke = (Button)findViewById(R.id.BtnJokeFunny);
+        hahahahaha=(ImageView)findViewById(R.id.hahahaha);
     }
     @Override
     protected void onResume() {
@@ -95,6 +99,7 @@ public class JokeActivity extends Activity {
         vBack.setOnClickListener(listener);
         vJoke.setOnClickListener(listener);
         vFunnyPicJoke.setOnClickListener(listener);
+        hahahahaha.setOnClickListener(listener);
     }
 
 //        @Override

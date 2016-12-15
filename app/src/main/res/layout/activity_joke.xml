@@ -56,10 +56,20 @@
             android:layout_weight="3"
             android:text="趣图笑话"/>
     </LinearLayout>
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:paddingTop="140dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/xiaohua_xiaoba"
+        android:id="@+id/hahahaha"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/LvJokeList">
     </ListView>
+</FrameLayout>
 </LinearLayout>
