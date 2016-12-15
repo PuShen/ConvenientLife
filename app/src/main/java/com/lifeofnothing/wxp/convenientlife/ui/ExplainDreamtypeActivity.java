@@ -47,6 +47,7 @@ public class ExplainDreamtypeActivity extends Activity{
                             e.printStackTrace();
                         }
                     }
+                    break;
             }
 
         }

@@ -45,29 +45,6 @@ public class ExplainDreamActivity extends Activity {
         }
     };
 
-//private Handler mHandler=new Handler(){
-  //  @Override
-   // public void handleMessage(Message msg) {
-     //   super.handleMessage(msg);
-      //  switch (msg.what){
-          //  case 0:
-              //  SharedPreferences sharedPreferences=getSharedPreferences("conveninetlife",MODE_PRIVATE);
-               // SharedPreferences.Editor editor=sharedPreferences.edit();
-               // editor.putString("mParm",EtExplainDreamSearch.getText().toString());
-                //editor.commit();
-
-              //  ExplainDreamAdapter adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
-
-               // break;
-          //  case 1:
-           //     Toast.makeText(ExplainDreamActivity.this,"您输入的梦的关键字不存在，请重新输入!",Toast.LENGTH_SHORT).show();
-           //     break;
-          //  case 2:
-            //    Toast.makeText(ExplainDreamActivity.this,"您的网络不佳，请检查您的网络!",Toast.LENGTH_SHORT).show();
-             //   break;
-     //   }
-  //  }
-//};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
