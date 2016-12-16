@@ -1,10 +1,12 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/11/24.
  */
 
-public class WeChat {
+public class WeChat implements Serializable{
     private String id;
     private String title;
     private String source;
@@ -63,4 +65,14 @@ public class WeChat {
         this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return "WeChat{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", source='" + source + '\'' +
+                ", firstImg='" + firstImg + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

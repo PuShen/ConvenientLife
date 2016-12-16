@@ -18,6 +18,7 @@ import com.lifeofnothing.wxp.convenientlife.adapter.WeChatAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
 import com.lifeofnothing.wxp.convenientlife.http.RefreshTask;
 import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,6 @@ public class WechatActivity extends Activity {
                     list=(List<WeChat>)msg.obj;
                     adapter=new WeChatAdapter(WechatActivity.this,list);
                     mLvList.setAdapter(adapter);
-                    mSwrRefresh.setOnRefreshListener(refreshListener);
                     mLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -63,10 +63,21 @@ public class WechatActivity extends Activity {
                             startActivity(intent);
                         }
                     });
+                    ObjectCacheUtils.setCache("wechat",list);
                     break;
                 case 1:
                     adapter.notifyDataSetChanged();
                     mSwrRefresh.setRefreshing(false);
+                    break;
+                case 2:
+                    if (ObjectCacheUtils.exists("wechat")){
+                        list=(List<WeChat>)ObjectCacheUtils.getCache("wechat");
+                        Log.e("list is null",String.valueOf(null==list));
+                        adapter=new WeChatAdapter(WechatActivity.this,list);
+                        mLvList.setAdapter(adapter);
+                    }
+                    mSwrRefresh.setRefreshing(false);
+                    Toast.makeText(WechatActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -99,5 +110,6 @@ public class WechatActivity extends Activity {
         mIvBack.setOnClickListener(listener);;
         mSwrRefresh.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_blue_bright,android.R.color.holo_red_light);
         mSwrRefresh.setProgressBackgroundColorSchemeResource(R.color.colorLightBlue);
+        mSwrRefresh.setOnRefreshListener(refreshListener);
     }
 }

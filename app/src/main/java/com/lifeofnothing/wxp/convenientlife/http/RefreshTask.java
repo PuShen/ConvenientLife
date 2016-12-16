@@ -52,6 +52,7 @@ public class RefreshTask implements Runnable {
             e.printStackTrace();
         } catch (IOException e){
             e.printStackTrace();
+            mHandler.sendEmptyMessage(2);
         } finally {
             if (reader != null) {
                 try {

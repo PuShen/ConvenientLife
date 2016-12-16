@@ -50,7 +50,9 @@ public class ObjectCacheUtils {
             e.printStackTrace();
         } finally {
             try {
-                outputStream.close();
+                if (null!=outputStream){
+                    outputStream.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,7 +80,9 @@ public class ObjectCacheUtils {
             e.printStackTrace();
         } finally {
             try {
-                inputStream.close();
+                if (null!=inputStream){
+                    inputStream.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -64,9 +64,11 @@ public class NewsActivity extends Activity {
                     ObjectCacheUtils.setCache("news",list);
                     break;
                 case 2:
-                    List<News> list1= (List<News>) ObjectCacheUtils.getCache("news");
-                    NewsAdapter adapter1=new NewsAdapter(NewsActivity.this,list1);
-                    mLvList.setAdapter(adapter1);
+                    if (ObjectCacheUtils.exists("news")){
+                        List<News> list1= (List<News>) ObjectCacheUtils.getCache("news");
+                        NewsAdapter adapter1=new NewsAdapter(NewsActivity.this,list1);
+                        mLvList.setAdapter(adapter1);
+                    }
                     Toast.makeText(NewsActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }

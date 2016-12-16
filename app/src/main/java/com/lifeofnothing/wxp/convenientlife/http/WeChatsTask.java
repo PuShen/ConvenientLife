@@ -44,6 +44,12 @@ public class WeChatsTask {
                 message.obj = parser.parse();
                 mHandler.sendMessage(message);
             }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                mHandler.sendEmptyMessage(2);
+            }
         });
     }
 
