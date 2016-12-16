@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.Weather;
 import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -93,9 +94,13 @@ public class WeatherActivity extends Activity {
             switch (msg.what){
                 case 0:
                     mList=(List<Weather>) msg.obj;
-                    init();
+                    init(mList);
+                    ObjectCacheUtils.setCache("weather",mList);
                     break;
                 case 2:
+                    if (ObjectCacheUtils.exists("weather")){
+                        init((List<Weather>) ObjectCacheUtils.getCache("weather"));
+                    }
                     Toast.makeText(WeatherActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -189,7 +194,7 @@ public class WeatherActivity extends Activity {
         }
     }
 
-    private void init(){
+    private void init(List<Weather> mList){
         mTvTemperature.setText(mList.get(0).getTemperature());
         mIvImage.setImageResource(mList.get(0).getImg());
         mTvWeather.setText(mList.get(0).getInfo());

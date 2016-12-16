@@ -72,7 +72,6 @@ public class WechatActivity extends Activity {
                 case 2:
                     if (ObjectCacheUtils.exists("wechat")){
                         list=(List<WeChat>)ObjectCacheUtils.getCache("wechat");
-                        Log.e("list is null",String.valueOf(null==list));
                         adapter=new WeChatAdapter(WechatActivity.this,list);
                         mLvList.setAdapter(adapter);
                     }

@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Created by Administrator on 2016/11/24.
  */
 
-public class Weather {
+public class Weather implements Serializable{
 //城市，日期
     private String city_name;
     private String date;
