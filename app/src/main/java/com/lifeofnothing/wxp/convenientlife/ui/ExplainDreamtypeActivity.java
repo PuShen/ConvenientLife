@@ -90,6 +90,7 @@ public class ExplainDreamtypeActivity extends Activity{
                     break;
                 case 2:
                     Dialog.dismiss();
+                    //
                     if (ObjectCacheUtils.exists("ExplainDream")){
                         list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
                         adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
