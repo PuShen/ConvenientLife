@@ -1,24 +1,15 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
-import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
-import com.lifeofnothing.wxp.convenientlife.entity.PerpetualCalendar;
-import com.lifeofnothing.wxp.convenientlife.http.NbaTask;
-import com.lifeofnothing.wxp.convenientlife.http.WeChatsTask;
-import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
-
-import java.io.UnsupportedEncodingException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private TextView mTvNews;
     private TextView mTvWechat;
     private TextView mTvWeather;
@@ -27,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvExplainDream;
     private TextView mTvPerpetualCalendar;
     private TextView mTvQQNumber;
+    private View mLlayMain;
+    private int[] mBackgroungArrays={R.drawable.bg1,R.drawable.bg2,R.drawable.bg3,R.drawable.bg4,R.drawable.bg5,R.drawable.bg6,R.drawable.bg7};
+
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -83,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         mTvExplainDream= (TextView) findViewById(R.id.TvMainExplainDream);
         mTvPerpetualCalendar= (TextView) findViewById(R.id.TvMainPerpetualCalendar);
         mTvQQNumber=(TextView)findViewById(R.id.TvMainQQNumber);
+        mLlayMain=findViewById(R.id.LlayMainMain);
     }
 
     @Override
@@ -96,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         mTvExplainDream.setOnClickListener(listener);
         mTvPerpetualCalendar.setOnClickListener(listener);
         mTvQQNumber.setOnClickListener(listener);
-
+        mLlayMain.setBackgroundResource(mBackgroungArrays[(int) (Math.random()*mBackgroungArrays.length)]);
     }
 
 }
