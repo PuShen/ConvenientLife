@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.QQNumber;
@@ -39,7 +40,16 @@ public class QQNumberActivity extends Activity {
                     mQqJi.setVisibility(View.INVISIBLE);
                     mQQtv.setVisibility(View.VISIBLE);
                     String mQQ = mQQNumber.getText().toString();
-                    new QQNumberTask(mQQ,handler).QQNum_run();
+                    if(mQQ.isEmpty()){
+                        Toast.makeText(QQNumberActivity.this,"您未输入qq号码或者输入了非法字符请重新输入",Toast.LENGTH_SHORT).show();
+                        break;
+                    }else if(mQQ.length()>10){
+                        Toast.makeText(QQNumberActivity.this,"暂不提供超过10位数的qq号码查询",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    else{
+                        new QQNumberTask(mQQ,handler).QQNum_run();
+                    }
                     break;
                 case R.id.IvQqBack:
                     QQNumberActivity.this.finish();
@@ -55,6 +65,9 @@ public class QQNumberActivity extends Activity {
                     qq = (QQNumber) msg.obj;
                     String a = "分析：\n"+qq.getAnalysis()+"\n结论：\n"+qq.getConclusion();
                     mQQtv.setText(a);
+                    break;
+                case 1:
+                    Toast.makeText(QQNumberActivity.this,"您的网络可能开小差了~",Toast.LENGTH_SHORT).show();
             }
             super.handleMessage(msg);
         }
