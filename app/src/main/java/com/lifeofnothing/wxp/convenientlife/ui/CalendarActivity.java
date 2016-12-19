@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +20,13 @@ import com.lifeofnothing.wxp.convenientlife.http.PerpetualCalendarTask;
  * 日历显示activity
  */
 public class CalendarActivity extends Activity {
-	private TextView textView;
+	private TextView textView1;
+	private TextView textView2;
+	private TextView textView3;
+	private TextView textView4;
+	private TextView textView5;
+	private TextView textView6;
+	private TextView textView7;
 	private ImageView mIvCaleandarback;
 	private CalendarView calendarview;
 	private PerpetualCalendar mPerpetualCalendar;
@@ -44,13 +51,13 @@ public class CalendarActivity extends Activity {
 		super.onStart();
 		mIvCaleandarback= (ImageView) findViewById(R.id.IvCalendarBack);
 		calendarview = (CalendarView) findViewById(R.id.calendarview);
-		textView = (TextView)findViewById(R.id.first);
-		textView = (TextView)findViewById(R.id.second);
-		textView = (TextView)findViewById(R.id.three);
-		textView = (TextView)findViewById(R.id.four);
-		textView = (TextView)findViewById(R.id.five);
-		textView = (TextView)findViewById(R.id.six);
-		textView = (TextView)findViewById(R.id.seven);
+		textView1 = (TextView)findViewById(R.id.first);
+		textView2 = (TextView)findViewById(R.id.second);
+		textView3 = (TextView)findViewById(R.id.three);
+		textView4 = (TextView)findViewById(R.id.four);
+		textView5 = (TextView)findViewById(R.id.five);
+		textView6 = (TextView)findViewById(R.id.six);
+		textView7 = (TextView)findViewById(R.id.seven);
 	}
 	private Handler mHandler = new Handler(){
 		@Override
@@ -59,6 +66,15 @@ public class CalendarActivity extends Activity {
 			switch (msg.what){
 				case 0:
 					mPerpetualCalendar = (PerpetualCalendar) msg.obj;
+					/* 测试
+					Log.e("dghfad",mPerpetualCalendar.toString());*/
+					textView1.setText(mPerpetualCalendar.getmAnimalsYear());
+					textView2.setText(mPerpetualCalendar.getmLunarYear());
+					textView3.setText(mPerpetualCalendar.getmLunar());
+					textView4.setText(mPerpetualCalendar.getmAvoid());
+					textView5.setText(mPerpetualCalendar.getmSuit());
+					textView6.setText(mPerpetualCalendar.getmDate());
+					textView7.setText(mPerpetualCalendar.getmHoliday());
 					break;
 			}
 		}
@@ -71,8 +87,6 @@ public class CalendarActivity extends Activity {
 
 			@Override
 			public void clickData(String year, String month, String day) {
-				Toast.makeText(getApplicationContext(),
-						year + "-" + month + "-" + day, Toast.LENGTH_SHORT).show();
 				new Thread(new PerpetualCalendarTask(year + "-" + month + "-" + day,mHandler)).start();
 
 			}

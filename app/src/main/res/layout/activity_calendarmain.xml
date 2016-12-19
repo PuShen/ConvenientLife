@@ -29,6 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </com.lifeofnothing.wxp.convenientlife.entity.CalendarView>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,30 +39,38 @@
         <TextView
             android:id="@+id/first"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
             android:id="@+id/second"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
             android:id="@+id/three"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
             android:id="@+id/four"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
            android:id="@+id/five"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
             android:id="@+id/six"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
         <TextView
             android:id="@+id/seven"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"/>
     </LinearLayout>
+</ScrollView>
 </LinearLayout>

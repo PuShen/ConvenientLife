@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.http;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.lifeofnothing.wxp.convenientlife.parser.PerpetualCalendarParser;
 
@@ -45,6 +46,7 @@ public class PerpetualCalendarTask implements Runnable {
                 buffer.append(line);
             }
             //发送信息
+            Log.e("ab",PerpetualCalendarParser.getGson(buffer).toString());
             Message message = new Message();
             message.what = 0;
             message.obj = PerpetualCalendarParser.getGson(buffer);

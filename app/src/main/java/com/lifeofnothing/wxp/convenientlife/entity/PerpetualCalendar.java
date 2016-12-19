@@ -14,13 +14,19 @@ public class PerpetualCalendar {
     private  String mYearMonth;   //年月
     private  String mDate;        //日期
     private  String mAvoid;       //忌
-    public PerpetualCalendar(String mAnimalsYear, String mWeekday, String mLunarYear, String mLunar, String mYearMonth, String mDate) {
+    private String mSuit;         //宜
+    private String mHoliday;      //节日
+
+    public PerpetualCalendar(String mAnimalsYear, String mWeekday, String mLunarYear, String mLunar, String mYearMonth, String mDate, String mAvoid, String mSuit, String mHoliday) {
         this.mAnimalsYear = mAnimalsYear;
         this.mWeekday = mWeekday;
         this.mLunarYear = mLunarYear;
         this.mLunar = mLunar;
         this.mYearMonth = mYearMonth;
         this.mDate = mDate;
+        this.mAvoid = mAvoid;
+        this.mSuit = mSuit;
+        this.mHoliday = mHoliday;
     }
 
     public String getmAnimalsYear() {
@@ -75,5 +81,47 @@ public class PerpetualCalendar {
     public PerpetualCalendar setmDate(String mDate) {
         this.mDate = mDate;
         return this;
+    }
+
+    public String getmSuit() {
+        return mSuit;
+    }
+
+    public PerpetualCalendar setmSuit(String mSuit) {
+        this.mSuit = mSuit;
+        return this;
+    }
+
+    public String getmHoliday() {
+        return mHoliday;
+    }
+
+    public PerpetualCalendar setmHoliday(String mHoliday) {
+        this.mHoliday = mHoliday;
+        return this;
+    }
+
+    public String getmAvoid() {
+        return mAvoid;
+    }
+
+    public PerpetualCalendar setmAvoid(String mAvoid) {
+        this.mAvoid = mAvoid;
+        return  this;
+    }
+
+    @Override
+    public String toString() {
+        return "PerpetualCalendar{" +
+                "mAnimalsYear='" + mAnimalsYear + '\'' +
+                ", mWeekday='" + mWeekday + '\'' +
+                ", mLunarYear='" + mLunarYear + '\'' +
+                ", mLunar='" + mLunar + '\'' +
+                ", mYearMonth='" + mYearMonth + '\'' +
+                ", mDate='" + mDate + '\'' +
+                ", mAvoid='" + mAvoid + '\'' +
+                ", mSuit='" + mSuit + '\'' +
+                ", mHoliday='" + mHoliday + '\'' +
+                '}';
     }
 }
