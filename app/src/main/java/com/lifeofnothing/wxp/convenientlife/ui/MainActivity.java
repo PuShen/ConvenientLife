@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     private TextView mTvPerpetualCalendar;
     private TextView mTvQQNumber;
     private View mLlayMain;
-    private int[] mBackgroungArrays={R.drawable.bg1,R.drawable.bg2,R.drawable.bg3,R.drawable.bg4,R.drawable.bg5,R.drawable.bg6,R.drawable.bg7};
+    private int[] mBackgroungArrays={R.drawable.bg1,R.drawable.bg2,R.drawable.bg3,R.drawable.bg4,R.drawable.bg5,R.drawable.bg6,R.drawable.bg7,R.drawable.bg8,R.drawable.bg9};
 
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
