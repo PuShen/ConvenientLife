@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.http.ExplainDreamTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
@@ -34,6 +35,8 @@ public class ExplainDreamtypeActivity extends Activity{
     private EditText EtExplainDream;
     private ImageView IvExplainDreamSearch;
     private ProgressDialog Dialog;
+    private List<ExplainDream> list;
+    private  ExplainDreamAdapter adapter;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -63,9 +66,9 @@ public class ExplainDreamtypeActivity extends Activity{
             switch (msg.what){
                 case 0:
                     Dialog.dismiss();
-                    final List<ExplainDream> list=(List<ExplainDream>) msg.obj;
+                    list=(List<ExplainDream>) msg.obj;
                   //  Log.e("result",list.toString());
-                    ExplainDreamAdapter adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
+                     adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
                     LvExplainDreamList.setAdapter(adapter);
                     LvExplainDreamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -79,6 +82,7 @@ public class ExplainDreamtypeActivity extends Activity{
 
                         }
                     });
+                    ObjectCacheUtils.setCache("ExplainDream",list);
                     break;
                 case 1:
                     Dialog.dismiss();
@@ -86,6 +90,12 @@ public class ExplainDreamtypeActivity extends Activity{
                     break;
                 case 2:
                     Dialog.dismiss();
+                    if (ObjectCacheUtils.exists("ExplainDream")){
+                        list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
+                        adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
+                        LvExplainDreamList.setAdapter(adapter);
+                    }
+                    Log.e("result", String.valueOf(list));
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
                     break;
 
