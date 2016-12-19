@@ -7,6 +7,23 @@
     android:orientation="vertical"
     android:background="@drawable/qq_bg1"
     tools:context="com.lifeofnothing.wxp.convenientlife.ui.QQNumberActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/activity_layout_margieright">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/IvQqBack"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQ号码测吉凶"
+            android:textColor="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,15 +33,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
         <EditText
-             android:layout_width="250dp"
-             android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-             android:layout_gravity="center"
-             android:layout_marginLeft="50dp"
-             android:text="请输入qq号码"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:hint="请输入要查询的qq号"
             android:textSize="20dp"
             android:background="@drawable/corner_white"
-             android:id="@+id/Ivqqnumber"/>
+            android:id="@+id/Ivqqnumber"/>
 
             <Button
                 android:layout_marginTop="-10dp"

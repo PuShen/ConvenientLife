@@ -1,5 +1,6 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,12 @@ import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 
-public class QQNumberActivity extends AppCompatActivity {
-    private Button btn;
-    private ImageView Imqqji;
-    private ImageView Imqqxong;
+public class QQNumberActivity extends Activity {
+    private ImageView mQqJi;
+    private ImageView mQqXiong;
+    private ImageView mQqBack;
+    private Button mQqSure;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +25,11 @@ public class QQNumberActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.Ivqqbtn :
-                    Imqqxong.setVisibility(View.INVISIBLE);
-                    Imqqji.setVisibility(View.INVISIBLE);
+                    mQqXiong.setVisibility(View.INVISIBLE);
+                    mQqJi.setVisibility(View.INVISIBLE);
                     break;
+                case R.id.IvQqBack:
+                    QQNumberActivity.this.finish();
             }
         }
     };
@@ -32,16 +37,18 @@ public class QQNumberActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        btn=(Button)findViewById(R.id.Ivqqbtn);
-        Imqqji=(ImageView) findViewById(R.id.Imqqji);
-        Imqqxong=(ImageView) findViewById(R.id.Imqqxong);
+        mQqJi=(ImageView) findViewById(R.id.Imqqji);
+        mQqXiong=(ImageView) findViewById(R.id.Imqqxong);
+        mQqBack = (ImageView)findViewById(R.id.IvQqBack);
+        mQqSure = (Button)findViewById(R.id.Ivqqbtn);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        btn.setOnClickListener(listener);
-        Imqqji.setOnClickListener(listener);
-        Imqqxong.setOnClickListener(listener);
+        mQqJi.setOnClickListener(listener);
+        mQqXiong.setOnClickListener(listener);
+        mQqBack.setOnClickListener(listener);
+        mQqSure.setOnClickListener(listener);
     }
 }
