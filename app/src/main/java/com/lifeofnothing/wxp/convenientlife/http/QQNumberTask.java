@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.lifeofnothing.wxp.convenientlife.entity.QQNumber;
+import com.lifeofnothing.wxp.convenientlife.parser.QQNumberParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -40,14 +41,17 @@ public class QQNumberTask{
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 Message msg = new Message();
-                msg.obj = response;
+                QQNumberParser qq = new QQNumberParser(response.toString());
+                QQNumber q1 = qq.parse();
+                msg.obj = q1;
+                msg.what = 0;
                 mHandler.sendMessage(msg);
                 super.onSuccess(statusCode, headers, response);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                mHandler.sendEmptyMessage(2);
+                mHandler.sendEmptyMessage(1);
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });

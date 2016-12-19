@@ -49,9 +49,13 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/Ivqqnumber"
                 android:id="@+id/Ivqqbtn"
-                android:text="确定"/>
+                android:text="查询"/>
 
   </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="45dp"
                 android:paddingRight="30dp"
                 android:src="@drawable/qq_ji"
                 android:id="@+id/Imqqji"/>
@@ -71,5 +75,16 @@
                 android:src="@drawable/qq_xong"
                 android:id="@+id/Imqqxong"/>
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvQQInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"
+            android:visibility="invisible"/>
+    </FrameLayout>
 
 </LinearLayout>
