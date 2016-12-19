@@ -17,6 +17,9 @@ import com.lifeofnothing.wxp.convenientlife.entity.QQNumber;
 import com.lifeofnothing.wxp.convenientlife.http.QQNumberTask;
 import com.lifeofnothing.wxp.convenientlife.parser.QQNumberParser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QQNumberActivity extends Activity {
     private ImageView mQqJi;
     private ImageView mQqXiong;
@@ -41,14 +44,22 @@ public class QQNumberActivity extends Activity {
                     mQQtv.setVisibility(View.VISIBLE);
                     String mQQ = mQQNumber.getText().toString();
                     if(mQQ.isEmpty()){
-                        Toast.makeText(QQNumberActivity.this,"您未输入qq号码或者输入了非法字符请重新输入",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QQNumberActivity.this,"请正确输入您的qq号",Toast.LENGTH_SHORT).show();
+                        mQQtv.setText(null);
                         break;
                     }else if(mQQ.length()>10){
                         Toast.makeText(QQNumberActivity.this,"暂不提供超过10位数的qq号码查询",Toast.LENGTH_SHORT).show();
+                        mQQtv.setText(null);
                         break;
-                    }
-                    else{
-                        new QQNumberTask(mQQ,handler).QQNum_run();
+                    } else{
+                        Pattern p = Pattern.compile("[0-9]*");
+                        Matcher m = p.matcher(mQQ);
+                        if(m.matches()){
+                            new QQNumberTask(mQQ,handler).QQNum_run();
+                        }else {
+                            Toast.makeText(QQNumberActivity.this,"请正确输入您的qq号",Toast.LENGTH_SHORT).show();
+                            mQQtv.setText(null);
+                        }
                     }
                     break;
                 case R.id.IvQqBack:
