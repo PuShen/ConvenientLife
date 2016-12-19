@@ -96,7 +96,7 @@ public class ExplainDreamtypeActivity extends Activity{
                         adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
                         LvExplainDreamList.setAdapter(adapter);
                     }
-                    Log.e("result", String.valueOf(list));
+                   // Log.e("result", String.valueOf(list));
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
                     break;
 
