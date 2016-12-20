@@ -106,7 +106,6 @@ public class CalendarActivity extends Activity {
 			@Override
 			public void clickData(String year, String month, String day) {
 				new Thread(new PerpetualCalendarTask(year + "-" + month + "-" + day,mHandler)).start();
-
 			}
 		});
 

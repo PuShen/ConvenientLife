@@ -132,11 +132,16 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlue"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlue"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
 </LinearLayout>
