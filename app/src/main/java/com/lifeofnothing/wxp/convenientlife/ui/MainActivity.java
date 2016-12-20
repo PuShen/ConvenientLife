@@ -10,14 +10,14 @@ import com.lifeofnothing.wxp.convenientlife.R;
 
 
 public class MainActivity extends Activity {
-    private TextView mTvNews;
-    private TextView mTvWechat;
-    private TextView mTvWeather;
-    private TextView mTvJoke;
-    private TextView mTvBusLine;
-    private TextView mTvExplainDream;
-    private TextView mTvPerpetualCalendar;
-    private TextView mTvQQNumber;
+    private View mTvNews;
+    private View mTvWechat;
+    private View mTvWeather;
+    private View mTvJoke;
+    private View mTvBusLine;
+    private View mTvExplainDream;
+    private View mTvPerpetualCalendar;
+    private View mTvQQNumber;
     private View mLlayMain;
     private int[] mBackgroungArrays={R.drawable.bg1,R.drawable.bg2,R.drawable.bg3,R.drawable.bg4,R.drawable.bg5,R.drawable.bg6,R.drawable.bg7,R.drawable.bg8,R.drawable.bg9};
 
@@ -25,37 +25,37 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.TvMainNews:
-                    Intent intent=new Intent(MainActivity.this,NewsActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.TvMainWechat:
-                    Intent intent1 = new Intent(MainActivity.this,WechatActivity.class);
+                case R.id.LlayMainNews:
+                    Intent intent1=new Intent(MainActivity.this,NewsActivity.class);
                     startActivity(intent1);
                     break;
-                case R.id.TvMainWeather:
-                    Intent intent2 = new Intent(MainActivity.this,WeatherActivity.class);
+                case R.id.LlayMainWechat:
+                    Intent intent2 = new Intent(MainActivity.this,WechatActivity.class);
                     startActivity(intent2);
                     break;
-                case R.id.TvMainJoke:
-                    Intent intent3=new Intent(MainActivity.this,JokeActivity.class);
+                case R.id.LlayMainWeather:
+                    Intent intent3 = new Intent(MainActivity.this,WeatherActivity.class);
                     startActivity(intent3);
                     break;
-                case R.id.TvMainBusLine:
-                    Intent intent4=new Intent(MainActivity.this, BusLineActivity.class);
+                case R.id.LlayMainJoke:
+                    Intent intent4=new Intent(MainActivity.this,JokeActivity.class);
                     startActivity(intent4);
                     break;
-                case R.id.TvMainExplainDream:
-                    Intent intent5=new Intent(MainActivity.this, ExplainDreamActivity.class);
+                case R.id.LlayMainBus:
+                    Intent intent5=new Intent(MainActivity.this, BusLineActivity.class);
                     startActivity(intent5);
                     break;
-                case R.id.TvMainPerpetualCalendar:
-                    Intent intent6=new Intent(MainActivity.this, CalendarActivity.class);
+                case R.id.LlayMainDream:
+                    Intent intent6=new Intent(MainActivity.this, ExplainDreamActivity.class);
                     startActivity(intent6);
                     break;
-                case R.id.TvMainQQNumber:
-                    Intent intent7=new Intent(MainActivity.this,QQNumberActivity.class);
+                case R.id.LlayMainCalendar:
+                    Intent intent7=new Intent(MainActivity.this, CalendarActivity.class);
                     startActivity(intent7);
+                    break;
+                case R.id.LlayMainQQ:
+                    Intent intent8=new Intent(MainActivity.this,QQNumberActivity.class);
+                    startActivity(intent8);
             }
         }
     };
@@ -69,14 +69,14 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        mTvNews= (TextView) findViewById(R.id.TvMainNews);
-        mTvWechat =(TextView)findViewById(R.id.TvMainWechat);
-        mTvWeather =(TextView)findViewById(R.id.TvMainWeather);
-        mTvJoke= (TextView) findViewById(R.id.TvMainJoke);
-        mTvBusLine= (TextView) findViewById(R.id.TvMainBusLine);
-        mTvExplainDream= (TextView) findViewById(R.id.TvMainExplainDream);
-        mTvPerpetualCalendar= (TextView) findViewById(R.id.TvMainPerpetualCalendar);
-        mTvQQNumber=(TextView)findViewById(R.id.TvMainQQNumber);
+        mTvNews= findViewById(R.id.LlayMainNews);
+        mTvWechat = findViewById(R.id.LlayMainWechat);
+        mTvWeather = findViewById(R.id.LlayMainWeather);
+        mTvJoke=  findViewById(R.id.LlayMainJoke);
+        mTvBusLine= findViewById(R.id.LlayMainBus);
+        mTvExplainDream= findViewById(R.id.LlayMainDream);
+        mTvPerpetualCalendar= findViewById(R.id.LlayMainCalendar);
+        mTvQQNumber=findViewById(R.id.LlayMainQQ);
         mLlayMain=findViewById(R.id.LlayMainMain);
     }
 
