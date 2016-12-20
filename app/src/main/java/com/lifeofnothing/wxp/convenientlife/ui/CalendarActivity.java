@@ -51,7 +51,6 @@ public class CalendarActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendarmain);
 	}
-
 	@Override
 	protected void onStart() {
 		super.onStart();
