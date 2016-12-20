@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/activity_main"
+    android:id="@+id/LlayMainMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lifeofnothing.wxp.convenientlife.ui.MainActivity">
@@ -21,8 +21,8 @@
         android:id="@+id/TvMainWechat"
         android:background="@drawable/weixin"
         android:text="@string/title_wechat"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/activity_item_height"
+        android:layout_height="@dimen/activity_item_height"
         android:gravity="center"/>
     <TextView
         android:id="@+id/TvMainWeather"
@@ -34,9 +34,9 @@
     <TextView
         android:id="@+id/TvMainJoke"
         android:background="@drawable/joke"
-        android:text="笑话大全"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:text="@string/title_joke"
+        android:layout_width="@dimen/activity_item_height"
+        android:layout_height="@dimen/activity_item_height"
         android:gravity="center"/>
    </LinearLayout>
 
@@ -48,30 +48,29 @@
             android:id="@+id/TvMainBusLine"
             android:background="@drawable/bus"
             android:text="@string/title_bus"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
             android:gravity="center"/>
         <TextView
             android:id="@+id/TvMainExplainDream"
             android:background="@drawable/dream"
             android:text="@string/title_explaindream"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
             android:gravity="center"/>
         <TextView
             android:id="@+id/TvMainPerpetualCalendar"
             android:background="@drawable/wannianli"
             android:text="@string/title_perpetualclendar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
             android:gravity="center"/>
         <TextView
-        android:id="@+id/TvMainQQNumber"
-        android:background="@drawable/qq_number"
-        android:text="QQ号测吉凶"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:gravity="center"/>
-
+            android:id="@+id/TvMainQQNumber"
+            android:background="@drawable/qq_number"
+            android:text="@string/title_qqnum"
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
+            android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>

@@ -13,6 +13,7 @@ import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
 import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
+import com.lifeofnothing.wxp.convenientlife.utils.ImageLoaderUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +58,7 @@ public class JokeAdapter extends BaseAdapter{
             TextView TvFunnyUnixTime =(TextView)convertView.findViewById(R.id.TvFunnyUnixTime);
             TvFunnyUnixTime.setText(jokeList.get(position).getmUnixtime());
             ImageView Ivfunnypic =(ImageView)convertView.findViewById(R.id.Ivfunnypic);
-            AsyncImageLoad imageLoad = new AsyncImageLoad(jokeList.get(position).getmImageUrl(),Ivfunnypic);
-            imageLoad.execute();
+            ImageLoaderUtils.displayImage(jokeList.get(position).getmImageUrl(),Ivfunnypic,context);
         }
         else{
             convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);

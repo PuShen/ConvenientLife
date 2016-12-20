@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.JokeAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
 import com.lifeofnothing.wxp.convenientlife.http.JokeTask;
+import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +70,9 @@ public class JokeActivity extends Activity {
                     JokeAdapter adapter1=new JokeAdapter(JokeActivity.this,list1,vFunnyPicJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter1);
+                    break;
+                case 2:
+                    Toast.makeText(JokeActivity.this,"世界上最遥远的距离就是没网~",Toast.LENGTH_SHORT).show();
                     break;
             }
         }

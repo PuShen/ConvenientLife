@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:padding="@dimen/activity_layout_margieright">
+        android:padding="@dimen/activity_layout_margieright">蛇
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,14 +25,30 @@
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <EditText
+        <!--<EditText-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:id="@+id/EtExplainDream"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="您梦到的关键字"/>-->
+        <AutoCompleteTextView
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:id="@+id/EtExplainDream"
+            android:id="@+id/auto"
             android:layout_height="wrap_content"
-            android:hint="您梦到的关键字"/>
+            android:hint="您梦到的关键字"
+            android:completionHint="最近的五条记录"
+            android:completionThreshold="1"
+            android:dropDownHeight="match_parent"/>
         <ImageView
             android:id="@+id/IvExplainDreamSearch"
             android:layout_width="wrap_content"
