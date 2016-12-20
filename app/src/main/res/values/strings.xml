@@ -58,5 +58,7 @@
     <string name="title_perpetualclendar">万年历</string>
     <string name="action_settings">Settings</string>
     <string name="title_clendar">中华万年历</string>
+    <string name="title_joke">笑话大全</string>
+    <string name="title_qqnum">QQ号测吉凶</string>
 
 </resources>

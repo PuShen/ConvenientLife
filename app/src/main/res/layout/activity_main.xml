@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/TvMainJoke"
         android:background="@drawable/joke"
-        android:text="笑话大全"
+        android:text="@string/title_joke"
         android:layout_width="@dimen/activity_item_height"
         android:layout_height="@dimen/activity_item_height"
         android:gravity="center"/>
@@ -68,7 +68,7 @@
         <TextView
             android:id="@+id/TvMainQQNumber"
             android:background="@drawable/qq_number"
-            android:text="QQ号测吉凶"
+            android:text="@string/title_qqnum"
             android:layout_width="@dimen/activity_item_height"
             android:layout_height="@dimen/activity_item_height"
             android:gravity="center"/>
