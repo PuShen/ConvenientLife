@@ -3,6 +3,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -16,7 +18,7 @@ public class ExplainDreamActivity extends Activity {
     private ImageView IvExplainDreamBack;
   //
     private LinearLayout LlayExplainDreamSearch;
-
+    private ImageView IvExplainDreammaotouying;
     private View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -31,7 +33,11 @@ public class ExplainDreamActivity extends Activity {
             }
         }
     };
+    public void rotateImpl(){
+    Animation animation= AnimationUtils.loadAnimation(ExplainDreamActivity.this,R.anim.explaindream_foot_rotate);
+        IvExplainDreammaotouying.setAnimation(animation);
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +49,7 @@ public class ExplainDreamActivity extends Activity {
     protected void onStart() {
         super.onStart();
         IvExplainDreamBack=(ImageView)findViewById(R.id.IvExplainDreamBack);
-
+        IvExplainDreammaotouying=(ImageView)findViewById(R.id.IvExplainDreammaotouying);
         LlayExplainDreamSearch=(LinearLayout) findViewById(R.id.LlayExplainDreamSearch);
 
     }
@@ -53,5 +59,6 @@ public class ExplainDreamActivity extends Activity {
         super.onResume();
         IvExplainDreamBack.setOnClickListener(listener);
         LlayExplainDreamSearch.setOnClickListener(listener);
+        rotateImpl();
     }
 }
