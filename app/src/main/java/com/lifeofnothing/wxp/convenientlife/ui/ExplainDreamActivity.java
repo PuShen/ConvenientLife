@@ -60,7 +60,7 @@ public class ExplainDreamActivity extends Activity {
         super.onResume();
         IvExplainDreamBack.setOnClickListener(listener);
         LlayExplainDreamSearch.setOnClickListener(listener);
-       rotateImpl();
+        rotateImpl();
 
     }
 }
