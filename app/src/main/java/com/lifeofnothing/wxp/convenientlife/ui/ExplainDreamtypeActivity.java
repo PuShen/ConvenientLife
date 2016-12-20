@@ -45,14 +45,13 @@ public class ExplainDreamtypeActivity extends Activity{
                     finish();
                     break;
                 case R.id.IvExplainDreamSearch:
-                    if (0!=EtExplainDream.getText().length()) {
+                     if(0!=EtExplainDream.getText().length())
                         try {
                             new ExplainDreamTask(EtExplainDream.getText().toString(), mHandler).run();
                             Dialog.show();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
-                    }
                     break;
             }
 
@@ -82,7 +81,7 @@ public class ExplainDreamtypeActivity extends Activity{
 
                         }
                     });
-                    ObjectCacheUtils.setCache("ExplainDream",list);
+                 //   ObjectCacheUtils.setCache("ExplainDream",list);
                     break;
                 case 1:
                     Dialog.dismiss();
@@ -91,11 +90,12 @@ public class ExplainDreamtypeActivity extends Activity{
                 case 2:
                     Dialog.dismiss();
                     //
-                    if (ObjectCacheUtils.exists("ExplainDream")){
-                        list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
-                        adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
-                        LvExplainDreamList.setAdapter(adapter);
-                    }
+//                    if (ObjectCacheUtils.exists("ExplainDream")){
+//                        list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
+//                        adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
+//                        LvExplainDreamList.setAdapter(adapter);
+//                        Log.e("result", String.valueOf(1));
+//                    }
                    // Log.e("result", String.valueOf(list));
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
                     break;
