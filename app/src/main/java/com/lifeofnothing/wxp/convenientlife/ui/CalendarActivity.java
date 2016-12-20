@@ -27,6 +27,12 @@ public class CalendarActivity extends Activity {
 	private TextView textView5;
 	private TextView textView6;
 	private TextView textView7;
+	private TextView mLunarAnimals;
+	private TextView mLunarYear;
+	private TextView mLunar;
+	private TextView mAvoid;
+	private TextView mSuit;
+	private TextView mDate;
 	private ImageView mIvCaleandarback;
 	private CalendarView calendarview;
 	private PerpetualCalendar mPerpetualCalendar;
@@ -58,6 +64,12 @@ public class CalendarActivity extends Activity {
 		textView5 = (TextView)findViewById(R.id.five);
 		textView6 = (TextView)findViewById(R.id.six);
 		textView7 = (TextView)findViewById(R.id.seven);
+		mLunarAnimals = (TextView)findViewById(R.id.MLunarAnimals);
+		mLunarYear = (TextView)findViewById(R.id.mLunarYear);
+		mLunar = (TextView)findViewById(R.id.mLunar);
+		mAvoid = (TextView)findViewById(R.id.mAvoid);
+		mSuit = (TextView)findViewById(R.id.mSuit);
+		mDate = (TextView)findViewById(R.id.mDate);
 	}
 	private Handler mHandler = new Handler(){
 		@Override
@@ -69,12 +81,18 @@ public class CalendarActivity extends Activity {
 					/* 测试
 					Log.e("dghfad",mPerpetualCalendar.toString());*/
 					textView1.setText(mPerpetualCalendar.getmAnimalsYear());
-					textView2.setText(mPerpetualCalendar.getmLunarYear());
-					textView3.setText(mPerpetualCalendar.getmLunar());
+					textView2.setText(mPerpetualCalendar.getmLunar());
+					textView3.setText(mPerpetualCalendar.getmLunarYear());
 					textView4.setText(mPerpetualCalendar.getmAvoid());
 					textView5.setText(mPerpetualCalendar.getmSuit());
 					textView6.setText(mPerpetualCalendar.getmDate());
 					textView7.setText(mPerpetualCalendar.getmHoliday());
+					mLunarAnimals.setVisibility(View.VISIBLE);
+					mLunarYear.setVisibility(View.VISIBLE);
+					mLunar.setVisibility(View.VISIBLE);
+					mAvoid.setVisibility(View.VISIBLE);
+					mSuit.setVisibility(View.VISIBLE);
+					mDate.setVisibility(View.VISIBLE);
 					break;
 			}
 		}
