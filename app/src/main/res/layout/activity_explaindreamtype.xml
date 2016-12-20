@@ -48,7 +48,7 @@
             android:hint="@string/explaindream_keyword"
             android:completionHint="@string/explaindream_recent"
             android:completionThreshold="1"
-            android:dropDownHeight="match_parent"/>
+            android:dropDownHeight="wrap_content"/>
         <ImageView
             android:id="@+id/IvExplainDreamSearch"
             android:layout_width="wrap_content"

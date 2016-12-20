@@ -62,7 +62,7 @@
     <string name="title_qqnum">QQ号测吉凶</string>
     <string name="title_huangjin">黄金</string>
     <string name="explaindream_keyword">您梦到的关键字</string>
-    <string name="explaindream_recent">最近的五条记录</string>
+    <string name="explaindream_recent">最近的搜索记录</string>
 
 
 </resources>
