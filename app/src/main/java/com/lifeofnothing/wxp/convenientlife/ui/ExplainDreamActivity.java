@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,9 +36,9 @@ public class ExplainDreamActivity extends Activity {
     };
     public void rotateImpl(){
     Animation animation= AnimationUtils.loadAnimation(ExplainDreamActivity.this,R.anim.explaindream_foot_rotate);
-        IvExplainDreammaotouying.setAnimation(animation);
-
+        IvExplainDreammaotouying.startAnimation(animation);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,7 @@ public class ExplainDreamActivity extends Activity {
         super.onResume();
         IvExplainDreamBack.setOnClickListener(listener);
         LlayExplainDreamSearch.setOnClickListener(listener);
-        rotateImpl();
+       rotateImpl();
+
     }
 }

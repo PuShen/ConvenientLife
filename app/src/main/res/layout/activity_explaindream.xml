@@ -66,8 +66,8 @@
         android:layout_gravity="center">
         <ImageView
             android:id="@+id/IvExplainDreammaotouying"
-            android:layout_width="181dp"
-            android:layout_height="200dp"
-           android:src="@drawable/maotouying"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:src="@drawable/houzi"/>
     </LinearLayout>
 </LinearLayout>
