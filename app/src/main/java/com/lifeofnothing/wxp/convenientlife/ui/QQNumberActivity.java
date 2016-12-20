@@ -46,9 +46,13 @@ public class QQNumberActivity extends Activity {
                     if(mQQ.isEmpty()){
                         Toast.makeText(QQNumberActivity.this,"请正确输入您的qq号",Toast.LENGTH_SHORT).show();
                         mQQtv.setText(null);
+                        mQqJi.setVisibility(View.VISIBLE);
+                        mQqXiong.setVisibility(View.VISIBLE);
                         break;
                     }else if(mQQ.length()>10){
                         Toast.makeText(QQNumberActivity.this,"暂不提供超过10位数的qq号码查询",Toast.LENGTH_SHORT).show();
+                        mQqJi.setVisibility(View.VISIBLE);
+                        mQqXiong.setVisibility(View.VISIBLE);
                         mQQtv.setText(null);
                         break;
                     } else{
@@ -58,6 +62,8 @@ public class QQNumberActivity extends Activity {
                             new QQNumberTask(mQQ,handler).QQNum_run();
                         }else {
                             Toast.makeText(QQNumberActivity.this,"请正确输入您的qq号",Toast.LENGTH_SHORT).show();
+                            mQqJi.setVisibility(View.VISIBLE);
+                            mQqXiong.setVisibility(View.VISIBLE);
                             mQQtv.setText(null);
                         }
                     }
