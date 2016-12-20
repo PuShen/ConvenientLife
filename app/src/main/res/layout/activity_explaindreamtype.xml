@@ -25,6 +25,13 @@
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -33,6 +40,15 @@
             android:id="@+id/EtExplainDream"
             android:layout_height="wrap_content"
             android:hint="您梦到的关键字"/>
+        <!--<AutoCompleteTextView-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:id="@+id/auto"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="您梦到的关键字"-->
+            <!--android:completionHint="最近的五条记录"-->
+            <!--android:completionThreshold="1"-->
+            <!--android:dropDownHeight="match_parent"/>-->
         <ImageView
             android:id="@+id/IvExplainDreamSearch"
             android:layout_width="wrap_content"

@@ -12,12 +12,16 @@
            android:layout_height="wrap_content"
            android:text="黄金"
            android:textSize="20dp"
+           android:paddingLeft="10dp"
+           android:paddingRight="10dp"
            android:textColor="@color/colorAccent"
            android:id="@+id/TvItemExplainDreamtitle"/>
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="常见"
+           android:paddingLeft="10dp"
+           android:paddingRight="10dp"
            android:textColor="@color/colorBlack"
            android:id="@+id/TvItemExplainDreamdes"/>
    </LinearLayout>
