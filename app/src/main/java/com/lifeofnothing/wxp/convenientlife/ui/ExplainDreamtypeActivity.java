@@ -98,6 +98,12 @@ public class ExplainDreamtypeActivity extends Activity{
                         list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
                         adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
                         LvExplainDreamList.setAdapter(adapter);
+                        LvExplainDreamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                    // Log.e("result", String.valueOf(list));
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
