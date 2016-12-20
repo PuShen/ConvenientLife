@@ -69,7 +69,7 @@ public class JokeActivity extends Activity {
                     JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list,vJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
-                    ObjectCacheUtils.setCache("jokes",list);
+                    ObjectCacheUtils.setCache("joke",list);
                     break;
                 case 1:
                     List<Joke> list1=(List<Joke>) msg.obj;
@@ -86,38 +86,13 @@ public class JokeActivity extends Activity {
                     }
                     Toast.makeText(JokeActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
-                case 2:
-                    Toast.makeText(JokeActivity.this,"世界上最遥远的距离就是没网~",Toast.LENGTH_SHORT).show();
-                    break;
+//                case 2:
+//                    Toast.makeText(JokeActivity.this,"世界上最遥远的距离就是没网~",Toast.LENGTH_SHORT).show();
+//                    break;
             }
         }
     };
 
-    public class NetWorkUtil {
-        private Context context = null;
-        public NetWorkUtil(Context context) {
-            this.context = context;
-        }
-        /**
-         * 判断当前网络是否可用
-         *
-         * @return
-         */
-        public boolean isNetWorkAvailable() {
-            ConnectivityManager manager = (ConnectivityManager) context
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (manager != null) {
-                NetworkInfo info = manager.getActiveNetworkInfo();
-                if (info != null && info.isConnected()) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
