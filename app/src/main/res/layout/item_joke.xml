@@ -20,14 +20,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/TvItemjokeHashId"
-                android:text="哈希码"
-                android:layout_margin="@dimen/activity_layout_margieright"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/TvItemjokeUnixTime"
-                android:text="指定时间"
+                android:background="@color/colorBlack"
                 android:layout_margin="@dimen/activity_layout_margieright"/>
         </LinearLayout>
     </LinearLayout>

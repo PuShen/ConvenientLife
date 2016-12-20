@@ -12,15 +12,11 @@ public class Joke implements Serializable {
     private String mUnixtime;   //指定时间
     private String mImageUrl;  //图片网址
 
-    public Joke(String mContent, String mHashId, String mUnixtime) {
+    public Joke(String mContent) {
         this.mContent = mContent;
-        this.mHashId = mHashId;
-        this.mUnixtime = mUnixtime;
     }
 
-    public Joke(String mContent, String mHashId, String mUnixtime, String mImageUrl) {
-        this.mHashId = mHashId;
-        this.mUnixtime = mUnixtime;
+    public Joke(String mContent,String mImageUrl) {
         this.mContent = mContent;
         this.mImageUrl = mImageUrl;
     }
@@ -33,21 +29,6 @@ public class Joke implements Serializable {
         this.mContent = mContent;
     }
 
-    public String getmHashId() {
-        return mHashId;
-    }
-
-    public void setmHashId(String mHashId) {
-        this.mHashId = mHashId;
-    }
-
-    public String getmUnixtime() {
-        return mUnixtime;
-    }
-
-    public void setmUnixtime(String mUnixtime) {
-        this.mUnixtime = mUnixtime;
-    }
 
     public String getmImageUrl() {
         return mImageUrl;

@@ -53,10 +53,6 @@ public class JokeAdapter extends BaseAdapter{
             convertView= LayoutInflater.from(context).inflate(R.layout.item_joke_funnypic,null);
             TextView TvFunnyContent =(TextView)convertView.findViewById(R.id.TvFunnyContent);
             TvFunnyContent.setText(jokeList.get(position).getmContent());
-            TextView TvFunnyHashId =(TextView)convertView.findViewById(R.id. TvFunnyHashId);
-            TvFunnyHashId.setText(jokeList.get(position).getmHashId());
-            TextView TvFunnyUnixTime =(TextView)convertView.findViewById(R.id.TvFunnyUnixTime);
-            TvFunnyUnixTime.setText(jokeList.get(position).getmUnixtime());
             ImageView Ivfunnypic =(ImageView)convertView.findViewById(R.id.Ivfunnypic);
             ImageLoaderUtils.displayImage(jokeList.get(position).getmImageUrl(),Ivfunnypic,context);
         }
@@ -64,10 +60,6 @@ public class JokeAdapter extends BaseAdapter{
             convertView= LayoutInflater.from(context).inflate(R.layout.item_joke,null);
             TextView TvItemjokeContent =(TextView)convertView.findViewById(R.id. TvItemjokeContent);
             TvItemjokeContent.setText(jokeList.get(position).getmContent());
-            TextView TvItemjokeHashId =(TextView)convertView.findViewById(R.id. TvItemjokeHashId);
-            TvItemjokeHashId.setText(jokeList.get(position).getmHashId());
-            TextView TvItemjokeUnixTime =(TextView)convertView.findViewById(R.id.TvItemjokeUnixTime);
-            TvItemjokeUnixTime.setText(jokeList.get(position).getmUnixtime());
         }
 //        TextView TvItemjokeUpdateTime =(TextView)convertView.findViewById(R.id. TvItemjokeUpdateTime);
 //        TvItemjokeUpdateTime.setText(jokeList.get(position).getmUpdatetime());

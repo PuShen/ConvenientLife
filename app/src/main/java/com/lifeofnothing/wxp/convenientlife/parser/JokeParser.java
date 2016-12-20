@@ -32,7 +32,7 @@ public class JokeParser {
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject js1 = data.getJSONObject(i);
 
-                        list.add(new Joke(js1.getString("content"), js1.getString("hashId"), js1.getString("unixtime")));
+                        list.add(new Joke(js1.getString("content")));
                     }
                     break;
                 case 1:
@@ -41,7 +41,7 @@ public class JokeParser {
                         Log.e("测试","调用");
                         String b = js2.getString("url");
                         if(b != null){
-                            list.add(new Joke(js2.getString("content"),js2.getString("hashId"),js2.getString("unixtime"),js2.getString("url")));
+                            list.add(new Joke(js2.getString("content"),js2.getString("url")));
                         }
                     }
             }
