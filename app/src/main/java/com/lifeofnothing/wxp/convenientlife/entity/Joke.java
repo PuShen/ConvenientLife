@@ -1,10 +1,12 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by dell on 2016/11/24.
  */
 
-public class Joke {
+public class Joke implements Serializable {
     private String mContent;  //内容
     private String mHashId;  //哈希码
     private String mUnixtime;   //指定时间

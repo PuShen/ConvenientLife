@@ -18,7 +18,9 @@ import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.JokeAdapter;
+import com.lifeofnothing.wxp.convenientlife.adapter.NewsAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
+import com.lifeofnothing.wxp.convenientlife.entity.News;
 import com.lifeofnothing.wxp.convenientlife.http.JokeTask;
 import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
@@ -48,7 +50,7 @@ public class JokeActivity extends Activity {
 //                    break;
                 case R.id.BtnJokeRefresh:
                     new Thread(new JokeTask(handler,vJoke,vUrl1)).start();
-                    hahahahaha.setVisibility(View.INVISIBLE);
+                   hahahahaha.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.BtnJokeFunny:
                     new Thread(new JokeTask(handler,vFunnyPicJoke,vUrl2)).start();
@@ -67,12 +69,22 @@ public class JokeActivity extends Activity {
                     JokeAdapter adapter=new JokeAdapter(JokeActivity.this,list,vJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter);
+                    ObjectCacheUtils.setCache("jokes",list);
                     break;
                 case 1:
                     List<Joke> list1=(List<Joke>) msg.obj;
                     JokeAdapter adapter1=new JokeAdapter(JokeActivity.this,list1,vFunnyPicJoke);
                     vJokeList=(ListView)findViewById(R.id.LvJokeList);
                     vJokeList.setAdapter(adapter1);
+                    ObjectCacheUtils.setCache("jokes",list1);
+                    break;
+                case 2:
+                    if (ObjectCacheUtils.exists("jokes")){
+                        List<Joke> list2= (List<Joke>) ObjectCacheUtils.getCache("jokes");
+                        JokeAdapter adapter2=new JokeAdapter(JokeActivity.this,list2,vJoke);
+                        vJokeList.setAdapter(adapter2);
+                    }
+                    Toast.makeText(JokeActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
                     Toast.makeText(JokeActivity.this,"世界上最遥远的距离就是没网~",Toast.LENGTH_SHORT).show();
@@ -135,8 +147,7 @@ public class JokeActivity extends Activity {
         vFunnyPicJoke.setOnClickListener(listener);
         hahahahaha.setOnClickListener(listener);
     }
-
-//        @Override
+    //        @Override
 //        protected void onResume() {
 //            super.onResume();
 //            mTvSearch.setOnClickListener(listener);
