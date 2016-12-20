@@ -7,7 +7,9 @@
         android:id="@+id/TvItemExplainDreamlist"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:text="黄金"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/title_huangjin"
         android:textColor="@color/colorBlack"
         />
 </LinearLayout>

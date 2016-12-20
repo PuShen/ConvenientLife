@@ -12,6 +12,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -32,7 +34,8 @@ import java.util.List;
 public class ExplainDreamtypeActivity extends Activity{
     private ImageView IvExplainDreamtypeBack;
     private ListView LvExplainDreamList;
-    private EditText EtExplainDream;
+   // private EditText EtExplainDream;
+    private AutoCompleteTextView autoCompleteTextView;
     private ImageView IvExplainDreamSearch;
     private ProgressDialog Dialog;
     private List<ExplainDream> list;
@@ -45,13 +48,14 @@ public class ExplainDreamtypeActivity extends Activity{
                     finish();
                     break;
                 case R.id.IvExplainDreamSearch:
-                     if(0!=EtExplainDream.getText().length())
+                     if(0!=autoCompleteTextView.getText().length())
                         try {
-                            new ExplainDreamTask(EtExplainDream.getText().toString(), mHandler).run();
+                            new ExplainDreamTask(autoCompleteTextView.getText().toString(), mHandler).run();
                             Dialog.show();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
+                    saveHistory("history",autoCompleteTextView);
                     break;
             }
 
@@ -115,7 +119,7 @@ public class ExplainDreamtypeActivity extends Activity{
         super.onStart();
         IvExplainDreamtypeBack=(ImageView)findViewById(R.id.IvExplainDreamtypeBack);
         LvExplainDreamList=(ListView)findViewById(R.id.LvExplainDreamList);
-        EtExplainDream=(EditText)findViewById(R.id.EtExplainDream);
+        autoCompleteTextView=(AutoCompleteTextView) findViewById(R.id.auto);
         IvExplainDreamSearch=(ImageView)findViewById(R.id.IvExplainDreamSearch);
         Dialog=new ProgressDialog(this);
     }
@@ -126,6 +130,40 @@ public class ExplainDreamtypeActivity extends Activity{
         IvExplainDreamtypeBack.setOnClickListener(listener);
         IvExplainDreamSearch.setOnClickListener(listener);
         Dialog.setMessage("系统正在加载中，请稍后！");
+        initAutoComplete("history", autoCompleteTextView);
 
+    }
+    private void saveHistory(String field,AutoCompleteTextView autoCompleteTextView){
+        String text=autoCompleteTextView.getText().toString();
+        SharedPreferences sharedPreferences=getSharedPreferences("ConveninentLife",0);
+        String longhistory=sharedPreferences.getString(field,"nothing");
+        if(!longhistory.contains(text+",")){
+            StringBuilder sb = new StringBuilder(longhistory);
+            sb.insert(0, text + ",");
+            sharedPreferences.edit().putString("history", sb.toString()).commit();
+        }
+
+    }
+    private void initAutoComplete(String field,AutoCompleteTextView autoCompleteTextView){
+         SharedPreferences sharedPreferences=getSharedPreferences("ConveninentLife",0);
+        String longhistory=sharedPreferences.getString(field,"nothing");
+        String [] histories=longhistory.split(",");
+        ArrayAdapter<String> adapter1=new ArrayAdapter<String>(ExplainDreamtypeActivity.this,R.layout.support_simple_spinner_dropdown_item,histories);
+        if(histories.length>50){
+           String [] newHistories=new String[50];
+            System.arraycopy(histories,0,newHistories,0,50);
+            adapter1=new ArrayAdapter<String>(ExplainDreamtypeActivity.this,R.layout.support_simple_spinner_dropdown_item,newHistories);
+
+        }
+        autoCompleteTextView.setAdapter(adapter1);
+        autoCompleteTextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                AutoCompleteTextView view=(AutoCompleteTextView) v;
+                if (hasFocus){
+                    view.showDropDown();
+                }
+            }
+        });
     }
 }
