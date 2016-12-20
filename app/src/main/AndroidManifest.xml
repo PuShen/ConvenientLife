@@ -60,7 +60,9 @@
             android:name=".ui.ExplainDreamContentActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.QQNumberActivity"></activity>
-        <activity android:name=".ui.CalendarActivity"></activity>
+        <activity android:name=".ui.CalendarActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
