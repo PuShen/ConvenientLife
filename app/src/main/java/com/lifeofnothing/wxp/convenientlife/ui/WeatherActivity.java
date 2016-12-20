@@ -20,6 +20,7 @@ import com.lifeofnothing.wxp.convenientlife.http.WeatherTask;
 import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ import java.util.List;
  */
 
 public class WeatherActivity extends Activity {
-    private List<Weather> mList;
+    private List<Weather> mList=new ArrayList<>();
     private SwipeRefreshLayout mSrlRefresh;
     private ImageView mIvBack;
     private TextView mTvCity;

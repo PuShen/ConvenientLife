@@ -31,7 +31,7 @@ public class WechatActivity extends Activity {
     private SwipeRefreshLayout mSwrRefresh;
     private ImageView mIvBack;
     private ListView mLvList;
-    private List<WeChat> list;
+    private List<WeChat> list=new ArrayList<>();
     private WeChatAdapter adapter;
     private final String url="http://v.juhe.cn/weixin/query?pno=";//本模块的信息来源网址
     private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";//地址的参数信息
