@@ -85,7 +85,7 @@ public class ExplainDreamtypeActivity extends Activity{
 
                         }
                     });
-                 //   ObjectCacheUtils.setCache("ExplainDream",list);
+                    ObjectCacheUtils.setCache("ExplainDream",list);
                     break;
                 case 1:
                     Dialog.dismiss();
@@ -93,13 +93,12 @@ public class ExplainDreamtypeActivity extends Activity{
                     break;
                 case 2:
                     Dialog.dismiss();
-                    //
-//                    if (ObjectCacheUtils.exists("ExplainDream")){
-//                        list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
-//                        adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
-//                        LvExplainDreamList.setAdapter(adapter);
-//                        Log.e("result", String.valueOf(1));
-//                    }
+
+                    if (ObjectCacheUtils.exists("ExplainDream")){
+                        list=(List<ExplainDream>) ObjectCacheUtils.getCache("ExplainDream");
+                        adapter=new ExplainDreamAdapter(ExplainDreamtypeActivity.this,list);
+                        LvExplainDreamList.setAdapter(adapter);
+                    }
                    // Log.e("result", String.valueOf(list));
                     Toast.makeText(ExplainDreamtypeActivity.this,"当前网络异常，请稍后再试！",Toast.LENGTH_SHORT).show();
                     break;
