@@ -67,8 +67,6 @@ public class WechatActivity extends Activity {
                         }
                     });
                     ObjectCacheUtils.setCache("wechat",list);
-                    mIvLoad.setVisibility(View.GONE);
-                    mDrawable.stop();
                     break;
                 case 1:
                     adapter.notifyDataSetChanged();
@@ -84,6 +82,8 @@ public class WechatActivity extends Activity {
                     Toast.makeText(WechatActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
+            mIvLoad.setVisibility(View.GONE);
+            mDrawable.stop();
         }
     };
     private SwipeRefreshLayout.OnRefreshListener refreshListener=new SwipeRefreshLayout.OnRefreshListener() {
