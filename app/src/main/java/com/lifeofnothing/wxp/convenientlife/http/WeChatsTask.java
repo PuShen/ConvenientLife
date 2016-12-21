@@ -16,6 +16,7 @@ import org.json.JSONObject;
  */
 
 public class WeChatsTask {
+    private final int mTimeout=5000;
     private final String mUrl = "http://v.juhe.cn/weixin/query?pno=";
     private final String param="&ps=&dtype=&key=d951919b8102f48eddd8f51b6cae6244";
     private Handler mHandler;
@@ -31,6 +32,7 @@ public class WeChatsTask {
     public void WeChats_run(){
         //进行网络请求
         AsyncHttpClient httpClient = new AsyncHttpClient();
+        httpClient.setTimeout(mTimeout);
         httpClient.get(mUrl+(int)(Math.random()*25)+param,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

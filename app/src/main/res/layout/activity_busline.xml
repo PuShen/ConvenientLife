@@ -74,11 +74,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/PbBuslineLoad"
+        <ImageView
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
+            android:id="@+id/IvBuslineLoad"
             android:layout_centerInParent="true"
+            android:background="@drawable/loading"
             android:visibility="gone"/>
         <ListView
             android:layout_width="match_parent"

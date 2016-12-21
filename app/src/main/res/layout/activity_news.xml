@@ -27,10 +27,21 @@
         android:padding="@dimen/activity_layout_margieright"
         android:gravity="center"
         android:background="@drawable/button_corner"/>
-    <ListView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/LvNewsList">
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
+            android:id="@+id/IvNewsLoad"
+            android:layout_centerInParent="true"
+            android:background="@drawable/loading"
+            android:visibility="gone"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/LvNewsList">
 
-    </ListView>
+        </ListView>
+    </RelativeLayout>
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -40,11 +41,12 @@ public class BusLineActivity extends Activity {
     private TextView mTvCity;
     private ImageView mIvAdd;
     private ImageView mIvSearch;
+    private AnimationDrawable mDrawable;
     private View mLlaySearch;
     private ImageView mIvBanner;
     private EditText mEtSearch;
     private TextView mTvRecommend;
-    private ProgressBar mPbLoad;
+    private ImageView mIvLoad;
     private ListView mLvList;
     private BusLineAdapter mAdapter;
     private List<BusLine> mList;
@@ -110,7 +112,8 @@ public class BusLineActivity extends Activity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            mPbLoad.setVisibility(View.VISIBLE);
+            mIvLoad.setVisibility(View.VISIBLE);
+            mDrawable.start();
             new BusLineTask(mCity,s.toString(),handler,mList).Bus_run();
         }
 
@@ -131,7 +134,8 @@ public class BusLineActivity extends Activity {
                     Toast.makeText(BusLineActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
-            mPbLoad.setVisibility(View.GONE);
+            mIvLoad.setVisibility(View.GONE);
+            mDrawable.stop();
         }
     };
 
@@ -139,14 +143,16 @@ public class BusLineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busline);
-        mPbLoad= (ProgressBar) findViewById(R.id.PbBuslineLoad);
+        mIvLoad= (ImageView) findViewById(R.id.IvBuslineLoad);
+        mDrawable= (AnimationDrawable) mIvLoad.getBackground();
         mList=new ArrayList<>();
         mLvList= (ListView) findViewById(R.id.LvBuslineList);
         mAdapter=new BusLineAdapter(this,mList);
         mLvList.setAdapter(mAdapter);
         mCity=getSharedPreferences("ConvenientLife", Context.MODE_PRIVATE).getString("bus_city","北京");
         new BusLineTask(mCity,String.valueOf((int)(Math.random()*10)),handler,mList).Bus_run();
-        mPbLoad.setVisibility(View.VISIBLE);
+        mIvLoad.setVisibility(View.VISIBLE);
+        mDrawable.start();
     }
 
     @Override

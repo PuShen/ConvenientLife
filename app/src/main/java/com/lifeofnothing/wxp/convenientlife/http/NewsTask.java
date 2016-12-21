@@ -17,6 +17,7 @@ import java.net.URL;
  */
 
 public class NewsTask implements Runnable {
+    private final int mTimeout=5000;
     private final String mUrl="http://v.juhe.cn/toutiao/index?type=";
     private String mParam1;
     private final String mParam2="&key=ac7e3f244befd24187ea3b16a41f394d";
@@ -34,6 +35,8 @@ public class NewsTask implements Runnable {
         try {
             URL url=new URL(mUrl+mParam1+mParam2);
             connection=(HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(mTimeout);
             reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer buffer=new StringBuffer("");
             String line=null;

@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -30,6 +31,8 @@ import java.util.List;
 public class WechatActivity extends Activity {
     private SwipeRefreshLayout mSwrRefresh;
     private ImageView mIvBack;
+    private ImageView mIvLoad;
+    private AnimationDrawable mDrawable;
     private ListView mLvList;
     private List<WeChat> list=new ArrayList<>();
     private WeChatAdapter adapter;
@@ -64,6 +67,8 @@ public class WechatActivity extends Activity {
                         }
                     });
                     ObjectCacheUtils.setCache("wechat",list);
+                    mIvLoad.setVisibility(View.GONE);
+                    mDrawable.stop();
                     break;
                 case 1:
                     adapter.notifyDataSetChanged();
@@ -92,7 +97,11 @@ public class WechatActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wechat);
+        mIvLoad= (ImageView) findViewById(R.id.IvWechatLoad);
+        mDrawable= (AnimationDrawable) mIvLoad.getBackground();
         new WeChatsTask(handler).WeChats_run();
+        mIvLoad.setVisibility(View.VISIBLE);
+        mDrawable.start();
     }
 
     @Override

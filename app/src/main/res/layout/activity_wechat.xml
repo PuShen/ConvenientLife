@@ -19,14 +19,25 @@
             android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <android.support.v4.widget.SwipeRefreshLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/SrlWechatRefresh">
-        <ListView
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="@dimen/activity_item_height"
+            android:layout_height="@dimen/activity_item_height"
+            android:id="@+id/IvWechatLoad"
+            android:layout_centerInParent="true"
+            android:background="@drawable/loading"
+            android:visibility="gone"/>
+        <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/LvWechatList">
-        </ListView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+            android:id="@+id/SrlWechatRefresh">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/LvWechatList">
+            </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </RelativeLayout>
 </LinearLayout>

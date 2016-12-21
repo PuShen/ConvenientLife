@@ -31,11 +31,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_news"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -57,11 +52,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_wechat"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
         </TableRow>
         <TableRow android:layout_height="0dp"
@@ -86,11 +76,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_weather"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -112,11 +97,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_joke"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
         </TableRow>
         <TableRow android:layout_height="0dp"
@@ -141,11 +121,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_bus"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -167,11 +142,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_explaindream"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
         </TableRow>
         <TableRow android:layout_height="0dp"
@@ -196,11 +166,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_clendar"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -222,11 +187,6 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/title_qqnum"
                     android:textColor="@color/colorWhite"/>
-                <ImageView
-                    android:layout_width="@dimen/activity_item_height"
-                    android:layout_height="@dimen/activity_item_height"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/liuzhi"/>
             </LinearLayout>
         </TableRow>
     </TableLayout>

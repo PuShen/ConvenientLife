@@ -2,6 +2,7 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -26,6 +27,8 @@ import java.util.List;
 
 public class NewsActivity extends Activity {
     private ListView mLvList;
+    private ImageView mIvLoad;
+    private AnimationDrawable mDrawable;
     private TextView mTvSearch;
     private ImageView mIvBack;
     private String mType;//新闻的类型
@@ -72,6 +75,8 @@ public class NewsActivity extends Activity {
                     Toast.makeText(NewsActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
                     break;
             }
+            mIvLoad.setVisibility(View.GONE);
+            mDrawable.stop();
         }
     };
 
@@ -90,6 +95,8 @@ public class NewsActivity extends Activity {
     protected void onStart() {
         super.onStart();
         mLvList= (ListView) findViewById(R.id.LvNewsList);
+        mIvLoad= (ImageView) findViewById(R.id.IvNewsLoad);
+        mDrawable= (AnimationDrawable) mIvLoad.getBackground();
         mTvSearch= (TextView) findViewById(R.id.TvNewsSearch);
         mIvBack= (ImageView) findViewById(R.id.IvNewsBack);
     }
@@ -100,6 +107,8 @@ public class NewsActivity extends Activity {
         mTvSearch.setOnClickListener(listener);
         mIvBack.setOnClickListener(listener);
         new Thread(new NewsTask(mType,handler)).start();
+        mIvLoad.setVisibility(View.VISIBLE);
+        mDrawable.start();
     }
 
     @Override
