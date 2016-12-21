@@ -100,7 +100,7 @@
                 android:gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/colorBlue">
+                android:background="@color/holo_blue_light">
                 <ImageView
                     android:layout_width="@dimen/activity_item_height"
                     android:layout_height="@dimen/activity_item_height"
@@ -129,7 +129,7 @@
                 android:gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/colorBlue">
+                android:background="@color/holo_blue_light">
                 <ImageView
                     android:layout_width="@dimen/activity_item_height"
                     android:layout_height="@dimen/activity_item_height"
@@ -155,7 +155,7 @@
                 android:gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/colorBlue">
+                android:background="@color/holo_blue_light">
                 <ImageView
                     android:layout_width="@dimen/activity_item_height"
                     android:layout_height="@dimen/activity_item_height"
@@ -184,7 +184,7 @@
                 android:gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/colorBlue">
+                android:background="@color/holo_blue_light">
                 <ImageView
                     android:layout_width="@dimen/activity_item_height"
                     android:layout_height="@dimen/activity_item_height"
@@ -210,7 +210,7 @@
                 android:gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/colorBlue">
+                android:background="@color/holo_blue_light">
                 <ImageView
                     android:layout_width="@dimen/activity_item_height"
                     android:layout_height="@dimen/activity_item_height"
