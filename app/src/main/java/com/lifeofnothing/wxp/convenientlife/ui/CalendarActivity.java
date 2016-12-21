@@ -4,18 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.CalendarView;
 import com.lifeofnothing.wxp.convenientlife.entity.ClickDataListener;
 import com.lifeofnothing.wxp.convenientlife.entity.PerpetualCalendar;
 import com.lifeofnothing.wxp.convenientlife.http.PerpetualCalendarTask;
-
 /**
  * 日历显示activity
  */
@@ -93,6 +90,9 @@ public class CalendarActivity extends Activity {
 					mSuit.setVisibility(View.VISIBLE);
 					mDate.setVisibility(View.VISIBLE);
 					break;
+                case 2:
+                    Toast.makeText(CalendarActivity.this,R.string.tip_error_net,Toast.LENGTH_SHORT).show();
+                    break;
 			}
 		}
 	};

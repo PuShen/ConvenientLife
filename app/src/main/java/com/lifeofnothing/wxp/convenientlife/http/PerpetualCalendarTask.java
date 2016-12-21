@@ -57,6 +57,7 @@ public class PerpetualCalendarTask implements Runnable {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+            mHandler.sendEmptyMessage(2);
         }finally {
             //释放资源
             if(null != reader){
