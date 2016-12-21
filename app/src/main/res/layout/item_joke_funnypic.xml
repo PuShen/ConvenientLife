@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:layout_gravity="center"
             android:id="@+id/Ivfunnypic"
             android:src="@drawable/image_default"
