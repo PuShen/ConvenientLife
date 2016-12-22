@@ -3,7 +3,6 @@ package com.lifeofnothing.wxp.convenientlife.entity;
 import android.util.Log;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

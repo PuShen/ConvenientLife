@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.lifeofnothing.wxp.convenientlife.R;
 
 import java.util.List;
-import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 /**
  * Created by Administrator on 2016/12/15.
  */

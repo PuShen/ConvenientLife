@@ -1,6 +1,5 @@
 package com.lifeofnothing.wxp.convenientlife.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
