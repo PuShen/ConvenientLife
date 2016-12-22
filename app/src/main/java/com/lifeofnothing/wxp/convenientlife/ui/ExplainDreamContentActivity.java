@@ -3,7 +3,6 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.ExplainDreamlistAdapter;
-import com.lifeofnothing.wxp.convenientlife.entity.ExplainDream;
 
 import java.util.ArrayList;
 import java.util.List;
