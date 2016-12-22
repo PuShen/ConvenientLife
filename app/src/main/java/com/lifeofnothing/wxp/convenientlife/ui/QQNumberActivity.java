@@ -3,7 +3,6 @@ package com.lifeofnothing.wxp.convenientlife.ui;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.QQNumber;
 import com.lifeofnothing.wxp.convenientlife.http.QQNumberTask;
-import com.lifeofnothing.wxp.convenientlife.parser.QQNumberParser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
