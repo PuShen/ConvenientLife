@@ -9,11 +9,7 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
-import com.lifeofnothing.wxp.convenientlife.entity.Nba;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
