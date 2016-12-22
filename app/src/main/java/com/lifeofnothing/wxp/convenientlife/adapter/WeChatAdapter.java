@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.entity.WeChat;
-import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
 import com.lifeofnothing.wxp.convenientlife.http.BackgroundLoadTask;
 import com.lifeofnothing.wxp.convenientlife.utils.ImageLoaderUtils;
 

@@ -1,30 +1,21 @@
 package com.lifeofnothing.wxp.convenientlife.ui;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lifeofnothing.wxp.convenientlife.R;
 import com.lifeofnothing.wxp.convenientlife.adapter.JokeAdapter;
-import com.lifeofnothing.wxp.convenientlife.adapter.NewsAdapter;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
-import com.lifeofnothing.wxp.convenientlife.entity.News;
 import com.lifeofnothing.wxp.convenientlife.http.JokeTask;
 import com.lifeofnothing.wxp.convenientlife.utils.ObjectCacheUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class JokeActivity extends Activity {

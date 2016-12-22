@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
-import com.lifeofnothing.wxp.convenientlife.entity.BusLine;
 import com.lifeofnothing.wxp.convenientlife.entity.Joke;
-import com.lifeofnothing.wxp.convenientlife.http.AsyncImageLoad;
 import com.lifeofnothing.wxp.convenientlife.utils.ImageLoaderUtils;
 
 import java.util.ArrayList;

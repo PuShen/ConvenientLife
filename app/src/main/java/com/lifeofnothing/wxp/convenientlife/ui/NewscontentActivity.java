@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import com.lifeofnothing.wxp.convenientlife.R;
@@ -43,6 +44,7 @@ public class NewscontentActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mIvBack.setOnClickListener(listener);
+        mWvContent.setWebViewClient(new WebViewClient());
         mWvContent.loadUrl(getIntent().getStringExtra("url"));
     }
 }
