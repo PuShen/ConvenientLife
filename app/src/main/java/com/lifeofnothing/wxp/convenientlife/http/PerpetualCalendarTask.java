@@ -20,8 +20,8 @@ import java.net.URL;
 public class PerpetualCalendarTask implements Runnable {
     private String mParam;         //用来存用户输入的日期
     private Handler mHandler;      //用于将返回的信息发送
-    private String mParam2 = "5dd2500352c34d37603419078163bd9e";        //app key
-    private  String mUrl = "http://japi.juhe.cn/calendar/day?date="+mParam+"&key="+mParam2;
+    private String mParam2 = "822e68f61e7aa02460eb28735dacfcb9";        //app key
+    private  String mUrl;
 
     //构造方法
     public PerpetualCalendarTask(String mParam, Handler mHandler) {
@@ -31,7 +31,7 @@ public class PerpetualCalendarTask implements Runnable {
 
     @Override
     public void run() {
-        mUrl = "http://japi.juhe.cn/calendar/day?date="+mParam+"&key="+mParam2;
+        mUrl = "http://v.juhe.cn/calendar/day?date="+mParam+"&key="+mParam2;
         HttpURLConnection connection = null;
         BufferedReader reader = null;
         try {

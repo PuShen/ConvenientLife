@@ -36,7 +36,7 @@ public class WeatherTask {
     public void Weather_run() throws UnsupportedEncodingException {
         //传的参数中城市名称需要utf-8 urlencode
         mCityName = URLEncoder.encode(mParam,"UTF-8");
-        mUrl = "http://op.juhe.cn/onebox/weather/query?cityname="+mCityName+"&key=440d0e0e41e24f869d09ed9696856c45";
+        mUrl = "http://op.juhe.cn/onebox/weather/query?cityname="+mCityName+"&key=7ab1728289bb0dcea52e4d65c7b2f7e6";
         AsyncHttpClient httpClient = new AsyncHttpClient();
         httpClient.get(mUrl,new JsonHttpResponseHandler(){
             @Override

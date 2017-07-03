@@ -55,9 +55,10 @@ public class WeatherParser {
         Weather weather = null;
         try {
             JSONObject data = result.getJSONObject("data");
-            String pubDate = data.getString("pubdate");
+//            String pubDate = data.getString("pubdate");
             JSONObject realtime = data.getJSONObject("realtime");
             String cityName = realtime.getString("city_name");
+            String pubDate=data.getString("date");
 
             weather = new Weather(cityName, pubDate);
 

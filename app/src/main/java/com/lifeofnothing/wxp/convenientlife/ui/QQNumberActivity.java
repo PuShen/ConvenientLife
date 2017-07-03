@@ -78,7 +78,12 @@ public class QQNumberActivity extends Activity {
             switch (msg.what){
                 case 0:
                     qq = (QQNumber) msg.obj;
-                    String a = "分析：\n"+qq.getAnalysis()+"\n结论：\n"+qq.getConclusion();
+                    String a;
+                    if (null==qq){
+                        a = "很抱歉，该接口暂时关闭！";
+                    }else {
+                        a = "分析：\n"+qq.getAnalysis()+"\n结论：\n"+qq.getConclusion();
+                    }
                     mQQtv.setText(a);
                     break;
                 case 1:

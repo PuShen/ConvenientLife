@@ -24,8 +24,8 @@ public class JokeActivity extends Activity {
     private ImageView vBack;//返回键
     private Button vFunnyPicJoke;  //有图笑话按钮
     private ImageView hahahahaha;
-    private String vUrl1 = "http://v.juhe.cn/joke/randJoke.php?key=99955ed34841b72633054903d94dc642";
-    private String vUrl2 = "http://v.juhe.cn/joke/randJoke.php?type=pic&key=99955ed34841b72633054903d94dc642" ;
+    private String vUrl1 = "http://v.juhe.cn/joke/randJoke.php?key=853c0de884c5b452909c120c9b87a8cc";
+    private String vUrl2 = "http://v.juhe.cn/joke/randJoke.php?type=pic&key=853c0de884c5b452909c120c9b87a8cc" ;
 
     private  View.OnClickListener listener=new  View.OnClickListener(){
 

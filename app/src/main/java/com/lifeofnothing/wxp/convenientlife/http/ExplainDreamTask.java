@@ -35,7 +35,7 @@ public class ExplainDreamTask{
 
      public void run()throws UnsupportedEncodingException{
          keyword=URLEncoder.encode(mParm,"UTF-8");
-         mUrl="http://v.juhe.cn/dream/query?q="+keyword+"&cid=&full=1&key=21ab81b5edf982ac86e9b82f98ad923c";
+         mUrl="http://v.juhe.cn/dream/query?q="+keyword+"&cid=&full=1&key=11a0f469653b5ca65aa482640039693d";
          AsyncHttpClient client=new AsyncHttpClient();
          client.setTimeout(mTimeout);
          client.get(mUrl,new JsonHttpResponseHandler(){

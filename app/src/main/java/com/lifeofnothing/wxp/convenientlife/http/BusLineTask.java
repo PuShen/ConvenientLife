@@ -23,14 +23,14 @@ public class BusLineTask {
     private final int mTimeout=5000;//设置超时时长
 
     private String mUrl = "http://op.juhe.cn/189/bus/busline?";
-    private String mParam1 = "key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
+    private String mParam1 = "key=52b1d454f953facc4fffa8a74259e9ab&city=";
     private String mParam2;     //城市代码或城市名称
     private String mParam3;     //公交车号
     private String url;
     private Handler mHandler;
     private Boolean mFlag1;
 
-    private String mUrl2 = "http://op.juhe.cn/189/bus/station?key=580f5ec11f82f6f5c19fb9321c0ca157&city=";
+    private String mUrl2 = "http://op.juhe.cn/189/bus/station?key=52b1d454f953facc4fffa8a74259e9ab&city=";
     private String mParam4;     //城市代码或城市名称
     private String mParam5 = "";//站名
     private String url2;
